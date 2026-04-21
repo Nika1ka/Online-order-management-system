@@ -1,0 +1,629 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "full_name": "Олександр Коваль",
+      "email": "oleksandr.koval@example.com",
+      "password_hash": "5f4dcc3b5aa765d61d8327deb882cf99",
+      "user_role": "admin",
+      "phone_number": "+380501234567",
+      "registration_date": "2024-01-10"
+    },
+    {
+      "user_id": 2,
+      "full_name": "Марія Петренко",
+      "email": "maria.petrenko@example.com",
+      "password_hash": "e99a18c428cb38d5f260853678922e03",
+      "user_role": "manager",
+      "phone_number": "+380631112233",
+      "registration_date": "2024-02-15"
+    },
+    {
+      "user_id": 3,
+      "full_name": "Ігор Сидоренко",
+      "email": "igor.sydorenko@example.com",
+      "password_hash": "7c6a180b36896a0a8c02787eeafb0e4c",
+      "user_role": "employee",
+      "phone_number": "+380671234890",
+      "registration_date": "2024-03-05"
+    },
+    {
+      "user_id": 4,
+      "full_name": "Світлана Гнатюк",
+      "email": "svitlana.hnatyuk@example.com",
+      "password_hash": "d8578edf8458ce06fbc5bb76a58c5ca4",
+      "user_role": "employee",
+      "phone_number": "+380991234567",
+      "registration_date": "2024-03-20"
+    },
+    {
+      "user_id": 5,
+      "full_name": "Анна Коваленко",
+      "email": "anna.kovalenko@example.com",
+      "password_hash": "25d55ad283aa400af464c76d713c07ad",
+      "user_role": "employee",
+      "phone_number": "+380671110501",
+      "registration_date": "2024-04-02"
+    },
+    {
+      "user_id": 6,
+      "full_name": "Максим Бойко",
+      "email": "maksym.boiko@example.com",
+      "password_hash": "5ebe2294ecd0e0f08eab7690d2a6ee69",
+      "user_role": "employee",
+      "phone_number": "+380671110502",
+      "registration_date": "2024-04-03"
+    },
+    {
+      "user_id": 7,
+      "full_name": "Олена Мельник",
+      "email": "olena.melnyk@example.com",
+      "password_hash": "8d3533d75ae2c3966d7e0d4fcc69216b",
+      "user_role": "employee",
+      "phone_number": "+380671110503",
+      "registration_date": "2024-04-04"
+    },
+    {
+      "user_id": 8,
+      "full_name": "Дмитро Литвин",
+      "email": "dmytro.lytvyn@example.com",
+      "password_hash": "96e79218965eb72c92a549dd5a330112",
+      "user_role": "employee",
+      "phone_number": "+380671110504",
+      "registration_date": "2024-04-05"
+    },
+    {
+      "user_id": 9,
+      "full_name": "Ілля Романюк",
+      "email": "illia.romaniuk@example.com",
+      "password_hash": "6cb75f652a9b52798eb6cf2201057c73",
+      "user_role": "employee",
+      "phone_number": "+380671110505",
+      "registration_date": "2024-04-06"
+    },
+    {
+      "user_id": 10,
+      "full_name": "Софія Ткаченко",
+      "email": "sofiia.tkachenko@example.com",
+      "password_hash": "827ccb0eea8a706c4c34a16891f84e7b",
+      "user_role": "manager",
+      "phone_number": "+380671110506",
+      "registration_date": "2024-04-07"
+    }
+  ],
+  "clients": [
+    {
+      "client_id": 1,
+      "company_name": "ТехноПродукт",
+      "company_address": "м. Київ, вул. Хрещатик, 12",
+      "user_id": 1
+    },
+    {
+      "client_id": 2,
+      "company_name": "АгроСервіс",
+      "company_address": "м. Львів, вул. Стрийська, 45",
+      "user_id": 2
+    },
+    {
+      "client_id": 3,
+      "company_name": "БудМаркет",
+      "company_address": "м. Харків, просп. Гагаріна, 7",
+      "user_id": 2
+    },
+    {
+      "client_id": 4,
+      "company_name": "CloudNova Solutions",
+      "company_address": "м. Київ, вул. Жилянська, 75",
+      "user_id": 10
+    },
+    {
+      "client_id": 5,
+      "company_name": "FinCore Digital",
+      "company_address": "м. Львів, вул. Наукова, 11",
+      "user_id": 2
+    },
+    {
+      "client_id": 6,
+      "company_name": "MedData Systems",
+      "company_address": "м. Дніпро, просп. Дмитра Яворницького, 54",
+      "user_id": 1
+    }
+  ],
+  "orders": [
+    {
+      "order_id": 1,
+      "order_name": "Серія металевих конструкцій",
+      "description": "Виготовлення каркасів для складу",
+      "created_at": "2024-03-01",
+      "planned_completion_date": "2024-03-20T18:00:00",
+      "actual_completion_date": "2024-03-19T17:30:00",
+      "order_status": "completed",
+      "client_id": 1
+    },
+    {
+      "order_id": 2,
+      "order_name": "Обладнання для пакування",
+      "description": "Монтаж та тестування пакувальної лінії",
+      "created_at": "2024-03-08",
+      "planned_completion_date": "2024-04-02T20:00:00",
+      "actual_completion_date": null,
+      "order_status": "in_progress",
+      "client_id": 2
+    },
+    {
+      "order_id": 3,
+      "order_name": "Ремонт виробничої лінії",
+      "description": "Заміна вузлів та запуск лінії",
+      "created_at": "2024-03-15",
+      "planned_completion_date": "2024-04-05T18:00:00",
+      "actual_completion_date": null,
+      "order_status": "planned",
+      "client_id": 3
+    },
+    {
+      "order_id": 4,
+      "order_name": "CRM-система для відділу продажів",
+      "description": "Розробка web-CRM з аналітикою лідів та автоматизацією воронки",
+      "created_at": "2024-04-10",
+      "planned_completion_date": "2024-05-20T18:00:00",
+      "actual_completion_date": null,
+      "order_status": "in_progress",
+      "client_id": 4
+    },
+    {
+      "order_id": 5,
+      "order_name": "Мобільний додаток для банкінгу",
+      "description": "Розробка iOS/Android додатку з біометрією та push-сповіщеннями",
+      "created_at": "2024-04-14",
+      "planned_completion_date": "2024-06-05T19:00:00",
+      "actual_completion_date": null,
+      "order_status": "in_progress",
+      "client_id": 5
+    },
+    {
+      "order_id": 6,
+      "order_name": "Портал електронного документообігу",
+      "description": "Запуск внутрішнього порталу для погодження документів",
+      "created_at": "2024-04-18",
+      "planned_completion_date": "2024-05-30T17:30:00",
+      "actual_completion_date": null,
+      "order_status": "planned",
+      "client_id": 6
+    },
+    {
+      "order_id": 7,
+      "order_name": "Дашборд клінічної аналітики",
+      "description": "BI-панель для візуалізації медичних показників та KPI",
+      "created_at": "2024-04-20",
+      "planned_completion_date": "2024-05-15T18:00:00",
+      "actual_completion_date": "2024-05-14T16:40:00",
+      "order_status": "completed",
+      "client_id": 6
+    },
+    {
+      "order_id": 8,
+      "order_name": "Мікросервіс нотифікацій",
+      "description": "Розробка відокремленого сервісу email, SMS та web-push сповіщень",
+      "created_at": "2024-04-25",
+      "planned_completion_date": "2024-05-18T18:30:00",
+      "actual_completion_date": null,
+      "order_status": "review",
+      "client_id": 4
+    }
+  ],
+  "employees": [
+    {
+      "employee_id": 1,
+      "position": "Інженер з виробництва",
+      "department": "Виробництво",
+      "specialization": "металообробка",
+      "hire_date": "2023-09-10",
+      "qualification_level": "senior",
+      "user_id": 3
+    },
+    {
+      "employee_id": 2,
+      "position": "Технік",
+      "department": "Виробництво",
+      "specialization": "ремонт обладнання",
+      "hire_date": "2024-01-12",
+      "qualification_level": "mid",
+      "user_id": 4
+    },
+    {
+      "employee_id": 3,
+      "position": "Аналітик",
+      "department": "Аналітика",
+      "specialization": "продуктивність",
+      "hire_date": "2023-11-28",
+      "qualification_level": "mid",
+      "user_id": 2
+    },
+    {
+      "employee_id": 4,
+      "position": "Frontend Developer",
+      "department": "IT",
+      "specialization": "React, TypeScript, Design Systems",
+      "hire_date": "2023-08-14",
+      "qualification_level": "senior",
+      "user_id": 5
+    },
+    {
+      "employee_id": 5,
+      "position": "Backend Developer",
+      "department": "IT",
+      "specialization": "Node.js, PostgreSQL, REST API",
+      "hire_date": "2023-10-02",
+      "qualification_level": "senior",
+      "user_id": 6
+    },
+    {
+      "employee_id": 6,
+      "position": "UI/UX Designer",
+      "department": "Дизайн",
+      "specialization": "Product Design, Prototyping, UX Research",
+      "hire_date": "2024-01-19",
+      "qualification_level": "mid",
+      "user_id": 7
+    },
+    {
+      "employee_id": 7,
+      "position": "QA Engineer",
+      "department": "Забезпечення якості",
+      "specialization": "Manual QA, API Testing, Regression Testing",
+      "hire_date": "2024-02-11",
+      "qualification_level": "mid",
+      "user_id": 8
+    },
+    {
+      "employee_id": 8,
+      "position": "DevOps Engineer",
+      "department": "Infrastructure",
+      "specialization": "AWS, Docker, CI/CD",
+      "hire_date": "2023-12-05",
+      "qualification_level": "senior",
+      "user_id": 9
+    },
+    {
+      "employee_id": 9,
+      "position": "Project Manager",
+      "department": "Управління проєктами",
+      "specialization": "Delivery Management, Agile, Stakeholder Communication",
+      "hire_date": "2023-07-03",
+      "qualification_level": "senior",
+      "user_id": 10
+    }
+  ],
+  "production_tasks": [
+    {
+      "task_id": 1,
+      "task_name": "Зварювання каркасів",
+      "description": "Підготовка та зварювання металевих рам",
+      "planned_completion_date": "2024-03-10T17:00:00",
+      "actual_completion_date": "2024-03-10T16:45:00",
+      "task_status": "completed",
+      "employee_id": 1,
+      "order_id": 1
+    },
+    {
+      "task_id": 2,
+      "task_name": "Налаштування пакувальної лінії",
+      "description": "Складання та налаштування обладнання",
+      "planned_completion_date": "2024-03-25T19:00:00",
+      "actual_completion_date": null,
+      "task_status": "in_progress",
+      "employee_id": 2,
+      "order_id": 2
+    },
+    {
+      "task_id": 3,
+      "task_name": "Тестування системи контролю",
+      "description": "Перевірка автоматизації та датчиків",
+      "planned_completion_date": "2024-03-28T15:00:00",
+      "actual_completion_date": null,
+      "task_status": "planned",
+      "employee_id": 1,
+      "order_id": 2
+    },
+    {
+      "task_id": 4,
+      "task_name": "Оцінка процесу ремонту",
+      "description": "Аналіз трудомісткості ремонтних робіт",
+      "planned_completion_date": "2024-04-01T14:00:00",
+      "actual_completion_date": null,
+      "task_status": "planned",
+      "employee_id": 3,
+      "order_id": 3
+    },
+    {
+      "task_id": 5,
+      "task_name": "Проєктування UI для CRM",
+      "description": "Розробка макетів екранів, design tokens та UI-kit",
+      "planned_completion_date": "2024-04-22T17:00:00",
+      "actual_completion_date": "2024-04-22T16:20:00",
+      "task_status": "completed",
+      "employee_id": 6,
+      "order_id": 4
+    },
+    {
+      "task_id": 6,
+      "task_name": "Розробка API клієнтів",
+      "description": "CRUD-операції для контактів, організацій та воронки продажів",
+      "planned_completion_date": "2024-04-29T18:30:00",
+      "actual_completion_date": null,
+      "task_status": "in_progress",
+      "employee_id": 5,
+      "order_id": 4
+    },
+    {
+      "task_id": 7,
+      "task_name": "Верстка dashboard CRM",
+      "description": "Реалізація dashboard, таблиць та канбан-дошки",
+      "planned_completion_date": "2024-05-03T18:00:00",
+      "actual_completion_date": null,
+      "task_status": "in_progress",
+      "employee_id": 4,
+      "order_id": 4
+    },
+    {
+      "task_id": 8,
+      "task_name": "Опис бізнес-вимог мобільного додатка",
+      "description": "Декомпозиція epic-задач, user stories та acceptance criteria",
+      "planned_completion_date": "2024-04-26T15:00:00",
+      "actual_completion_date": "2024-04-26T14:10:00",
+      "task_status": "completed",
+      "employee_id": 9,
+      "order_id": 5
+    },
+    {
+      "task_id": 9,
+      "task_name": "Розгортання CI/CD для mobile backend",
+      "description": "Налаштування GitHub Actions, Docker build та staging environment",
+      "planned_completion_date": "2024-05-04T19:00:00",
+      "actual_completion_date": null,
+      "task_status": "review",
+      "employee_id": 8,
+      "order_id": 5
+    },
+    {
+      "task_id": 10,
+      "task_name": "Інтеграція електронного підпису",
+      "description": "Підключення кваліфікованого електронного підпису до порталу",
+      "planned_completion_date": "2024-05-12T18:00:00",
+      "actual_completion_date": null,
+      "task_status": "planned",
+      "employee_id": 5,
+      "order_id": 6
+    },
+    {
+      "task_id": 11,
+      "task_name": "Побудова ETL для BI-дашборду",
+      "description": "Об'єднання джерел даних та підготовка вітрин для звітності",
+      "planned_completion_date": "2024-05-08T17:00:00",
+      "actual_completion_date": "2024-05-08T16:35:00",
+      "task_status": "completed",
+      "employee_id": 3,
+      "order_id": 7
+    },
+    {
+      "task_id": 12,
+      "task_name": "Навантажувальне тестування notification service",
+      "description": "Перевірка пропускної здатності черги повідомлень",
+      "planned_completion_date": "2024-05-16T16:00:00",
+      "actual_completion_date": null,
+      "task_status": "planned",
+      "employee_id": 7,
+      "order_id": 8
+    }
+  ],
+  "task_results": [
+    {
+      "result_id": 1,
+      "completion_date": "2024-03-10T16:45:00",
+      "actual_execution_time": 8.5,
+      "comment": "Робота завершена з випередженням",
+      "performance_rating": 9,
+      "task_id": 1
+    },
+    {
+      "result_id": 2,
+      "completion_date": null,
+      "actual_execution_time": null,
+      "comment": "Робота в процесі",
+      "performance_rating": null,
+      "task_id": 2
+    },
+    {
+      "result_id": 3,
+      "completion_date": null,
+      "actual_execution_time": null,
+      "comment": "Планове завдання на наступний тиждень",
+      "performance_rating": null,
+      "task_id": 3
+    },
+    {
+      "result_id": 4,
+      "completion_date": null,
+      "actual_execution_time": null,
+      "comment": "Очікує технічного брифу від клієнта",
+      "performance_rating": null,
+      "task_id": 4
+    },
+    {
+      "result_id": 5,
+      "completion_date": "2024-04-22T16:20:00",
+      "actual_execution_time": 14.75,
+      "comment": "Макети погоджено з першого раунду",
+      "performance_rating": 10,
+      "task_id": 5
+    },
+    {
+      "result_id": 6,
+      "completion_date": null,
+      "actual_execution_time": 11.2,
+      "comment": "Реалізовано авторизацію та контролери контактів",
+      "performance_rating": 8,
+      "task_id": 6
+    },
+    {
+      "result_id": 7,
+      "completion_date": null,
+      "actual_execution_time": 9.6,
+      "comment": "Завершено сітку dashboard та почато верстку віджетів",
+      "performance_rating": 8,
+      "task_id": 7
+    },
+    {
+      "result_id": 8,
+      "completion_date": "2024-04-26T14:10:00",
+      "actual_execution_time": 6.4,
+      "comment": "Вимоги декомпозовано на 24 user stories",
+      "performance_rating": 9,
+      "task_id": 8
+    },
+    {
+      "result_id": 9,
+      "completion_date": null,
+      "actual_execution_time": 7.9,
+      "comment": "Pipeline на stage QA, очікує схвалення по security checklist",
+      "performance_rating": 8,
+      "task_id": 9
+    },
+    {
+      "result_id": 10,
+      "completion_date": null,
+      "actual_execution_time": null,
+      "comment": "Завдання заплановано на наступний sprint",
+      "performance_rating": null,
+      "task_id": 10
+    },
+    {
+      "result_id": 11,
+      "completion_date": "2024-05-08T16:35:00",
+      "actual_execution_time": 18.3,
+      "comment": "ETL-пайплайн виконується щогодини, latency менше 5 хвилин",
+      "performance_rating": 10,
+      "task_id": 11
+    },
+    {
+      "result_id": 12,
+      "completion_date": null,
+      "actual_execution_time": null,
+      "comment": "Очікує надходження test data для benchmark",
+      "performance_rating": null,
+      "task_id": 12
+    }
+  ],
+  "performance_reports": [
+    {
+      "report_id": 1,
+      "period_start_date": "2024-03-01",
+      "period_end_date": "2024-03-31",
+      "avg_task_completion_time": 7.25,
+      "total_work_time": 132.5,
+      "completed_task_count": 12,
+      "efficiency_level": 8.5,
+      "report_created_at": "2024-04-01T09:30:00",
+      "ai_report_id": 1,
+      "employee_id": 3
+    },
+    {
+      "report_id": 2,
+      "period_start_date": "2024-02-01",
+      "period_end_date": "2024-02-29",
+      "avg_task_completion_time": 8.1,
+      "total_work_time": 118.75,
+      "completed_task_count": 10,
+      "efficiency_level": 7.9,
+      "report_created_at": "2024-03-01T10:00:00",
+      "ai_report_id": 2,
+      "employee_id": 3
+    },
+    {
+      "report_id": 3,
+      "period_start_date": "2024-04-01",
+      "period_end_date": "2024-04-30",
+      "avg_task_completion_time": 6.85,
+      "total_work_time": 164.2,
+      "completed_task_count": 18,
+      "efficiency_level": 9.1,
+      "report_created_at": "2024-05-01T09:10:00",
+      "ai_report_id": 3,
+      "employee_id": 4
+    },
+    {
+      "report_id": 4,
+      "period_start_date": "2024-04-01",
+      "period_end_date": "2024-04-30",
+      "avg_task_completion_time": 7.4,
+      "total_work_time": 171.8,
+      "completed_task_count": 16,
+      "efficiency_level": 8.7,
+      "report_created_at": "2024-05-01T09:20:00",
+      "ai_report_id": 4,
+      "employee_id": 5
+    },
+    {
+      "report_id": 5,
+      "period_start_date": "2024-04-01",
+      "period_end_date": "2024-04-30",
+      "avg_task_completion_time": 5.95,
+      "total_work_time": 149.5,
+      "completed_task_count": 14,
+      "efficiency_level": 9.3,
+      "report_created_at": "2024-05-01T09:35:00",
+      "ai_report_id": 5,
+      "employee_id": 6
+    },
+    {
+      "report_id": 6,
+      "period_start_date": "2024-04-01",
+      "period_end_date": "2024-04-30",
+      "avg_task_completion_time": 7.95,
+      "total_work_time": 156.6,
+      "completed_task_count": 13,
+      "efficiency_level": 8.2,
+      "report_created_at": "2024-05-01T09:50:00",
+      "ai_report_id": 6,
+      "employee_id": 7
+    }
+  ],
+  "ai_performance_reports": [
+    {
+      "ai_report_id": 1,
+      "productivity_score": 8.8,
+      "efficiency_forecast": 8.7,
+      "recommendations": "Збільшити частоту профілактичних перевірок обладнання"
+    },
+    {
+      "ai_report_id": 2,
+      "productivity_score": 7.5,
+      "efficiency_forecast": 7.8,
+      "recommendations": "Оптимізувати розподіл задач між відділами"
+    },
+    {
+      "ai_report_id": 3,
+      "productivity_score": 9.2,
+      "efficiency_forecast": 9.0,
+      "recommendations": "Підтримувати темп ведення design system та масштабувати UI-компоненти"
+    },
+    {
+      "ai_report_id": 4,
+      "productivity_score": 8.6,
+      "efficiency_forecast": 8.8,
+      "recommendations": "Винести частину синхронних операцій у асинхронні worker-и та оптимізувати SQL-запити"
+    },
+    {
+      "ai_report_id": 5,
+      "productivity_score": 9.4,
+      "efficiency_forecast": 9.1,
+      "recommendations": "Додати більше UX-валідацій на ранніх етапах discovery для зменшення переробок"
+    },
+    {
+      "ai_report_id": 6,
+      "productivity_score": 8.1,
+      "efficiency_forecast": 8.4,
+      "recommendations": "Автоматизувати regression-набір та додати performance smoke tests у release pipeline"
+    }
+  ]
+}

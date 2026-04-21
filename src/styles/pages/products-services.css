@@ -1,0 +1,13 @@
+.products-services {
+  display: grid;
+  gap: 18px;
+}
+
+.products-services__title,
+.products-services__intro {
+  margin: 0;
+}
+
+.products-services__intro {
+  color: #475569;
+}

@@ -1,0 +1,88 @@
+.page--employee-performance .panel--analytics {
+  border: none;
+  padding: 0;
+}
+
+.page--employee-performance .small-card:first-child {
+  padding: 14px 18px 10px;
+}
+
+.page--employee-performance .small-card:first-child .small-card__list {
+  gap: 0;
+}
+
+.page--employee-performance .small-card:first-child .small-card__item {
+  grid-template-columns: 1fr 154px 24px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #edf1f6;
+}
+
+.page--employee-performance .small-card:first-child .small-card__item:first-child {
+  border-top: none;
+}
+
+.page--employee-performance .small-card:first-child .small-card__item::after {
+  justify-self: end;
+  font-size: 0.84rem;
+  color: var(--text);
+}
+
+.page--employee-performance .small-card:first-child .small-card__item:nth-child(1)::after {
+  content: "95";
+}
+
+.page--employee-performance .small-card:first-child .small-card__item:nth-child(2)::after {
+  content: "84";
+}
+
+.page--employee-performance .small-card:first-child .small-card__item:nth-child(3)::after {
+  content: "74";
+}
+
+.page--employee-performance .analytics-aside .small-card:last-child {
+  position: relative;
+  min-height: 308px;
+  padding: 14px 22px;
+}
+
+.page--employee-performance .analytics-aside .small-card:last-child .dashboard-card__text {
+  max-width: 280px;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.page--employee-performance .analytics-aside .small-card:last-child .progress-inline {
+  display: none;
+}
+
+.page--employee-performance .analytics-aside .small-card:last-child::after {
+  content: "";
+  position: absolute;
+  right: 50px;
+  bottom: 48px;
+  width: 116px;
+  height: 116px;
+  background: var(--info);
+  -webkit-mask: url("../../assets/icons/ai.svg") center / contain no-repeat;
+  mask: url("../../assets/icons/ai.svg") center / contain no-repeat;
+  opacity: 0.95;
+}
+
+.page--employee-performance .table td:last-child {
+  width: 64px;
+}
+
+.page--employee-performance .table tbody tr:nth-child(3) .progress-inline__bar {
+  background: #ff4141;
+}
+
+.page--employee-performance .table tbody tr:nth-child(4) .progress-inline__bar,
+.page--employee-performance .table tbody tr:nth-child(5) .progress-inline__bar {
+  background: #ffd856;
+}
+
+.page--employee-performance .table .icon-button--small {
+  background: var(--info);
+  color: #ffffff;
+}

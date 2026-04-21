@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Співробітники компанії</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/pages/employees.css">
+</head>
+<body class="page page--employees">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__brand-icon"><img src="assets/icons/shield.svg" alt="" class="icon icon--brand"></span>
+        <span>Система</span>
+      </div>
+
+      <nav class="sidebar__group" aria-label="Керування">
+        <h2 class="sidebar__group-title">КЕРУВАННЯ</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="index.html">
+              <span class="sidebar__icon"><img src="assets/icons/dashboard.svg" alt="" class="icon icon--sidebar"></span>
+              Головна панель
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="production-schedule.html">
+              <span class="sidebar__icon"><img src="assets/icons/schedule.svg" alt="" class="icon icon--sidebar"></span>
+              Графік виробництва
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="order-management.html">
+              <span class="sidebar__icon"><img src="assets/icons/orders.svg" alt="" class="icon icon--sidebar"></span>
+              Управління замовленнями
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="production-tasks.html">
+              <span class="sidebar__icon"><img src="assets/icons/tasks.svg" alt="" class="icon icon--sidebar"></span>
+              Виробничі задачі
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Ресурси">
+        <h2 class="sidebar__group-title">РЕСУРСИ</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link sidebar__link--active" href="employees.html">
+              <span class="sidebar__icon"><img src="assets/icons/employees.svg" alt="" class="icon icon--sidebar"></span>
+              Співробітники
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="departments.html">
+              <span class="sidebar__icon"><img src="assets/icons/departments.svg" alt="" class="icon icon--sidebar"></span>
+              Підрозділи
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="products-services.html">
+              <span class="sidebar__icon"><img src="assets/icons/products.svg" alt="" class="icon icon--sidebar"></span>
+              Продукція та послуги
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="inventory-resources.html">
+              <span class="sidebar__icon"><img src="assets/icons/inventory.svg" alt="" class="icon icon--sidebar"></span>
+              Склад та ресурси
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Аналітика">
+        <h2 class="sidebar__group-title">АНАЛІТИКА</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="employee-performance.html">
+              <span class="sidebar__icon"><img src="assets/icons/analytics.svg" alt="" class="icon icon--sidebar"></span>
+              Ефективність співробітників
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="resource-usage.html">
+              <span class="sidebar__icon"><img src="assets/icons/resource-usage.svg" alt="" class="icon icon--sidebar"></span>
+              Використання ресурсів
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="finance-report.html">
+              <span class="sidebar__icon"><img src="assets/icons/finance.svg" alt="" class="icon icon--sidebar"></span>
+              Витрати та прибуток
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Система">
+        <h2 class="sidebar__group-title">СИСТЕМА</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="roles-permissions.html">
+              <span class="sidebar__icon"><img src="assets/icons/roles.svg" alt="" class="icon icon--sidebar"></span>
+              Ролі та права
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="activity-log.html">
+              <span class="sidebar__icon"><img src="assets/icons/log.svg" alt="" class="icon icon--sidebar"></span>
+              Журнал подій
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="settings.html">
+              <span class="sidebar__icon"><img src="assets/icons/settings.svg" alt="" class="icon icon--sidebar"></span>
+              Налаштування
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content-area">
+      <header class="topbar">
+        <div class="breadcrumb">
+          <span class="breadcrumb__label">Ресурси</span>
+          <span class="breadcrumb__separator">›</span>
+          <span class="breadcrumb__current">Співробітники</span>
+        </div>
+        <div class="topbar__actions">
+          <button class="icon-button" aria-label="Сповіщення"><img src="assets/icons/notification.svg" alt="" class="icon icon--button"></button>
+          <button class="icon-button" aria-label="Допомога"><img src="assets/icons/question.svg" alt="" class="icon icon--button"></button>
+          <button class="icon-button" aria-label="Налаштування"><img src="assets/icons/settings.svg" alt="" class="icon icon--button"></button>
+          <div class="topbar__avatar" aria-label="Профіль користувача"><img src="assets/icons/avatar-admin.svg" alt="Профіль користувача" class="topbar__avatar-image"></div>
+        </div>
+      </header>
+
+      <main class="main-content main-content--employees">
+        <section class="panel panel--hero">
+          <div>
+            <p class="eyebrow">Ресурси</p>
+            <h1 class="panel__title">Співробітники компанії</h1>
+            <p class="panel__description">Перегляд, фільтрація, контроль статусу поточних задач співробітників</p>
+          </div>
+          <button class="button button--primary">+ Додати співробітника</button>
+        </section>
+
+        <section class="panel panel--filters">
+          <div class="filter-grid">
+            <label class="field">
+              <span class="field__label">Посада</span>
+              <select class="field__select">
+                <option>Всі посади</option>
+                <option>Дизайн</option>
+                <option>Веб-розробка</option>
+                <option>Тестування</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Відділ</span>
+              <select class="field__select">
+                <option>Всі відділи</option>
+                <option>UX/UI</option>
+                <option>IT</option>
+                <option>Маркетинг</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Кваліфікація</span>
+              <select class="field__select">
+                <option>Будь-яка</option>
+                <option>Вища</option>
+                <option>Середня</option>
+                <option>Практикант</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Дата прийому на роботу</span>
+              <select class="field__select">
+                <option>За весь час</option>
+                <option>Останній місяць</option>
+                <option>Останні 6 місяців</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Статус задачі</span>
+              <select class="field__select">
+                <option>Всі статуси</option>
+                <option>Виконано</option>
+                <option>В роботі</option>
+                <option>На перевірці</option>
+                <option>Очікує</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="filter-search">
+            <label class="field field--search">
+              <span class="field__label">Пошук за ПІБ співробітника</span>
+              <input class="field__input" type="search" placeholder="Введіть ім'я або email" />
+            </label>
+            <div class="filter-actions">
+              <button class="button button--secondary">Скинути</button>
+              <button class="button button--primary">Фільтрувати</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel--table">
+          <div class="table-card">
+            <div class="table-card__header">
+              <h2 class="table-card__title">Список співробітників</h2>
+            </div>
+            <div class="table-wrap">
+              <table class="table table--employees">
+                <thead>
+                  <tr>
+                    <th>ID <span class="sort-indicator"><img src="assets/icons/sort.svg" alt="" class="icon icon--sort"></span></th>
+                    <th>Співробітник <span class="sort-indicator"><img src="assets/icons/sort.svg" alt="" class="icon icon--sort"></span></th>
+                    <th>Email <span class="sort-indicator"><img src="assets/icons/sort.svg" alt="" class="icon icon--sort"></span></th>
+                    <th>Номер телефону</th>
+                    <th>Посада</th>
+                    <th>Відділ</th>
+                    <th>Кваліфікація</th>
+                    <th>Дата прийому на роботу</th>
+                    <th>Поточна задача</th>
+                    <th>Статус задачі</th>
+                    <th>Дії</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">IP</div>
+                        <div>
+                          <div class="user-name">Іван Петренко</div>
+                          <div class="user-role">Design</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Petrenko@company.com</td>
+                    <td>+380721834821</td>
+                    <td>Дизайн</td>
+                    <td>UX/UI</td>
+                    <td>Вища</td>
+                    <td>13.02.2023</td>
+                    <td>Підготовка матеріалів</td>
+                    <td><span class="badge badge--success">Виконано</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">MK</div>
+                        <div>
+                          <div class="user-name">Марія Коваль</div>
+                          <div class="user-role">Web</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Koval@company.com</td>
+                    <td>+380726564821</td>
+                    <td>Веб-розробка</td>
+                    <td>IT</td>
+                    <td>Практикант</td>
+                    <td>24.02.2026</td>
+                    <td>Верстка головної сторінки</td>
+                    <td><span class="badge badge--info">В роботі</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">OS</div>
+                        <div>
+                          <div class="user-name">Олег Сидоренко</div>
+                          <div class="user-role">Backend</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Sidorenko@company.com</td>
+                    <td>+380756648456</td>
+                    <td>Веб-розробка</td>
+                    <td>IT</td>
+                    <td>Вища</td>
+                    <td>01.02.2023</td>
+                    <td>Інтеграція з API</td>
+                    <td><span class="badge badge--success">Виконано</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">DL</div>
+                        <div>
+                          <div class="user-name">Дмитро Лисенко</div>
+                          <div class="user-role">Backend</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Lusenko@company.com</td>
+                    <td>+380900666462</td>
+                    <td>Веб-розробка</td>
+                    <td>IT</td>
+                    <td>Середня</td>
+                    <td>24.02.2024</td>
+                    <td>Налаштування БД</td>
+                    <td><span class="badge badge--info">В роботі</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">AS</div>
+                        <div>
+                          <div class="user-name">Анна Шевченко</div>
+                          <div class="user-role">QA</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Chevchenko@company.com</td>
+                    <td>+380874654336</td>
+                    <td>Тестування</td>
+                    <td>Відділ якості</td>
+                    <td>Низька</td>
+                    <td>03.02.2025</td>
+                    <td>Тестування функціоналу</td>
+                    <td><span class="badge badge--purple">На перевірці</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">SB</div>
+                        <div>
+                          <div class="user-name">Світлана Бондар</div>
+                          <div class="user-role">CMM</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Bondar@company.com</td>
+                    <td>+380967344451</td>
+                    <td>Маркетинг</td>
+                    <td>Маркетинг</td>
+                    <td>Без кваліфікації</td>
+                    <td>15.02.2025</td>
+                    <td>Підготовка розсилки</td>
+                    <td><span class="badge badge--success">Виконано</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">VT</div>
+                        <div>
+                          <div class="user-name">Владислав Ткач</div>
+                          <div class="user-role">Web</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Tkach@company.com</td>
+                    <td>+380155657771</td>
+                    <td>Веб-розробка</td>
+                    <td>IT</td>
+                    <td>Середня</td>
+                    <td>08.02.2020</td>
+                    <td>Верстка сторінки аналізу</td>
+                    <td><span class="badge badge--gray">Очікує</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">EK</div>
+                        <div>
+                          <div class="user-name">Єгор Курченко</div>
+                          <div class="user-role">QA</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Kurchenko@company.com</td>
+                    <td>+380143732475</td>
+                    <td>Тестування</td>
+                    <td>Відділ якості</td>
+                    <td>Практикант</td>
+                    <td>11.01.2026</td>
+                    <td>Тестування функціоналу</td>
+                    <td><span class="badge badge--info">В роботі</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">MK</div>
+                        <div>
+                          <div class="user-name">Марія Кузнєцова</div>
+                          <div class="user-role">Менеджер</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Kuznezova@company.com</td>
+                    <td>+380658537410</td>
+                    <td>Менеджмент</td>
+                    <td>Менеджмент</td>
+                    <td>Вища</td>
+                    <td>28.11.2023</td>
+                    <td>Створення плану виробництва</td>
+                    <td><span class="badge badge--gray">Очікує</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar">OM</div>
+                        <div>
+                          <div class="user-name">Олександр Міроненко</div>
+                          <div class="user-role">Design</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Mironenko@company.com</td>
+                    <td>+380885247005</td>
+                    <td>Дизайн</td>
+                    <td>UX/UI</td>
+                    <td>Без кваліфікації</td>
+                    <td>20.05.2024</td>
+                    <td>Узагальнення матеріалів</td>
+                    <td><span class="badge badge--success">Виконано</span></td>
+                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.svg" alt="" class="icon icon--action"></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-footer">
+              <span class="table-footer__text">Показано 1–10 із 24 співробітників</span>
+              <div class="table-footer__controls">
+                <label class="footer-select">
+                  <span>Рядків на сторінці</span>
+                  <select>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                </label>
+                <div class="pagination">
+                  <button class="button button--ghost">Попередня</button>
+                  <button class="button button--ghost button--active">1</button>
+                  <button class="button button--ghost">2</button>
+                  <button class="button button--ghost">3</button>
+                  <button class="button button--ghost">Наступна</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
+

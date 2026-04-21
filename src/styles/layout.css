@@ -1,0 +1,14 @@
+/* Стилі для глобальних лейаутів та сіток */
+.layout {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

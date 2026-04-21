@@ -1,0 +1,7 @@
+.page--production-tasks .table td:nth-child(1) {
+  width: 60px;
+}
+
+.page--production-tasks .table td:nth-child(8) {
+  width: 164px;
+}

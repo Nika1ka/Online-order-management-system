@@ -1,0 +1,13 @@
+.resource-usage {
+  display: grid;
+  gap: 18px;
+}
+
+.resource-usage__title,
+.resource-usage__intro {
+  margin: 0;
+}
+
+.resource-usage__intro {
+  color: #475569;
+}

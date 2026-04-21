@@ -1,0 +1,25 @@
+/* ========== КОМПОНЕНТИ UI ========== */
+/* Повторно використовувані компоненти для всієї системи */
+
+/* Базова карта - контейнер з тінню та закругленим кутом */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Базова кнопка - інтерактивний елемент */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Таблиця - залізнична сітка для даних */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+

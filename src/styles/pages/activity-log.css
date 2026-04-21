@@ -1,0 +1,13 @@
+.activity-log {
+  display: grid;
+  gap: 18px;
+}
+
+.activity-log__title,
+.activity-log__intro {
+  margin: 0;
+}
+
+.activity-log__intro {
+  color: #475569;
+}

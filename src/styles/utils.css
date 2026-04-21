@@ -1,0 +1,12 @@
+/* Утиліти та допоміжні класи */
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-space-between {
+  justify-content: space-between;
+}

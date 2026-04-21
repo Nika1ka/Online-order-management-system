@@ -1,0 +1,13 @@
+.finance-report {
+  display: grid;
+  gap: 18px;
+}
+
+.finance-report__title,
+.finance-report__intro {
+  margin: 0;
+}
+
+.finance-report__intro {
+  color: #475569;
+}

@@ -1,0 +1,30 @@
+.page--order-management .panel--hero .button,
+.page--production-tasks .panel--hero .button,
+.page--employees .panel--hero .button {
+  gap: 10px;
+}
+
+.page--order-management .panel--hero .button::before,
+.page--production-tasks .panel--hero .button::before,
+.page--employees .panel--hero .button::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  -webkit-mask: url("../../assets/icons/add.svg") center / contain no-repeat;
+  mask: url("../../assets/icons/add.svg") center / contain no-repeat;
+}
+
+.page--order-management .table td:nth-child(1) {
+  width: 60px;
+}
+
+.page--order-management .table td:nth-child(8) {
+  width: 170px;
+}
+
+.page--order-management .table td:last-child,
+.page--production-tasks .table td:last-child {
+  width: 88px;
+  white-space: nowrap;
+}

@@ -1,0 +1,13 @@
+.inventory-resources {
+  display: grid;
+  gap: 18px;
+}
+
+.inventory-resources__title,
+.inventory-resources__intro {
+  margin: 0;
+}
+
+.inventory-resources__intro {
+  color: #475569;
+}

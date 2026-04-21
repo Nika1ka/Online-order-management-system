@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Графік виробництва — Замовлення</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/pages/production-schedule-variants.css">
+</head>
+<body class="page page--production-schedule page--production-schedule-tasks">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__brand-icon"><img src="assets/icons/shield.svg" alt="" class="icon icon--brand"></span>
+        <span>Система</span>
+      </div>
+
+      <nav class="sidebar__group" aria-label="Керування">
+        <h2 class="sidebar__group-title">КЕРУВАННЯ</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="index.html">
+              <span class="sidebar__icon"><img src="assets/icons/dashboard.svg" alt="" class="icon icon--sidebar"></span>
+              Головна панель
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link sidebar__link--active" href="production-schedule-tasks.html">
+              <span class="sidebar__icon"><img src="assets/icons/schedule.svg" alt="" class="icon icon--sidebar"></span>
+              Графік виробництва
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="order-management.html">
+              <span class="sidebar__icon"><img src="assets/icons/orders.svg" alt="" class="icon icon--sidebar"></span>
+              Управління замовленнями
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="production-tasks.html">
+              <span class="sidebar__icon"><img src="assets/icons/tasks.svg" alt="" class="icon icon--sidebar"></span>
+              Виробничі задачі
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Ресурси">
+        <h2 class="sidebar__group-title">РЕСУРСИ</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="employees.html">
+              <span class="sidebar__icon"><img src="assets/icons/employees.svg" alt="" class="icon icon--sidebar"></span>
+              Співробітники
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="departments.html">
+              <span class="sidebar__icon"><img src="assets/icons/departments.svg" alt="" class="icon icon--sidebar"></span>
+              Підрозділи
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="products-services.html">
+              <span class="sidebar__icon"><img src="assets/icons/products.svg" alt="" class="icon icon--sidebar"></span>
+              Продукція та послуги
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="inventory-resources.html">
+              <span class="sidebar__icon"><img src="assets/icons/inventory.svg" alt="" class="icon icon--sidebar"></span>
+              Склад та ресурси
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Аналітика">
+        <h2 class="sidebar__group-title">АНАЛІТИКА</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="employee-performance.html">
+              <span class="sidebar__icon"><img src="assets/icons/analytics.svg" alt="" class="icon icon--sidebar"></span>
+              Ефективність співробітників
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="resource-usage.html">
+              <span class="sidebar__icon"><img src="assets/icons/resource-usage.svg" alt="" class="icon icon--sidebar"></span>
+              Використання ресурсів
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="finance-report.html">
+              <span class="sidebar__icon"><img src="assets/icons/finance.svg" alt="" class="icon icon--sidebar"></span>
+              Витрати та прибуток
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sidebar__group" aria-label="Система">
+        <h2 class="sidebar__group-title">СИСТЕМА</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="roles-permissions.html">
+              <span class="sidebar__icon"><img src="assets/icons/roles.svg" alt="" class="icon icon--sidebar"></span>
+              Ролі та права
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="activity-log.html">
+              <span class="sidebar__icon"><img src="assets/icons/log.svg" alt="" class="icon icon--sidebar"></span>
+              Журнал подій
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="settings.html">
+              <span class="sidebar__icon"><img src="assets/icons/settings.svg" alt="" class="icon icon--sidebar"></span>
+              Налаштування
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content-area">
+      <header class="topbar">
+        <div class="breadcrumb">
+          <span class="breadcrumb__label">Керування</span>
+          <span class="breadcrumb__separator">›</span>
+          <span class="breadcrumb__current">Графік виробництва</span>
+        </div>
+        <div class="topbar__actions">
+          <button class="icon-button" aria-label="Сповіщення"><img src="assets/icons/notification.svg" alt="" class="icon icon--button"></button>
+          <button class="icon-button" aria-label="Допомога"><img src="assets/icons/question.svg" alt="" class="icon icon--button"></button>
+          <button class="icon-button" aria-label="Налаштування"><img src="assets/icons/settings.svg" alt="" class="icon icon--button"></button>
+          <div class="topbar__avatar" aria-label="Профіль користувача"><img src="assets/icons/avatar-admin.svg" alt="Профіль користувача" class="topbar__avatar-image"></div>
+        </div>
+      </header>
+
+      <main class="main-content main-content--production-schedule">
+        <section class="panel panel--hero panel--hero-compact">
+          <div>
+            <h1 class="panel__title">Графік виробництва</h1>
+            <p class="panel__description">Графік роботи над замовленням 135 - “Landing page “Еко Туризм”” в період 13.03.2026–19.03.2026</p>
+          </div>
+        </section>
+
+        <section class="panel panel--filters schedule-filters">
+          <div class="schedule-filters__row">
+            <label class="field field--inline">
+              <span class="field__label">Початкова дата:</span>
+              <input class="field__input field__input--date" type="text" value="Бер. 13, 2026">
+            </label>
+            <label class="field field--inline">
+              <span class="field__label">Термін:</span>
+              <select class="field__select field__select--term">
+                <option>Тиждень</option>
+              </select>
+            </label>
+            <label class="field field--search schedule-filters__search">
+              <input class="field__input" type="search" value="Landing page “Еко Туризм”" aria-label="Пошук за замовленням">
+            </label>
+            <div class="filter-actions">
+              <button class="button button--primary">Фільтрувати</button>
+              <button class="button button--secondary">Скинути</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel--schedule-variant">
+          <div class="schedule-tabs">
+            <a class="schedule-tabs__item" href="production-schedule-department.html">Відділ</a>
+            <a class="schedule-tabs__item schedule-tabs__item--active" href="production-schedule-tasks.html">Замовлення</a>
+          </div>
+
+          <div class="schedule-grid schedule-grid--tasks" style="--name-col: 244px; --columns: 7;">
+            <div class="schedule-grid__head schedule-grid__head--name">Співробітник</div>
+            <div class="schedule-grid__head">13 березня</div>
+            <div class="schedule-grid__head">14 березня</div>
+            <div class="schedule-grid__head">15 березня</div>
+            <div class="schedule-grid__head">16 березня</div>
+            <div class="schedule-grid__head">17 березня</div>
+            <div class="schedule-grid__head">18 березня</div>
+            <div class="schedule-grid__head">19 березня</div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Майкл Джонсон</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--red" style="--start: 1.05; --span: 2.0;">Визначення цільової аудиторії</span>
+              <span class="schedule-pill schedule-pill--red" style="--start: 3.05; --span: 2.0;">Формування цілей сторінки</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Карлос Гарсія</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--green" style="--start: 3.05; --span: 3.95;">Підбір шрифтів та іконок</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Анна Добуа</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--blue" style="--start: 1.05; --span: 4.0;">Формування структури landing page</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Томас Мюллер</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--red" style="--start: 4.05; --span: 3.9;">Верстка сторінки</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Богдан Романюк</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--green" style="--start: 2.05; --span: 3.0;">Кросбраузерна сумісність</span>
+              <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1.9;">Оптимізація швидкості завантаження</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Юлія Савченко</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 3.0;">Оптимізація мета-тегів</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Віктор Черненко</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--red" style="--start: 6.05; --span: 1.9;">Кросбраузерна сумісність</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Вей Лі</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1.0;">Інтеграція з БД</span>
+            </div>
+
+            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Ілля Смирнов</div>
+            <div class="schedule-grid__track">
+              <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 4.0;">Перевірка швидкості (PageSpeed)</span>
+            </div>
+          </div>
+
+          <div class="schedule-footer schedule-footer--compact">
+            <span class="schedule-footer__text">Показано 1–9 із 9 співробітників</span>
+            <div class="schedule-footer__controls">
+              <label class="footer-select">
+                <span>Рядків на сторінці:</span>
+                <select>
+                  <option>15</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

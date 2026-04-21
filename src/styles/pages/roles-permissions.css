@@ -1,0 +1,13 @@
+.roles-permissions {
+  display: grid;
+  gap: 18px;
+}
+
+.roles-permissions__title,
+.roles-permissions__intro {
+  margin: 0;
+}
+
+.roles-permissions__intro {
+  color: #475569;
+}
