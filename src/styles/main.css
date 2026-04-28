@@ -168,22 +168,23 @@ select {
 }
 
 .breadcrumb::before {
-  content: "";
-  width: 28px;
-  height: 28px;
+  content: url("../assets/icons/menu.png");
+  width: 24px;
+  height: 24px;
   margin-right: 16px;
   background: currentColor;
-  -webkit-mask: url("../assets/icons/menu.svg") center / contain no-repeat;
-  mask: url("../assets/icons/menu.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/icons/menu.png") center / contain no-repeat;
+  mask: url("../assets/icons/menu.png") center / contain no-repeat;
 }
 
 .breadcrumb__separator {
-  width: 16px;
-  height: 16px;
+  content: url("../assets/icons/next.png");
+  width: 12px;
+  height: 12px;
   font-size: 0;
   background: #324866;
-  -webkit-mask: url("../assets/icons/chevron-right.svg") center / contain no-repeat;
-  mask: url("../assets/icons/chevron-right.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/icons/next.png") center / contain no-repeat;
+  mask: url("../assets/icons/next.png") center / contain no-repeat;
 }
 
 .breadcrumb__current {
@@ -203,23 +204,37 @@ select {
   vertical-align: middle;
 }
 
+/* Основна іконка меню */
 .icon--brand {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
+/* Іконки в бічному меню */
 .icon--sidebar {
   width: 22px;
   height: 22px;
 }
 
-.icon--button,
-.icon--sort,
+/* Сортування в таблицях */
+.icon--sort {
+  width: 14px;
+  height: 14px;
+}
+
+/* Іконки виконаних та не виконаних завдань співробітника */
 .icon--metric {
   width: 18px;
   height: 18px;
 }
 
+/* Дії над аккаунтом (у topbar) */
+.icon--button {
+  width: 32px;
+  height: 32px;
+}
+
+/* Дії елемента */
 .icon--action {
   width: 16px;
   height: 16px;
@@ -242,8 +257,8 @@ select {
 }
 
 .icon-button {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -251,7 +266,6 @@ select {
   border-radius: 0;
   background: transparent;
   color: #324866;
-  cursor: pointer;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -291,12 +305,6 @@ select {
   gap: 18px;
 }
 
-.panel {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  box-shadow: none;
-}
 
 .panel--hero {
   display: flex;
@@ -326,6 +334,11 @@ select {
   line-height: 1.4;
 }
 
+button {
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -334,12 +347,10 @@ select {
   padding: 10px 18px;
   border-radius: 6px;
   border: 1px solid transparent;
-  cursor: pointer;
   font-weight: 500;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.button:hover {
+button:hover {
   transform: translateY(-1px);
 }
 
@@ -369,6 +380,10 @@ select {
 .panel--filters {
   position: relative;
   padding: 48px 20px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: none;
 }
 
 .panel--filters::before {
@@ -485,12 +500,12 @@ select {
 }
 
 .filter-actions .button--primary::before {
-  content: "";
+  content: url("../assets/icons/filter.png");
   width: 16px;
   height: 16px;
   background: currentColor;
-  -webkit-mask: url("../assets/icons/filter.svg") center / contain no-repeat;
-  mask: url("../assets/icons/filter.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/icons/filter.png") center / contain no-repeat;
+  mask: url("../assets/icons/filter.png") center / contain no-repeat;
 }
 
 .dashboard-card {
@@ -589,14 +604,15 @@ select {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
-  width: 214px;
-  height: 214px;
-  padding-top: 56px;
+  width: 220px;
+  height: 220px;
+  padding-top: 42px;
   border-radius: 50%;
-  background: #edf5ff url("../assets/icons/3342ff81-a095-4b50-84d8-127760c32975.png") no-repeat center 55% / 72%;
-  border: 1px solid #bfd6ff;
+  background: url("../assets/icons/AI_icon.png") no-repeat center;
+  background-size: contain;
+  border: 20px solid #dae8ff;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(26, 64, 129, 0.25);
 }
@@ -633,9 +649,6 @@ select {
 
 .table-card {
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #ffffff;
 }
 
 .table-card__header {
@@ -644,6 +657,10 @@ select {
 
 .table-wrap {
   overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: none;
 }
 
 .table {
@@ -661,7 +678,16 @@ select {
   font-size: 0.82rem;
 }
 
+.table th:last-child, .table td:last-child {
+  border-right: none;
+}
+
+.table tr:last-child {
+  border-bottom: none;
+}
+
 .table thead th {
+  text-align: center;
   background: #eef2f7;
   color: var(--text);
   font-weight: 700;
@@ -758,18 +784,21 @@ select {
 
 .progress__bar {
   height: 100%;
-  border-radius: 999px;
+  border-radius: 20px;
   background: var(--info);
 }
 
+/* Завершена задача */
 .progress--success .progress__bar {
   background: #66ca5d;
 }
 
+/* Прогрес по задачі 1-99% */
 .progress--info .progress__bar {
   background: var(--info);
 }
 
+/* Ще не почата задача */
 .progress--gray .progress__bar {
   background: #d3d9e0;
 }
