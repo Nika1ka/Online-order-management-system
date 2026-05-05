@@ -107,13 +107,13 @@
 }
 
 .schedule-tabs__item:first-child::before {
-  -webkit-mask: url("../../assets/icons/employees.svg") center / contain no-repeat;
-  mask: url("../../assets/icons/employees.svg") center / contain no-repeat;
+  -webkit-mask: url("../../assets/icons/employees.png") center / contain no-repeat;
+  mask: url("../../assets/icons/employees.png") center / contain no-repeat;
 }
 
 .schedule-tabs__item:last-child::before {
-  -webkit-mask: url("../../assets/icons/orders.svg") center / contain no-repeat;
-  mask: url("../../assets/icons/orders.svg") center / contain no-repeat;
+  -webkit-mask: url("../../assets/icons/orders.png") center / contain no-repeat;
+  mask: url("../../assets/icons/orders.png") center / contain no-repeat;
 }
 
 .schedule-tabs__item--active {
@@ -175,7 +175,7 @@
   height: 28px;
   border-radius: 50%;
   transform: translateY(-50%);
-  background: url("../../assets/icons/avatar-user.svg") center / cover no-repeat;
+  background: url("../../assets/icons/avatar-user.png") center / cover no-repeat;
 }
 
 .schedule-grid__track {
