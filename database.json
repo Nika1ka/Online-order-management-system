@@ -2,628 +2,4952 @@
   "users": [
     {
       "user_id": 1,
-      "full_name": "Олександр Коваль",
-      "email": "oleksandr.koval@example.com",
-      "password_hash": "5f4dcc3b5aa765d61d8327deb882cf99",
-      "user_role": "admin",
-      "phone_number": "+380501234567",
-      "registration_date": "2024-01-10"
+      "full_name": "Аніта Кабаненко",
+      "email": "user1@example.com",
+      "password_hash": "c4ca4238a0b923820dcc509a6f75849b",
+      "user_role": "Менеджер",
+      "phone_number": "+380546807989",
+      "registration_date": "2026-01-28"
     },
     {
       "user_id": 2,
-      "full_name": "Марія Петренко",
-      "email": "maria.petrenko@example.com",
-      "password_hash": "e99a18c428cb38d5f260853678922e03",
-      "user_role": "manager",
-      "phone_number": "+380631112233",
-      "registration_date": "2024-02-15"
+      "full_name": "Спас Рябченко",
+      "email": "user2@example.com",
+      "password_hash": "c81e728d9d4c2f636f067f89cc14862c",
+      "user_role": "Співробітник",
+      "phone_number": "+380643104990",
+      "registration_date": "2024-07-29"
     },
     {
       "user_id": 3,
-      "full_name": "Ігор Сидоренко",
-      "email": "igor.sydorenko@example.com",
-      "password_hash": "7c6a180b36896a0a8c02787eeafb0e4c",
-      "user_role": "employee",
-      "phone_number": "+380671234890",
-      "registration_date": "2024-03-05"
+      "full_name": "Оксенія Цимбалюк",
+      "email": "user3@example.com",
+      "password_hash": "eccbc87e4b5ce2fe28308fd9f2a7baf3",
+      "user_role": "Менеджер",
+      "phone_number": "+380983827462",
+      "registration_date": "2025-07-14"
     },
     {
       "user_id": 4,
-      "full_name": "Світлана Гнатюк",
-      "email": "svitlana.hnatyuk@example.com",
-      "password_hash": "d8578edf8458ce06fbc5bb76a58c5ca4",
-      "user_role": "employee",
-      "phone_number": "+380991234567",
-      "registration_date": "2024-03-20"
+      "full_name": "Остап Шовкопляс",
+      "email": "user4@example.com",
+      "password_hash": "a87ff679a2f3e71d9181a67b7542122c",
+      "user_role": "Співробітник",
+      "phone_number": "+380703540826",
+      "registration_date": "2026-02-11"
     },
     {
       "user_id": 5,
-      "full_name": "Анна Коваленко",
-      "email": "anna.kovalenko@example.com",
-      "password_hash": "25d55ad283aa400af464c76d713c07ad",
-      "user_role": "employee",
-      "phone_number": "+380671110501",
-      "registration_date": "2024-04-02"
+      "full_name": "Ярема Ніколюк",
+      "email": "user5@example.com",
+      "password_hash": "e4da3b7fbbce2345d7772b0674a318d5",
+      "user_role": "Співробітник",
+      "phone_number": "+380678347281",
+      "registration_date": "2025-08-21"
     },
     {
       "user_id": 6,
-      "full_name": "Максим Бойко",
-      "email": "maksym.boiko@example.com",
-      "password_hash": "5ebe2294ecd0e0f08eab7690d2a6ee69",
-      "user_role": "employee",
-      "phone_number": "+380671110502",
-      "registration_date": "2024-04-03"
+      "full_name": "Наталія Бгиденко",
+      "email": "user6@example.com",
+      "password_hash": "1679091c5a880faf6fb5e6087eb1b2dc",
+      "user_role": "Співробітник",
+      "phone_number": "+380527864489",
+      "registration_date": "2025-11-07"
     },
     {
       "user_id": 7,
-      "full_name": "Олена Мельник",
-      "email": "olena.melnyk@example.com",
-      "password_hash": "8d3533d75ae2c3966d7e0d4fcc69216b",
-      "user_role": "employee",
-      "phone_number": "+380671110503",
-      "registration_date": "2024-04-04"
+      "full_name": "Сергій Захаренко",
+      "email": "user7@example.com",
+      "password_hash": "8f14e45fceea167a5a36dedd4bea2543",
+      "user_role": "Менеджер",
+      "phone_number": "+380681041815",
+      "registration_date": "2024-07-15"
     },
     {
       "user_id": 8,
-      "full_name": "Дмитро Литвин",
-      "email": "dmytro.lytvyn@example.com",
-      "password_hash": "96e79218965eb72c92a549dd5a330112",
-      "user_role": "employee",
-      "phone_number": "+380671110504",
-      "registration_date": "2024-04-05"
+      "full_name": "Василь Калениченко",
+      "email": "user8@example.com",
+      "password_hash": "c9f0f895fb98ab9159f51fd0297e236d",
+      "user_role": "Співробітник",
+      "phone_number": "+380876716838",
+      "registration_date": "2025-07-19"
     },
     {
       "user_id": 9,
-      "full_name": "Ілля Романюк",
-      "email": "illia.romaniuk@example.com",
-      "password_hash": "6cb75f652a9b52798eb6cf2201057c73",
-      "user_role": "employee",
-      "phone_number": "+380671110505",
-      "registration_date": "2024-04-06"
+      "full_name": "Альбіна Удовенко",
+      "email": "user9@example.com",
+      "password_hash": "45c48cce2e2d7fbdea1afc51c7c6ad26",
+      "user_role": "Співробітник",
+      "phone_number": "+380500896870",
+      "registration_date": "2024-08-04"
     },
     {
       "user_id": 10,
-      "full_name": "Софія Ткаченко",
-      "email": "sofiia.tkachenko@example.com",
-      "password_hash": "827ccb0eea8a706c4c34a16891f84e7b",
-      "user_role": "manager",
-      "phone_number": "+380671110506",
-      "registration_date": "2024-04-07"
+      "full_name": "Світлана Колесниченко",
+      "email": "user10@example.com",
+      "password_hash": "d3d9446802a44259755d38e6d163e820",
+      "user_role": "Співробітник",
+      "phone_number": "+380915316887",
+      "registration_date": "2025-08-02"
+    },
+    {
+      "user_id": 11,
+      "full_name": "Лілія Ґжицький",
+      "email": "user11@example.com",
+      "password_hash": "6512bd43d9caa6e02c990b0a82652dca",
+      "user_role": "Менеджер",
+      "phone_number": "+380820833768",
+      "registration_date": "2024-07-09"
+    },
+    {
+      "user_id": 12,
+      "full_name": "пан Аарон Дахно",
+      "email": "user12@example.com",
+      "password_hash": "c20ad4d76fe97759aa27a0c99bff6710",
+      "user_role": "Співробітник",
+      "phone_number": "+380503540685",
+      "registration_date": "2025-11-12"
+    },
+    {
+      "user_id": 13,
+      "full_name": "Альбіна Мірошниченко",
+      "email": "user13@example.com",
+      "password_hash": "c51ce410c124a10e0db5e4b97fc2af39",
+      "user_role": "Співробітник",
+      "phone_number": "+380740690886",
+      "registration_date": "2024-06-20"
+    },
+    {
+      "user_id": 14,
+      "full_name": "Галина Малик",
+      "email": "user14@example.com",
+      "password_hash": "aab3238922bcc25a6f606eb525ffdc56",
+      "user_role": "Менеджер",
+      "phone_number": "+380523561897",
+      "registration_date": "2026-05-08"
+    },
+    {
+      "user_id": 15,
+      "full_name": "Алевтин Кириленко",
+      "email": "user15@example.com",
+      "password_hash": "9bf31c7ff062936a96d3c8bd1f8f2ff3",
+      "user_role": "Менеджер",
+      "phone_number": "+380576329659",
+      "registration_date": "2025-10-09"
+    },
+    {
+      "user_id": 16,
+      "full_name": "Аліна Кибкало",
+      "email": "user16@example.com",
+      "password_hash": "c74d97b01eae257e44aa9d5bade97baf",
+      "user_role": "Менеджер",
+      "phone_number": "+380986731454",
+      "registration_date": "2025-09-15"
+    },
+    {
+      "user_id": 17,
+      "full_name": "Павло Зінкевич",
+      "email": "user17@example.com",
+      "password_hash": "70efdf2ec9b086079795c442636b55fb",
+      "user_role": "Адміністратор",
+      "phone_number": "+380989170226",
+      "registration_date": "2024-07-12"
+    },
+    {
+      "user_id": 18,
+      "full_name": "Валентин Ейбоженко",
+      "email": "user18@example.com",
+      "password_hash": "6f4922f45568161a8cdf4ad2299f6d23",
+      "user_role": "Співробітник",
+      "phone_number": "+380756046292",
+      "registration_date": "2026-03-03"
+    },
+    {
+      "user_id": 19,
+      "full_name": "Валентин Уманець",
+      "email": "user19@example.com",
+      "password_hash": "1f0e3dad99908345f7439f8ffabdffc4",
+      "user_role": "Співробітник",
+      "phone_number": "+380949810660",
+      "registration_date": "2024-12-28"
+    },
+    {
+      "user_id": 20,
+      "full_name": "Камілла Чуприна",
+      "email": "user20@example.com",
+      "password_hash": "98f13708210194c475687be6106a3b84",
+      "user_role": "Адміністратор",
+      "phone_number": "+380663797775",
+      "registration_date": "2025-08-22"
+    },
+    {
+      "user_id": 21,
+      "full_name": "Надія Дубенко",
+      "email": "user21@example.com",
+      "password_hash": "3c59dc048e8850243be8079a5c74d079",
+      "user_role": "Співробітник",
+      "phone_number": "+380930300204",
+      "registration_date": "2025-12-29"
+    },
+    {
+      "user_id": 22,
+      "full_name": "Лілія Шиян",
+      "email": "user22@example.com",
+      "password_hash": "b6d767d2f8ed5d21a44b0e5886680cb9",
+      "user_role": "Співробітник",
+      "phone_number": "+380940917113",
+      "registration_date": "2025-10-02"
+    },
+    {
+      "user_id": 23,
+      "full_name": "пан Арсен Засенко",
+      "email": "user23@example.com",
+      "password_hash": "37693cfc748049e45d87b8c7d8b9aacd",
+      "user_role": "Співробітник",
+      "phone_number": "+380782971208",
+      "registration_date": "2026-01-16"
+    },
+    {
+      "user_id": 24,
+      "full_name": "Розалія Козак",
+      "email": "user24@example.com",
+      "password_hash": "1ff1de774005f8da13f42943881c655f",
+      "user_role": "Співробітник",
+      "phone_number": "+380669255616",
+      "registration_date": "2024-12-27"
+    },
+    {
+      "user_id": 25,
+      "full_name": "пан Демʼян Перебийніс",
+      "email": "user25@example.com",
+      "password_hash": "8e296a067a37563370ded05f5a3bf3ec",
+      "user_role": "Адміністратор",
+      "phone_number": "+380979394213",
+      "registration_date": "2025-03-04"
+    },
+    {
+      "user_id": 26,
+      "full_name": "Марія Дурдинець",
+      "email": "user26@example.com",
+      "password_hash": "4e732ced3463d06de0ca9a15b6153677",
+      "user_role": "Співробітник",
+      "phone_number": "+380775281704",
+      "registration_date": "2024-11-24"
+    },
+    {
+      "user_id": 27,
+      "full_name": "Амвросій Вернигора",
+      "email": "user27@example.com",
+      "password_hash": "02e74f10e0327ad868d138f2b4fdd6f0",
+      "user_role": "Співробітник",
+      "phone_number": "+380789115417",
+      "registration_date": "2024-06-03"
+    },
+    {
+      "user_id": 28,
+      "full_name": "Валентин Рубан",
+      "email": "user28@example.com",
+      "password_hash": "33e75ff09dd601bbe69f351039152189",
+      "user_role": "Співробітник",
+      "phone_number": "+380857909090",
+      "registration_date": "2024-09-20"
+    },
+    {
+      "user_id": 29,
+      "full_name": "Віктор Овсієнко",
+      "email": "user29@example.com",
+      "password_hash": "6ea9ab1baa0efb9e19094440c317e21b",
+      "user_role": "Співробітник",
+      "phone_number": "+380947487689",
+      "registration_date": "2025-07-11"
+    },
+    {
+      "user_id": 30,
+      "full_name": "Вʼячеслав Колесниченко",
+      "email": "user30@example.com",
+      "password_hash": "34173cb38f07f89ddbebc2ac9128303f",
+      "user_role": "Співробітник",
+      "phone_number": "+380858882217",
+      "registration_date": "2025-04-30"
+    },
+    {
+      "user_id": 31,
+      "full_name": "Юстина Батіг",
+      "email": "user31@example.com",
+      "password_hash": "c16a5320fa475530d9583c34fd356ef5",
+      "user_role": "Співробітник",
+      "phone_number": "+380773839716",
+      "registration_date": "2025-05-12"
+    },
+    {
+      "user_id": 32,
+      "full_name": "Віра Девдюк",
+      "email": "user32@example.com",
+      "password_hash": "6364d3f0f495b6ab9dcf8d3b5c6e0b01",
+      "user_role": "Адміністратор",
+      "phone_number": "+380904893637",
+      "registration_date": "2024-09-14"
+    },
+    {
+      "user_id": 33,
+      "full_name": "Климент Колесниченко",
+      "email": "user33@example.com",
+      "password_hash": "182be0c5cdcd5072bb1864cdee4d3d6e",
+      "user_role": "Співробітник",
+      "phone_number": "+380889675852",
+      "registration_date": "2025-03-08"
+    },
+    {
+      "user_id": 34,
+      "full_name": "Ганна Бабариченко",
+      "email": "user34@example.com",
+      "password_hash": "e369853df766fa44e1ed0ff613f563bd",
+      "user_role": "Співробітник",
+      "phone_number": "+380990509915",
+      "registration_date": "2025-12-16"
+    },
+    {
+      "user_id": 35,
+      "full_name": "Марина Юрчишин",
+      "email": "user35@example.com",
+      "password_hash": "1c383cd30b7c298ab50293adfecb7b18",
+      "user_role": "Співробітник",
+      "phone_number": "+380640599648",
+      "registration_date": "2025-07-05"
+    },
+    {
+      "user_id": 36,
+      "full_name": "Аркадій Лаба",
+      "email": "user36@example.com",
+      "password_hash": "19ca14e7ea6328a42e0eb13d585e4c22",
+      "user_role": "Менеджер",
+      "phone_number": "+380680880481",
+      "registration_date": "2026-02-11"
+    },
+    {
+      "user_id": 37,
+      "full_name": "Ярослав Михалюк",
+      "email": "user37@example.com",
+      "password_hash": "a5bfc9e07964f8dddeb95fc584cd965d",
+      "user_role": "Співробітник",
+      "phone_number": "+380974549110",
+      "registration_date": "2025-08-11"
+    },
+    {
+      "user_id": 38,
+      "full_name": "пані Софія Михалюк",
+      "email": "user38@example.com",
+      "password_hash": "a5771bce93e200c36f7cd9dfd0e5deaa",
+      "user_role": "Менеджер",
+      "phone_number": "+380745224955",
+      "registration_date": "2024-09-01"
+    },
+    {
+      "user_id": 39,
+      "full_name": "Августин Ґжицький",
+      "email": "user39@example.com",
+      "password_hash": "d67d8ab4f4c10bf22aa353e27879133c",
+      "user_role": "Співробітник",
+      "phone_number": "+380918082086",
+      "registration_date": "2024-10-23"
+    },
+    {
+      "user_id": 40,
+      "full_name": "Гордій Гоголь-Яновський",
+      "email": "user40@example.com",
+      "password_hash": "d645920e395fedad7bbbed0eca3fe2e0",
+      "user_role": "Співробітник",
+      "phone_number": "+380601501816",
+      "registration_date": "2024-06-09"
     }
   ],
   "clients": [
     {
       "client_id": 1,
       "company_name": "ТехноПродукт",
-      "company_address": "м. Київ, вул. Хрещатик, 12",
+      "company_address": "вулиця Абрикосовий, буд. 8 кв. 604, Судова Вишня, 06172",
       "user_id": 1
     },
     {
       "client_id": 2,
-      "company_name": "АгроСервіс",
-      "company_address": "м. Львів, вул. Стрийська, 45",
+      "company_name": "CloudNova Solutions",
+      "company_address": "набережна Черкаська, буд. 92 кв. 808, Сокиряни, 63612",
       "user_id": 2
     },
     {
       "client_id": 3,
-      "company_name": "БудМаркет",
-      "company_address": "м. Харків, просп. Гагаріна, 7",
-      "user_id": 2
+      "company_name": "FinCore Digital",
+      "company_address": "проспект Донцова Дмитра, буд. 90 кв. 7, Сквира, 75036",
+      "user_id": 3
     },
     {
       "client_id": 4,
-      "company_name": "CloudNova Solutions",
-      "company_address": "м. Київ, вул. Жилянська, 75",
-      "user_id": 10
+      "company_name": "АгроСервіс",
+      "company_address": "площа Академіка Гаркавого, буд. 11, Благовіщенське, 03501",
+      "user_id": 4
     },
     {
       "client_id": 5,
-      "company_name": "FinCore Digital",
-      "company_address": "м. Львів, вул. Наукова, 11",
-      "user_id": 2
+      "company_name": "БудМаркет",
+      "company_address": "площа Лінія 32-га, буд. 896 кв. 1, Судова Вишня, 04677",
+      "user_id": 5
     },
     {
       "client_id": 6,
       "company_name": "MedData Systems",
-      "company_address": "м. Дніпро, просп. Дмитра Яворницького, 54",
-      "user_id": 1
+      "company_address": "узвіз Офіцерський 2-й, буд. 53 кв. 438, Первомайськ, 48785",
+      "user_id": 6
+    },
+    {
+      "client_id": 7,
+      "company_name": "SkyLine Factory",
+      "company_address": "площа Іподромний, буд. 32 кв. 798, Василівка , 43176",
+      "user_id": 7
+    },
+    {
+      "client_id": 8,
+      "company_name": "NeoSteel",
+      "company_address": "парк Лиманчик 2-й Лінія 3-тя, буд. 56, Первомайський , 64134",
+      "user_id": 8
+    },
+    {
+      "client_id": 9,
+      "company_name": "Delta Logistics",
+      "company_address": "парк 17-та Лінія 6-й ст. Люстдорфської дороги, буд. 75, Благовіщенське, 16459",
+      "user_id": 9
+    },
+    {
+      "client_id": 10,
+      "company_name": "PixelSoft",
+      "company_address": "площа Богуна, буд. 99, Антрацит , 64961",
+      "user_id": 10
+    },
+    {
+      "client_id": 11,
+      "company_name": "GreenEnergy Group",
+      "company_address": "проспект Нескучна, буд. 732, Енергодар, 31729",
+      "user_id": 11
+    },
+    {
+      "client_id": 12,
+      "company_name": "SmartVision",
+      "company_address": "шосе Воронцовський, буд. 71, Зборів, 95757",
+      "user_id": 12
+    },
+    {
+      "client_id": 13,
+      "company_name": "Future Systems",
+      "company_address": "сквер Кришталевий, буд. 90 кв. 8, Чоп, 03629",
+      "user_id": 13
+    },
+    {
+      "client_id": 14,
+      "company_name": "NovaTech Europe",
+      "company_address": "провулок Бузковий 2-й, буд. 93, Нетішин, 94267",
+      "user_id": 14
+    },
+    {
+      "client_id": 15,
+      "company_name": "Atlas Production",
+      "company_address": "сквер Садова 4-та, буд. 3 кв. 92, Славутич, 49356",
+      "user_id": 15
     }
   ],
   "orders": [
     {
       "order_id": 1,
-      "order_name": "Серія металевих конструкцій",
-      "description": "Виготовлення каркасів для складу",
-      "created_at": "2024-03-01",
-      "planned_completion_date": "2024-03-20T18:00:00",
-      "actual_completion_date": "2024-03-19T17:30:00",
-      "order_status": "completed",
-      "client_id": 1
-    },
-    {
-      "order_id": 2,
-      "order_name": "Обладнання для пакування",
-      "description": "Монтаж та тестування пакувальної лінії",
-      "created_at": "2024-03-08",
-      "planned_completion_date": "2024-04-02T20:00:00",
+      "order_name": "Розробка web-порталу",
+      "description": "Ipsa aperiam corrupti optio asperiores deserunt ad molestias sapiente dolore.",
+      "created_at": "2025-07-18",
+      "planned_completion_date": "2025-09-10T00:00:00",
       "actual_completion_date": null,
-      "order_status": "in_progress",
+      "order_status": "На перевірці",
       "client_id": 2
     },
     {
-      "order_id": 3,
-      "order_name": "Ремонт виробничої лінії",
-      "description": "Заміна вузлів та запуск лінії",
-      "created_at": "2024-03-15",
-      "planned_completion_date": "2024-04-05T18:00:00",
+      "order_id": 2,
+      "order_name": "Налаштування CI/CD",
+      "description": "Eaque minus placeat nam quod.",
+      "created_at": "2025-12-27",
+      "planned_completion_date": "2026-02-25T00:00:00",
       "actual_completion_date": null,
-      "order_status": "planned",
-      "client_id": 3
+      "order_status": "В роботі",
+      "client_id": 7
+    },
+    {
+      "order_id": 3,
+      "order_name": "Створення системи резервного копіювання",
+      "description": "Eos corrupti perferendis asperiores accusantium quis maxime velit vitae enim.",
+      "created_at": "2025-09-03",
+      "planned_completion_date": "2025-10-20T00:00:00",
+      "actual_completion_date": "2025-10-19T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 11
     },
     {
       "order_id": 4,
-      "order_name": "CRM-система для відділу продажів",
-      "description": "Розробка web-CRM з аналітикою лідів та автоматизацією воронки",
-      "created_at": "2024-04-10",
-      "planned_completion_date": "2024-05-20T18:00:00",
+      "order_name": "Створення системи резервного копіювання",
+      "description": "Necessitatibus debitis quibusdam assumenda sit accusantium.",
+      "created_at": "2025-11-24",
+      "planned_completion_date": "2025-12-15T00:00:00",
       "actual_completion_date": null,
-      "order_status": "in_progress",
-      "client_id": 4
+      "order_status": "На перевірці",
+      "client_id": 14
     },
     {
       "order_id": 5,
-      "order_name": "Мобільний додаток для банкінгу",
-      "description": "Розробка iOS/Android додатку з біометрією та push-сповіщеннями",
-      "created_at": "2024-04-14",
-      "planned_completion_date": "2024-06-05T19:00:00",
+      "order_name": "Впровадження BI-аналітики",
+      "description": "Eius vero iusto repellat rem ex.",
+      "created_at": "2025-09-02",
+      "planned_completion_date": "2025-11-08T00:00:00",
       "actual_completion_date": null,
-      "order_status": "in_progress",
-      "client_id": 5
+      "order_status": "Очікує",
+      "client_id": 7
     },
     {
       "order_id": 6,
-      "order_name": "Портал електронного документообігу",
-      "description": "Запуск внутрішнього порталу для погодження документів",
-      "created_at": "2024-04-18",
-      "planned_completion_date": "2024-05-30T17:30:00",
-      "actual_completion_date": null,
-      "order_status": "planned",
+      "order_name": "Розробка web-порталу",
+      "description": "Sit iste velit nihil quia quis fugit iure perspiciatis.",
+      "created_at": "2025-12-11",
+      "planned_completion_date": "2026-02-19T00:00:00",
+      "actual_completion_date": "2026-02-18T00:00:00",
+      "order_status": "Виконано",
       "client_id": 6
     },
     {
       "order_id": 7,
-      "order_name": "Дашборд клінічної аналітики",
-      "description": "BI-панель для візуалізації медичних показників та KPI",
-      "created_at": "2024-04-20",
-      "planned_completion_date": "2024-05-15T18:00:00",
-      "actual_completion_date": "2024-05-14T16:40:00",
-      "order_status": "completed",
-      "client_id": 6
+      "order_name": "Інтеграція електронного документообігу",
+      "description": "Sequi ut maxime tempora quos eius dignissimos.",
+      "created_at": "2026-03-14",
+      "planned_completion_date": "2026-05-28T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 9
     },
     {
       "order_id": 8,
-      "order_name": "Мікросервіс нотифікацій",
-      "description": "Розробка відокремленого сервісу email, SMS та web-push сповіщень",
-      "created_at": "2024-04-25",
-      "planned_completion_date": "2024-05-18T18:30:00",
+      "order_name": "Створення мобільного додатка",
+      "description": "Ea accusamus quasi quia quasi soluta tenetur corporis iure.",
+      "created_at": "2025-06-08",
+      "planned_completion_date": "2025-07-04T00:00:00",
       "actual_completion_date": null,
-      "order_status": "review",
+      "order_status": "На перевірці",
+      "client_id": 15
+    },
+    {
+      "order_id": 9,
+      "order_name": "Автоматизація виробничої лінії",
+      "description": "Quo quas esse unde dicta eos.",
+      "created_at": "2025-06-27",
+      "planned_completion_date": "2025-08-22T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 5
+    },
+    {
+      "order_id": 10,
+      "order_name": "Створення мобільного додатка",
+      "description": "Eveniet incidunt nisi saepe cum reprehenderit illum distinctio.",
+      "created_at": "2026-04-22",
+      "planned_completion_date": "2026-07-10T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 15
+    },
+    {
+      "order_id": 11,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Tenetur facere possimus accusamus corporis quisquam nam culpa.",
+      "created_at": "2026-02-02",
+      "planned_completion_date": "2026-03-14T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 1
+    },
+    {
+      "order_id": 12,
+      "order_name": "Розробка web-порталу",
+      "description": "Nostrum in corrupti tempora eius pariatur dolore ducimus.",
+      "created_at": "2025-09-21",
+      "planned_completion_date": "2025-12-10T00:00:00",
+      "actual_completion_date": "2025-12-09T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 4
+    },
+    {
+      "order_id": 13,
+      "order_name": "Впровадження BI-аналітики",
+      "description": "Optio blanditiis fugiat id nisi a laboriosam atque et.",
+      "created_at": "2026-01-01",
+      "planned_completion_date": "2026-03-10T00:00:00",
+      "actual_completion_date": "2026-03-09T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 10
+    },
+    {
+      "order_id": 14,
+      "order_name": "Інтеграція електронного документообігу",
+      "description": "Illum tempora dolore pariatur eaque dolorem maxime nesciunt esse neque.",
+      "created_at": "2025-06-12",
+      "planned_completion_date": "2025-07-16T00:00:00",
+      "actual_completion_date": "2025-07-12T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 2
+    },
+    {
+      "order_id": 15,
+      "order_name": "Розробка web-порталу",
+      "description": "Similique eaque consequuntur nam odio vel sequi.",
+      "created_at": "2025-08-31",
+      "planned_completion_date": "2025-10-11T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 3
+    },
+    {
+      "order_id": 16,
+      "order_name": "Створення системи резервного копіювання",
+      "description": "Inventore id atque nam repellendus aspernatur maxime quas repellat tempore.",
+      "created_at": "2025-07-16",
+      "planned_completion_date": "2025-09-24T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "Очікує",
+      "client_id": 12
+    },
+    {
+      "order_id": 17,
+      "order_name": "Налаштування CI/CD",
+      "description": "Dignissimos debitis sed nisi dolore facilis enim praesentium.",
+      "created_at": "2025-11-03",
+      "planned_completion_date": "2025-12-18T00:00:00",
+      "actual_completion_date": "2025-12-16T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 14
+    },
+    {
+      "order_id": 18,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Facilis quisquam ducimus voluptatum quis amet amet porro temporibus.",
+      "created_at": "2025-07-24",
+      "planned_completion_date": "2025-09-13T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 15
+    },
+    {
+      "order_id": 19,
+      "order_name": "Налаштування CI/CD",
+      "description": "Qui atque accusamus nam reprehenderit.",
+      "created_at": "2025-07-07",
+      "planned_completion_date": "2025-08-10T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 11
+    },
+    {
+      "order_id": 20,
+      "order_name": "Інтеграція електронного документообігу",
+      "description": "Quia laboriosam nostrum doloremque officiis commodi veniam dolorum incidunt odit consequuntur.",
+      "created_at": "2026-03-14",
+      "planned_completion_date": "2026-04-03T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "Очікує",
+      "client_id": 12
+    },
+    {
+      "order_id": 21,
+      "order_name": "Інтеграція електронного документообігу",
+      "description": "Unde consectetur fugiat corrupti minima.",
+      "created_at": "2026-04-13",
+      "planned_completion_date": "2026-06-09T00:00:00",
+      "actual_completion_date": "2026-06-09T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 14
+    },
+    {
+      "order_id": 22,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Amet rem tempora alias praesentium quaerat provident aperiam.",
+      "created_at": "2026-02-02",
+      "planned_completion_date": "2026-03-23T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 6
+    },
+    {
+      "order_id": 23,
+      "order_name": "Створення системи резервного копіювання",
+      "description": "Occaecati repellat deserunt saepe debitis sit eius ipsum.",
+      "created_at": "2025-08-15",
+      "planned_completion_date": "2025-09-26T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 6
+    },
+    {
+      "order_id": 24,
+      "order_name": "Модернізація серверної інфраструктури",
+      "description": "Odio quidem neque corporis earum ullam vero fugiat neque omnis.",
+      "created_at": "2026-02-20",
+      "planned_completion_date": "2026-05-02T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 7
+    },
+    {
+      "order_id": 25,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Voluptatum iusto voluptatum atque temporibus.",
+      "created_at": "2026-03-02",
+      "planned_completion_date": "2026-05-12T00:00:00",
+      "actual_completion_date": "2026-05-09T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 9
+    },
+    {
+      "order_id": 26,
+      "order_name": "Розробка web-порталу",
+      "description": "Nam natus tempore provident ipsam vero.",
+      "created_at": "2025-06-21",
+      "planned_completion_date": "2025-07-27T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 7
+    },
+    {
+      "order_id": 27,
+      "order_name": "Автоматизація виробничої лінії",
+      "description": "Quis rem ipsum eos libero.",
+      "created_at": "2025-06-09",
+      "planned_completion_date": "2025-07-22T00:00:00",
+      "actual_completion_date": "2025-07-20T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 15
+    },
+    {
+      "order_id": 28,
+      "order_name": "Розробка CRM-системи",
+      "description": "Commodi ratione nemo debitis ut expedita.",
+      "created_at": "2025-12-07",
+      "planned_completion_date": "2026-01-12T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 7
+    },
+    {
+      "order_id": 29,
+      "order_name": "Впровадження BI-аналітики",
+      "description": "Modi dolore unde vitae consequatur.",
+      "created_at": "2025-11-07",
+      "planned_completion_date": "2025-11-30T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "Очікує",
+      "client_id": 2
+    },
+    {
+      "order_id": 30,
+      "order_name": "Створення мобільного додатка",
+      "description": "Sed atque sequi officia ad architecto vel amet.",
+      "created_at": "2025-08-08",
+      "planned_completion_date": "2025-09-26T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 11
+    },
+    {
+      "order_id": 31,
+      "order_name": "Створення системи резервного копіювання",
+      "description": "Sapiente possimus praesentium tempore.",
+      "created_at": "2025-12-09",
+      "planned_completion_date": "2026-01-26T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 10
+    },
+    {
+      "order_id": 32,
+      "order_name": "Створення мобільного додатка",
+      "description": "Eaque delectus exercitationem voluptatibus officia illum ullam et.",
+      "created_at": "2025-10-03",
+      "planned_completion_date": "2025-11-28T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 12
+    },
+    {
+      "order_id": 33,
+      "order_name": "Інтеграція електронного документообігу",
+      "description": "Sit nostrum quas commodi cupiditate culpa dolores.",
+      "created_at": "2026-02-10",
+      "planned_completion_date": "2026-03-31T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 1
+    },
+    {
+      "order_id": 34,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Esse esse eos odit vitae suscipit ducimus veritatis.",
+      "created_at": "2025-08-15",
+      "planned_completion_date": "2025-09-15T00:00:00",
+      "actual_completion_date": "2025-09-15T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 11
+    },
+    {
+      "order_id": 35,
+      "order_name": "Створення системи резервного копіювання",
+      "description": "In asperiores dolor minus quisquam natus eveniet neque dicta.",
+      "created_at": "2026-02-10",
+      "planned_completion_date": "2026-04-02T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "В роботі",
+      "client_id": 9
+    },
+    {
+      "order_id": 36,
+      "order_name": "Розробка web-порталу",
+      "description": "Commodi earum ipsum delectus tempora officiis unde.",
+      "created_at": "2026-04-04",
+      "planned_completion_date": "2026-04-26T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "Очікує",
+      "client_id": 3
+    },
+    {
+      "order_id": 37,
+      "order_name": "Створення мобільного додатка",
+      "description": "Voluptatum ipsum dicta accusantium libero quisquam inventore fuga aperiam nobis deserunt.",
+      "created_at": "2026-03-05",
+      "planned_completion_date": "2026-04-14T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 10
+    },
+    {
+      "order_id": 38,
+      "order_name": "Розробка web-порталу",
+      "description": "Quod esse eveniet natus impedit atque cupiditate similique fuga.",
+      "created_at": "2025-12-28",
+      "planned_completion_date": "2026-03-13T00:00:00",
+      "actual_completion_date": "2026-03-10T00:00:00",
+      "order_status": "Виконано",
+      "client_id": 15
+    },
+    {
+      "order_id": 39,
+      "order_name": "Налаштування CI/CD",
+      "description": "Vel ab corrupti eum inventore.",
+      "created_at": "2025-12-13",
+      "planned_completion_date": "2026-03-01T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
+      "client_id": 15
+    },
+    {
+      "order_id": 40,
+      "order_name": "Розробка API для клієнтів",
+      "description": "Sint suscipit libero sint mollitia voluptas ipsa voluptate consectetur.",
+      "created_at": "2025-06-25",
+      "planned_completion_date": "2025-07-15T00:00:00",
+      "actual_completion_date": null,
+      "order_status": "На перевірці",
       "client_id": 4
     }
   ],
   "employees": [
     {
       "employee_id": 1,
-      "position": "Інженер з виробництва",
-      "department": "Виробництво",
-      "specialization": "металообробка",
-      "hire_date": "2023-09-10",
-      "qualification_level": "senior",
-      "user_id": 3
+      "position": "Системний адміністратор",
+      "department": "IT",
+      "specialization": "Мережеве адміністрування",
+      "hire_date": "2023-06-13",
+      "qualification_level": "mid",
+      "user_id": 16
     },
     {
       "employee_id": 2,
-      "position": "Технік",
+      "position": "Frontend Developer",
       "department": "Виробництво",
-      "specialization": "ремонт обладнання",
-      "hire_date": "2024-01-12",
-      "qualification_level": "mid",
-      "user_id": 4
+      "specialization": "React та TypeScript",
+      "hire_date": "2025-08-29",
+      "qualification_level": "junior",
+      "user_id": 17
     },
     {
       "employee_id": 3,
-      "position": "Аналітик",
-      "department": "Аналітика",
-      "specialization": "продуктивність",
-      "hire_date": "2023-11-28",
-      "qualification_level": "mid",
-      "user_id": 2
+      "position": "Project Manager",
+      "department": "Infrastructure",
+      "specialization": "Agile Management",
+      "hire_date": "2023-06-06",
+      "qualification_level": "Практикант",
+      "user_id": 18
     },
     {
       "employee_id": 4,
-      "position": "Frontend Developer",
-      "department": "IT",
-      "specialization": "React, TypeScript, Design Systems",
-      "hire_date": "2023-08-14",
-      "qualification_level": "senior",
-      "user_id": 5
+      "position": "UI/UX Designer",
+      "department": "Дизайн",
+      "specialization": "UX Research",
+      "hire_date": "2026-02-11",
+      "qualification_level": "junior",
+      "user_id": 19
     },
     {
       "employee_id": 5,
-      "position": "Backend Developer",
-      "department": "IT",
-      "specialization": "Node.js, PostgreSQL, REST API",
-      "hire_date": "2023-10-02",
-      "qualification_level": "senior",
-      "user_id": 6
+      "position": "Технік",
+      "department": "Дизайн",
+      "specialization": "Ремонт обладнання",
+      "hire_date": "2025-04-01",
+      "qualification_level": "junior",
+      "user_id": 20
     },
     {
       "employee_id": 6,
-      "position": "UI/UX Designer",
-      "department": "Дизайн",
-      "specialization": "Product Design, Prototyping, UX Research",
-      "hire_date": "2024-01-19",
-      "qualification_level": "mid",
-      "user_id": 7
+      "position": "QA Engineer",
+      "department": "Infrastructure",
+      "specialization": "Автоматизація тестування",
+      "hire_date": "2024-03-06",
+      "qualification_level": "senior",
+      "user_id": 21
     },
     {
       "employee_id": 7,
-      "position": "QA Engineer",
+      "position": "Project Manager",
       "department": "Забезпечення якості",
-      "specialization": "Manual QA, API Testing, Regression Testing",
-      "hire_date": "2024-02-11",
-      "qualification_level": "mid",
-      "user_id": 8
+      "specialization": "Agile Management",
+      "hire_date": "2025-04-14",
+      "qualification_level": "senior",
+      "user_id": 22
     },
     {
       "employee_id": 8,
-      "position": "DevOps Engineer",
-      "department": "Infrastructure",
-      "specialization": "AWS, Docker, CI/CD",
-      "hire_date": "2023-12-05",
-      "qualification_level": "senior",
-      "user_id": 9
+      "position": "Frontend Developer",
+      "department": "IT",
+      "specialization": "React та TypeScript",
+      "hire_date": "2025-03-03",
+      "qualification_level": "junior",
+      "user_id": 23
     },
     {
       "employee_id": 9,
-      "position": "Project Manager",
-      "department": "Управління проєктами",
-      "specialization": "Delivery Management, Agile, Stakeholder Communication",
-      "hire_date": "2023-07-03",
+      "position": "Інженер з виробництва",
+      "department": "Аналітика",
+      "specialization": "Металообробка",
+      "hire_date": "2024-04-30",
+      "qualification_level": "Практикант",
+      "user_id": 24
+    },
+    {
+      "employee_id": 10,
+      "position": "UI/UX Designer",
+      "department": "Забезпечення якості",
+      "specialization": "UX Research",
+      "hire_date": "2024-04-21",
+      "qualification_level": "mid",
+      "user_id": 25
+    },
+    {
+      "employee_id": 11,
+      "position": "UI/UX Designer",
+      "department": "Дизайн",
+      "specialization": "UX Research",
+      "hire_date": "2025-08-06",
       "qualification_level": "senior",
-      "user_id": 10
+      "user_id": 26
+    },
+    {
+      "employee_id": 12,
+      "position": "Frontend Developer",
+      "department": "IT",
+      "specialization": "React та TypeScript",
+      "hire_date": "2023-08-16",
+      "qualification_level": "Практикант",
+      "user_id": 27
+    },
+    {
+      "employee_id": 13,
+      "position": "Технік",
+      "department": "Виробництво",
+      "specialization": "Ремонт обладнання",
+      "hire_date": "2025-01-20",
+      "qualification_level": "Практикант",
+      "user_id": 28
+    },
+    {
+      "employee_id": 14,
+      "position": "Backend Developer",
+      "department": "Дизайн",
+      "specialization": "Node.js та PostgreSQL",
+      "hire_date": "2024-06-30",
+      "qualification_level": "Практикант",
+      "user_id": 29
+    },
+    {
+      "employee_id": 15,
+      "position": "Технік",
+      "department": "Дизайн",
+      "specialization": "Ремонт обладнання",
+      "hire_date": "2024-04-27",
+      "qualification_level": "Практикант",
+      "user_id": 30
+    },
+    {
+      "employee_id": 16,
+      "position": "Технік",
+      "department": "Управління проєктами",
+      "specialization": "Ремонт обладнання",
+      "hire_date": "2025-03-02",
+      "qualification_level": "senior",
+      "user_id": 31
+    },
+    {
+      "employee_id": 17,
+      "position": "Frontend Developer",
+      "department": "Виробництво",
+      "specialization": "React та TypeScript",
+      "hire_date": "2023-10-16",
+      "qualification_level": "mid",
+      "user_id": 32
+    },
+    {
+      "employee_id": 18,
+      "position": "Інженер з виробництва",
+      "department": "IT",
+      "specialization": "Металообробка",
+      "hire_date": "2025-12-09",
+      "qualification_level": "mid",
+      "user_id": 33
+    },
+    {
+      "employee_id": 19,
+      "position": "Project Manager",
+      "department": "Виробництво",
+      "specialization": "Agile Management",
+      "hire_date": "2025-01-12",
+      "qualification_level": "Практикант",
+      "user_id": 34
+    },
+    {
+      "employee_id": 20,
+      "position": "QA Engineer",
+      "department": "Дизайн",
+      "specialization": "Автоматизація тестування",
+      "hire_date": "2025-12-05",
+      "qualification_level": "Практикант",
+      "user_id": 35
+    },
+    {
+      "employee_id": 21,
+      "position": "QA Engineer",
+      "department": "Виробництво",
+      "specialization": "Автоматизація тестування",
+      "hire_date": "2025-10-24",
+      "qualification_level": "junior",
+      "user_id": 36
+    },
+    {
+      "employee_id": 22,
+      "position": "Backend Developer",
+      "department": "Забезпечення якості",
+      "specialization": "Node.js та PostgreSQL",
+      "hire_date": "2025-05-06",
+      "qualification_level": "Практикант",
+      "user_id": 37
+    },
+    {
+      "employee_id": 23,
+      "position": "Технік",
+      "department": "Дизайн",
+      "specialization": "Ремонт обладнання",
+      "hire_date": "2025-11-09",
+      "qualification_level": "mid",
+      "user_id": 38
+    },
+    {
+      "employee_id": 24,
+      "position": "QA Engineer",
+      "department": "Управління проєктами",
+      "specialization": "Автоматизація тестування",
+      "hire_date": "2023-07-28",
+      "qualification_level": "mid",
+      "user_id": 39
+    },
+    {
+      "employee_id": 25,
+      "position": "Project Manager",
+      "department": "Виробництво",
+      "specialization": "Agile Management",
+      "hire_date": "2025-02-03",
+      "qualification_level": "junior",
+      "user_id": 40
     }
   ],
   "production_tasks": [
     {
       "task_id": 1,
-      "task_name": "Зварювання каркасів",
-      "description": "Підготовка та зварювання металевих рам",
-      "planned_completion_date": "2024-03-10T17:00:00",
-      "actual_completion_date": "2024-03-10T16:45:00",
-      "task_status": "completed",
+      "task_name": "Створення dashboard",
+      "description": "Itaque illum omnis dicta earum quia hic commodi delectus.",
+      "planned_completion_date": "2026-02-26T21:25:33.137098",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 10,
+      "order_id": 11
+    },
+    {
+      "task_id": 2,
+      "task_name": "Аналіз вимог",
+      "description": "Deserunt debitis dolore labore quasi enim quisquam cumque corporis dolorum delectus.",
+      "planned_completion_date": "2026-05-12T21:25:33.137133",
+      "actual_completion_date": "2026-05-08T21:25:33.141225",
+      "task_status": "Виконано",
+      "employee_id": 2,
+      "order_id": 39
+    },
+    {
+      "task_id": 3,
+      "task_name": "Налаштування серверів",
+      "description": "Sed impedit voluptatem deserunt eos pariatur.",
+      "planned_completion_date": "2026-08-01T21:25:33.137153",
+      "actual_completion_date": "2026-08-01T18:25:33.137153",
+      "task_status": "Виконано",
+      "employee_id": 2,
+      "order_id": 18
+    },
+    {
+      "task_id": 4,
+      "task_name": "Створення dashboard",
+      "description": "Odit magnam perspiciatis sunt nihil expedita natus.",
+      "planned_completion_date": "2026-06-25T21:25:33.137175",
+      "actual_completion_date": "2026-06-25T17:25:33.137175",
+      "task_status": "Виконано",
+      "employee_id": 16,
+      "order_id": 30
+    },
+    {
+      "task_id": 5,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Sed modi inventore optio quidem culpa dolore dignissimos.",
+      "planned_completion_date": "2026-06-25T21:25:33.137196",
+      "actual_completion_date": "2026-06-25T19:25:33.137196",
+      "task_status": "Виконано",
+      "employee_id": 15,
+      "order_id": 40
+    },
+    {
+      "task_id": 6,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Similique ipsum assumenda omnis veritatis autem nobis voluptates temporibus quibusdam.",
+      "planned_completion_date": "2026-04-22T21:25:33.137214",
+      "actual_completion_date": "2026-04-22T17:25:33.137214",
+      "task_status": "Виконано",
+      "employee_id": 3,
+      "order_id": 26
+    },
+    {
+      "task_id": 7,
+      "task_name": "Розробка API",
+      "description": "Sint delectus hic consectetur sint atque provident.",
+      "planned_completion_date": "2026-06-04T21:25:33.137233",
+      "actual_completion_date": "2026-06-04T19:25:33.137233",
+      "task_status": "Виконано",
+      "employee_id": 19,
+      "order_id": 28
+    },
+    {
+      "task_id": 8,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Unde doloribus sunt repellat molestiae quis similique error.",
+      "planned_completion_date": "2026-06-01T21:25:33.137255",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 12,
+      "order_id": 10
+    },
+    {
+      "task_id": 9,
+      "task_name": "Налаштування серверів",
+      "description": "Dolores maiores cupiditate consequatur deleniti consequatur.",
+      "planned_completion_date": "2026-03-31T21:25:33.137275",
+      "actual_completion_date": "2026-03-31T17:25:33.137275",
+      "task_status": "Виконано",
+      "employee_id": 2,
+      "order_id": 16
+    },
+    {
+      "task_id": 10,
+      "task_name": "Аналіз вимог",
+      "description": "Culpa officia deleniti maiores quod ea vitae ut possimus.",
+      "planned_completion_date": "2026-02-28T21:25:33.137298",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
       "employee_id": 1,
       "order_id": 1
     },
     {
-      "task_id": 2,
-      "task_name": "Налаштування пакувальної лінії",
-      "description": "Складання та налаштування обладнання",
-      "planned_completion_date": "2024-03-25T19:00:00",
+      "task_id": 11,
+      "task_name": "Розробка API",
+      "description": "Odit commodi accusantium qui neque delectus eius.",
+      "planned_completion_date": "2026-05-03T21:25:33.137313",
+      "actual_completion_date": "2026-05-03T20:25:33.137313",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 28
+    },
+    {
+      "task_id": 12,
+      "task_name": "Створення dashboard",
+      "description": "Nisi assumenda nihil harum sit autem ratione.",
+      "planned_completion_date": "2026-03-29T21:25:33.137331",
       "actual_completion_date": null,
-      "task_status": "in_progress",
-      "employee_id": 2,
+      "task_status": "В роботі",
+      "employee_id": 4,
+      "order_id": 19
+    },
+    {
+      "task_id": 13,
+      "task_name": "Налаштування серверів",
+      "description": "Fugiat distinctio in quae autem architecto explicabo.",
+      "planned_completion_date": "2026-05-04T21:25:33.137346",
+      "actual_completion_date": "2026-04-29T21:25:33.141035",
+      "task_status": "Виконано",
+      "employee_id": 17,
       "order_id": 2
     },
     {
-      "task_id": 3,
-      "task_name": "Тестування системи контролю",
-      "description": "Перевірка автоматизації та датчиків",
-      "planned_completion_date": "2024-03-28T15:00:00",
+      "task_id": 14,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Molestias aspernatur ut eligendi consectetur nesciunt atque consequatur occaecati.",
+      "planned_completion_date": "2026-03-21T21:25:33.137362",
+      "actual_completion_date": "2026-04-25T21:25:33.141270",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 27
+    },
+    {
+      "task_id": 15,
+      "task_name": "Аналіз вимог",
+      "description": "Fugit excepturi dolorum ab adipisci repellat.",
+      "planned_completion_date": "2026-07-29T21:25:33.137377",
+      "actual_completion_date": "2026-07-29T14:25:33.137377",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 13
+    },
+    {
+      "task_id": 16,
+      "task_name": "Створення dashboard",
+      "description": "Alias nemo aliquam esse sequi ipsum iusto ipsa dolorem et.",
+      "planned_completion_date": "2026-06-17T21:25:33.137394",
+      "actual_completion_date": "2026-06-17T20:25:33.137394",
+      "task_status": "Виконано",
+      "employee_id": 5,
+      "order_id": 31
+    },
+    {
+      "task_id": 17,
+      "task_name": "Тестування системи",
+      "description": "Explicabo ipsam praesentium doloribus expedita magnam perferendis tenetur voluptate.",
+      "planned_completion_date": "2026-03-09T21:25:33.137413",
+      "actual_completion_date": "2026-05-06T21:25:33.141007",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 30
+    },
+    {
+      "task_id": 18,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Tempora culpa a nesciunt doloribus blanditiis tenetur facere deleniti necessitatibus dolore.",
+      "planned_completion_date": "2026-05-11T21:25:33.137429",
       "actual_completion_date": null,
-      "task_status": "planned",
-      "employee_id": 1,
+      "task_status": "На перевірці",
+      "employee_id": 20,
       "order_id": 2
     },
     {
-      "task_id": 4,
-      "task_name": "Оцінка процесу ремонту",
-      "description": "Аналіз трудомісткості ремонтних робіт",
-      "planned_completion_date": "2024-04-01T14:00:00",
+      "task_id": 19,
+      "task_name": "Інтеграція бази даних",
+      "description": "Omnis quod aperiam ut voluptatibus eius ea adipisci ullam aliquid.",
+      "planned_completion_date": "2026-05-11T21:25:33.137445",
+      "actual_completion_date": "2026-05-11T16:25:33.137445",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 25
+    },
+    {
+      "task_id": 20,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Architecto veritatis nobis eaque facere in quia tenetur.",
+      "planned_completion_date": "2026-03-09T21:25:33.137462",
+      "actual_completion_date": "2026-04-29T21:25:33.140725",
+      "task_status": "Виконано",
+      "employee_id": 25,
+      "order_id": 7
+    },
+    {
+      "task_id": 21,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Eaque sit voluptates dolores maxime repudiandae reprehenderit perspiciatis nemo.",
+      "planned_completion_date": "2026-05-04T21:25:33.137477",
       "actual_completion_date": null,
-      "task_status": "planned",
-      "employee_id": 3,
+      "task_status": "В роботі",
+      "employee_id": 25,
+      "order_id": 14
+    },
+    {
+      "task_id": 22,
+      "task_name": "Аналіз вимог",
+      "description": "Beatae tempore doloremque ea laboriosam quae voluptates repudiandae maiores.",
+      "planned_completion_date": "2026-03-28T21:25:33.137491",
+      "actual_completion_date": null,
+      "task_status": "Очікує",
+      "employee_id": 5,
+      "order_id": 31
+    },
+    {
+      "task_id": 23,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Vero nemo dolores quam hic adipisci explicabo voluptatem voluptatem.",
+      "planned_completion_date": "2026-02-11T21:25:33.137505",
+      "actual_completion_date": "2026-02-11T18:25:33.137505",
+      "task_status": "Виконано",
+      "employee_id": 11,
       "order_id": 3
     },
     {
-      "task_id": 5,
-      "task_name": "Проєктування UI для CRM",
-      "description": "Розробка макетів екранів, design tokens та UI-kit",
-      "planned_completion_date": "2024-04-22T17:00:00",
-      "actual_completion_date": "2024-04-22T16:20:00",
-      "task_status": "completed",
-      "employee_id": 6,
-      "order_id": 4
+      "task_id": 24,
+      "task_name": "Аналіз вимог",
+      "description": "Fuga aperiam consequatur quaerat rerum dicta officiis consequatur.",
+      "planned_completion_date": "2026-04-07T21:25:33.137521",
+      "actual_completion_date": "2026-04-07T13:25:33.137521",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 26
     },
     {
-      "task_id": 6,
-      "task_name": "Розробка API клієнтів",
-      "description": "CRUD-операції для контактів, організацій та воронки продажів",
-      "planned_completion_date": "2024-04-29T18:30:00",
-      "actual_completion_date": null,
-      "task_status": "in_progress",
-      "employee_id": 5,
-      "order_id": 4
+      "task_id": 25,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Aspernatur consectetur quasi consequatur dolorem modi quaerat laborum fuga.",
+      "planned_completion_date": "2026-03-20T21:25:33.137538",
+      "actual_completion_date": "2026-03-20T19:25:33.137538",
+      "task_status": "Виконано",
+      "employee_id": 23,
+      "order_id": 6
     },
     {
-      "task_id": 7,
-      "task_name": "Верстка dashboard CRM",
-      "description": "Реалізація dashboard, таблиць та канбан-дошки",
-      "planned_completion_date": "2024-05-03T18:00:00",
-      "actual_completion_date": null,
-      "task_status": "in_progress",
-      "employee_id": 4,
-      "order_id": 4
+      "task_id": 26,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Qui delectus ea perferendis vitae vero ut nam voluptates.",
+      "planned_completion_date": "2026-02-20T21:25:33.137554",
+      "actual_completion_date": "2026-02-20T15:25:33.137554",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 16
     },
     {
-      "task_id": 8,
-      "task_name": "Опис бізнес-вимог мобільного додатка",
-      "description": "Декомпозиція epic-задач, user stories та acceptance criteria",
-      "planned_completion_date": "2024-04-26T15:00:00",
-      "actual_completion_date": "2024-04-26T14:10:00",
-      "task_status": "completed",
-      "employee_id": 9,
-      "order_id": 5
+      "task_id": 27,
+      "task_name": "Тестування системи",
+      "description": "Repellendus animi iste est praesentium ab pariatur nemo aut cupiditate tenetur.",
+      "planned_completion_date": "2026-05-31T21:25:33.137571",
+      "actual_completion_date": "2026-05-31T15:25:33.137571",
+      "task_status": "Виконано",
+      "employee_id": 3,
+      "order_id": 1
     },
     {
-      "task_id": 9,
-      "task_name": "Розгортання CI/CD для mobile backend",
-      "description": "Налаштування GitHub Actions, Docker build та staging environment",
-      "planned_completion_date": "2024-05-04T19:00:00",
-      "actual_completion_date": null,
-      "task_status": "review",
+      "task_id": 28,
+      "task_name": "Інтеграція бази даних",
+      "description": "Totam modi placeat ipsam dolorem reiciendis molestias consequatur laborum.",
+      "planned_completion_date": "2026-07-31T21:25:33.137588",
+      "actual_completion_date": "2026-07-31T14:25:33.137588",
+      "task_status": "Виконано",
       "employee_id": 8,
+      "order_id": 4
+    },
+    {
+      "task_id": 29,
+      "task_name": "Налаштування серверів",
+      "description": "Ipsum dolore sequi aliquid repellendus atque accusantium ducimus illum optio.",
+      "planned_completion_date": "2026-02-26T21:25:33.137604",
+      "actual_completion_date": "2026-02-26T19:25:33.137604",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 16
+    },
+    {
+      "task_id": 30,
+      "task_name": "Аналіз вимог",
+      "description": "Odit deleniti aliquam culpa voluptates quo assumenda aut nemo iure.",
+      "planned_completion_date": "2026-02-10T21:25:33.137622",
+      "actual_completion_date": "2026-02-10T16:25:33.137622",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 24
+    },
+    {
+      "task_id": 31,
+      "task_name": "Розробка API",
+      "description": "Asperiores eum aspernatur repudiandae rerum.",
+      "planned_completion_date": "2026-03-15T21:25:33.137639",
+      "actual_completion_date": "2026-03-15T14:25:33.137639",
+      "task_status": "Виконано",
+      "employee_id": 20,
+      "order_id": 19
+    },
+    {
+      "task_id": 32,
+      "task_name": "Інтеграція бази даних",
+      "description": "Illum ipsum quibusdam harum suscipit sapiente magnam quo temporibus.",
+      "planned_completion_date": "2026-08-05T21:25:33.137655",
+      "actual_completion_date": "2026-08-05T20:25:33.137655",
+      "task_status": "Виконано",
+      "employee_id": 17,
+      "order_id": 1
+    },
+    {
+      "task_id": 33,
+      "task_name": "Аналіз вимог",
+      "description": "Occaecati reprehenderit pariatur earum mollitia.",
+      "planned_completion_date": "2026-03-02T21:25:33.137677",
+      "actual_completion_date": "2026-05-03T21:25:33.140702",
+      "task_status": "Виконано",
+      "employee_id": 24,
+      "order_id": 12
+    },
+    {
+      "task_id": 34,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Culpa sit expedita perspiciatis non laborum placeat voluptatem perferendis.",
+      "planned_completion_date": "2026-06-03T21:25:33.137691",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 24,
+      "order_id": 39
+    },
+    {
+      "task_id": 35,
+      "task_name": "Налаштування серверів",
+      "description": "Beatae inventore totam hic atque illum.",
+      "planned_completion_date": "2026-06-26T21:25:33.137705",
+      "actual_completion_date": null,
+      "task_status": "Очікує",
+      "employee_id": 13,
       "order_id": 5
     },
     {
-      "task_id": 10,
-      "task_name": "Інтеграція електронного підпису",
-      "description": "Підключення кваліфікованого електронного підпису до порталу",
-      "planned_completion_date": "2024-05-12T18:00:00",
+      "task_id": 36,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Ipsa facere ad temporibus blanditiis repellendus ipsum.",
+      "planned_completion_date": "2026-05-12T21:25:33.137719",
+      "actual_completion_date": "2026-05-12T14:25:33.137719",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 36
+    },
+    {
+      "task_id": 37,
+      "task_name": "Аналіз вимог",
+      "description": "Culpa distinctio dignissimos necessitatibus facere incidunt eum veniam sequi animi assumenda illum.",
+      "planned_completion_date": "2026-03-23T21:25:33.137735",
+      "actual_completion_date": "2026-04-27T21:25:33.141021",
+      "task_status": "Виконано",
+      "employee_id": 1,
+      "order_id": 17
+    },
+    {
+      "task_id": 38,
+      "task_name": "Тестування системи",
+      "description": "Nam nostrum excepturi voluptatum dolor dolorum sapiente voluptates excepturi.",
+      "planned_completion_date": "2026-07-20T21:25:33.137750",
       "actual_completion_date": null,
-      "task_status": "planned",
+      "task_status": "В роботі",
+      "employee_id": 25,
+      "order_id": 13
+    },
+    {
+      "task_id": 39,
+      "task_name": "Підготовка документації",
+      "description": "Quaerat totam delectus suscipit voluptates deserunt quidem sapiente corporis.",
+      "planned_completion_date": "2026-03-07T21:25:33.137764",
+      "actual_completion_date": "2026-03-07T18:25:33.137764",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 18
+    },
+    {
+      "task_id": 40,
+      "task_name": "Розробка API",
+      "description": "Libero quam iure reprehenderit impedit molestias iste.",
+      "planned_completion_date": "2026-02-28T21:25:33.137780",
+      "actual_completion_date": "2026-02-28T15:25:33.137780",
+      "task_status": "Виконано",
+      "employee_id": 9,
+      "order_id": 24
+    },
+    {
+      "task_id": 41,
+      "task_name": "Підготовка документації",
+      "description": "Nostrum distinctio illo asperiores cum corrupti molestiae.",
+      "planned_completion_date": "2026-05-26T21:25:33.137797",
+      "actual_completion_date": "2026-05-26T19:25:33.137797",
+      "task_status": "Виконано",
+      "employee_id": 9,
+      "order_id": 34
+    },
+    {
+      "task_id": 42,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Eos consectetur distinctio maxime totam assumenda hic praesentium.",
+      "planned_completion_date": "2026-03-12T21:25:33.137813",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 4,
+      "order_id": 22
+    },
+    {
+      "task_id": 43,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Possimus officiis debitis quia fuga laboriosam dolorum perspiciatis suscipit aspernatur non voluptate.",
+      "planned_completion_date": "2026-07-23T21:25:33.137827",
+      "actual_completion_date": "2026-07-23T16:25:33.137827",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 1
+    },
+    {
+      "task_id": 44,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Laboriosam necessitatibus ullam architecto quas recusandae natus illum.",
+      "planned_completion_date": "2026-03-10T21:25:33.137845",
+      "actual_completion_date": "2026-03-10T19:25:33.137845",
+      "task_status": "Виконано",
+      "employee_id": 13,
+      "order_id": 23
+    },
+    {
+      "task_id": 45,
+      "task_name": "Тестування системи",
+      "description": "Esse error natus a in veritatis a consequuntur distinctio earum est soluta.",
+      "planned_completion_date": "2026-03-28T21:25:33.137863",
+      "actual_completion_date": null,
+      "task_status": "Очікує",
+      "employee_id": 13,
+      "order_id": 1
+    },
+    {
+      "task_id": 46,
+      "task_name": "Аналіз вимог",
+      "description": "Cupiditate ab aliquid non animi occaecati doloremque id totam vero sunt quod.",
+      "planned_completion_date": "2026-04-12T21:25:33.137878",
+      "actual_completion_date": "2026-04-12T20:25:33.137878",
+      "task_status": "Виконано",
       "employee_id": 5,
       "order_id": 6
     },
     {
-      "task_id": 11,
-      "task_name": "Побудова ETL для BI-дашборду",
-      "description": "Об'єднання джерел даних та підготовка вітрин для звітності",
-      "planned_completion_date": "2024-05-08T17:00:00",
-      "actual_completion_date": "2024-05-08T16:35:00",
-      "task_status": "completed",
+      "task_id": 47,
+      "task_name": "Тестування системи",
+      "description": "Cupiditate a officiis quis omnis molestias ad aspernatur aliquam assumenda at.",
+      "planned_completion_date": "2026-04-19T21:25:33.137896",
+      "actual_completion_date": "2026-04-19T14:25:33.137896",
+      "task_status": "Виконано",
+      "employee_id": 25,
+      "order_id": 25
+    },
+    {
+      "task_id": 48,
+      "task_name": "Розробка API",
+      "description": "Quidem et quos quis labore magnam repellat quia.",
+      "planned_completion_date": "2026-02-26T21:25:33.137913",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 4,
+      "order_id": 37
+    },
+    {
+      "task_id": 49,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Officiis totam blanditiis facilis voluptate dolore et.",
+      "planned_completion_date": "2026-07-05T21:25:33.137927",
+      "actual_completion_date": "2026-07-05T20:25:33.137927",
+      "task_status": "Виконано",
+      "employee_id": 23,
+      "order_id": 13
+    },
+    {
+      "task_id": 50,
+      "task_name": "Підготовка документації",
+      "description": "Quasi at laborum ex mollitia saepe.",
+      "planned_completion_date": "2026-04-30T21:25:33.137943",
+      "actual_completion_date": "2026-05-09T21:25:33.140605",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 22
+    },
+    {
+      "task_id": 51,
+      "task_name": "Тестування системи",
+      "description": "Enim aspernatur quam cupiditate mollitia.",
+      "planned_completion_date": "2026-07-30T21:25:33.137956",
+      "actual_completion_date": "2026-05-01T21:25:33.140850",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 19
+    },
+    {
+      "task_id": 52,
+      "task_name": "Аналіз вимог",
+      "description": "Distinctio aut molestias hic recusandae maxime repudiandae.",
+      "planned_completion_date": "2026-04-02T21:25:33.137969",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 7,
+      "order_id": 32
+    },
+    {
+      "task_id": 53,
+      "task_name": "Тестування системи",
+      "description": "Eveniet placeat minima nihil sapiente esse.",
+      "planned_completion_date": "2026-02-26T21:25:33.137982",
+      "actual_completion_date": "2026-02-26T18:25:33.137982",
+      "task_status": "Виконано",
+      "employee_id": 22,
+      "order_id": 4
+    },
+    {
+      "task_id": 54,
+      "task_name": "Підготовка документації",
+      "description": "Minus quas quasi aliquid iusto quod consequuntur provident atque maiores.",
+      "planned_completion_date": "2026-02-26T21:25:33.137998",
+      "actual_completion_date": "2026-02-26T13:25:33.137998",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 26
+    },
+    {
+      "task_id": 55,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Quibusdam est maiores explicabo voluptate enim occaecati.",
+      "planned_completion_date": "2026-06-01T21:25:33.138017",
+      "actual_completion_date": "2026-06-01T15:25:33.138017",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 6
+    },
+    {
+      "task_id": 56,
+      "task_name": "Розробка API",
+      "description": "Asperiores minima aperiam maiores debitis quisquam.",
+      "planned_completion_date": "2026-06-26T21:25:33.138033",
+      "actual_completion_date": "2026-06-26T16:25:33.138033",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 3
+    },
+    {
+      "task_id": 57,
+      "task_name": "Розробка API",
+      "description": "Esse neque deserunt repellat earum animi sequi quisquam.",
+      "planned_completion_date": "2026-07-24T21:25:33.138050",
+      "actual_completion_date": "2026-07-24T19:25:33.138050",
+      "task_status": "Виконано",
+      "employee_id": 14,
+      "order_id": 31
+    },
+    {
+      "task_id": 58,
+      "task_name": "Тестування системи",
+      "description": "Dolorem libero voluptatem incidunt nam quia animi omnis nesciunt sequi occaecati.",
+      "planned_completion_date": "2026-05-06T21:25:33.138066",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 21,
+      "order_id": 26
+    },
+    {
+      "task_id": 59,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Excepturi a cupiditate dolorum nostrum exercitationem deleniti rem perferendis optio voluptatem vel.",
+      "planned_completion_date": "2026-07-28T21:25:33.138080",
+      "actual_completion_date": "2026-05-05T21:25:33.141118",
+      "task_status": "Виконано",
       "employee_id": 3,
+      "order_id": 3
+    },
+    {
+      "task_id": 60,
+      "task_name": "Підготовка документації",
+      "description": "Nisi sunt ipsum voluptatem odit rem id neque.",
+      "planned_completion_date": "2026-07-28T21:25:33.138104",
+      "actual_completion_date": "2026-07-28T18:25:33.138104",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 24
+    },
+    {
+      "task_id": 61,
+      "task_name": "Створення dashboard",
+      "description": "Iste a necessitatibus ea quas amet nostrum sed quam occaecati sunt.",
+      "planned_completion_date": "2026-08-09T21:25:33.138130",
+      "actual_completion_date": "2026-08-09T16:25:33.138130",
+      "task_status": "Виконано",
+      "employee_id": 14,
+      "order_id": 12
+    },
+    {
+      "task_id": 62,
+      "task_name": "Розробка API",
+      "description": "Enim mollitia repellat maxime reiciendis quos nisi voluptate sunt debitis.",
+      "planned_completion_date": "2026-07-29T21:25:33.138153",
+      "actual_completion_date": "2026-07-29T19:25:33.138153",
+      "task_status": "Виконано",
+      "employee_id": 19,
+      "order_id": 39
+    },
+    {
+      "task_id": 63,
+      "task_name": "Підготовка документації",
+      "description": "Itaque accusamus consequuntur exercitationem delectus adipisci.",
+      "planned_completion_date": "2026-06-23T21:25:33.138182",
+      "actual_completion_date": "2026-04-26T21:25:33.140873",
+      "task_status": "Виконано",
+      "employee_id": 22,
+      "order_id": 39
+    },
+    {
+      "task_id": 64,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Consectetur fuga culpa maxime ea labore.",
+      "planned_completion_date": "2026-07-27T21:25:33.138207",
+      "actual_completion_date": "2026-07-27T17:25:33.138207",
+      "task_status": "Виконано",
+      "employee_id": 16,
+      "order_id": 2
+    },
+    {
+      "task_id": 65,
+      "task_name": "Створення dashboard",
+      "description": "Itaque expedita voluptatem quam illo nesciunt culpa minus.",
+      "planned_completion_date": "2026-06-09T21:25:33.138235",
+      "actual_completion_date": "2026-06-09T15:25:33.138235",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 37
+    },
+    {
+      "task_id": 66,
+      "task_name": "Інтеграція бази даних",
+      "description": "Adipisci amet corrupti facilis ea.",
+      "planned_completion_date": "2026-07-26T21:25:33.138265",
+      "actual_completion_date": "2026-04-25T21:25:33.140930",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 11
+    },
+    {
+      "task_id": 67,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Quidem vel atque itaque reiciendis minus earum consectetur quia at.",
+      "planned_completion_date": "2026-02-23T21:25:33.138289",
+      "actual_completion_date": "2026-02-23T19:25:33.138289",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 27
+    },
+    {
+      "task_id": 68,
+      "task_name": "Підготовка документації",
+      "description": "Natus aliquid vero sed dolorem saepe delectus saepe.",
+      "planned_completion_date": "2026-03-08T21:25:33.138318",
+      "actual_completion_date": "2026-05-03T21:25:33.141142",
+      "task_status": "Виконано",
+      "employee_id": 3,
+      "order_id": 15
+    },
+    {
+      "task_id": 69,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Dignissimos autem eum ut voluptates.",
+      "planned_completion_date": "2026-03-16T21:25:33.138343",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 22,
       "order_id": 7
     },
     {
-      "task_id": 12,
-      "task_name": "Навантажувальне тестування notification service",
-      "description": "Перевірка пропускної здатності черги повідомлень",
-      "planned_completion_date": "2024-05-16T16:00:00",
+      "task_id": 70,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Facilis deleniti enim commodi nisi minima tempora cum officiis ut reiciendis quod.",
+      "planned_completion_date": "2026-06-14T21:25:33.138365",
       "actual_completion_date": null,
-      "task_status": "planned",
-      "employee_id": 7,
+      "task_status": "В роботі",
+      "employee_id": 25,
+      "order_id": 15
+    },
+    {
+      "task_id": 71,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Sed ipsa sit libero repellendus neque autem fugit aperiam.",
+      "planned_completion_date": "2026-06-24T21:25:33.138389",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 11,
+      "order_id": 21
+    },
+    {
+      "task_id": 72,
+      "task_name": "Аналіз вимог",
+      "description": "Expedita tenetur temporibus adipisci eius facilis natus.",
+      "planned_completion_date": "2026-07-21T21:25:33.138412",
+      "actual_completion_date": null,
+      "task_status": "Очікує",
+      "employee_id": 25,
+      "order_id": 18
+    },
+    {
+      "task_id": 73,
+      "task_name": "Налаштування серверів",
+      "description": "Sed accusamus nesciunt vitae adipisci accusantium doloribus delectus vel cum quas dolorum.",
+      "planned_completion_date": "2026-06-13T21:25:33.138436",
+      "actual_completion_date": "2026-06-13T18:25:33.138436",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 4
+    },
+    {
+      "task_id": 74,
+      "task_name": "Інтеграція бази даних",
+      "description": "Quisquam repellendus officiis recusandae amet qui fugit corrupti totam eveniet in cupiditate.",
+      "planned_completion_date": "2026-03-18T21:25:33.138466",
+      "actual_completion_date": "2026-05-06T21:25:33.140662",
+      "task_status": "Виконано",
+      "employee_id": 2,
+      "order_id": 9
+    },
+    {
+      "task_id": 75,
+      "task_name": "Аналіз вимог",
+      "description": "Distinctio itaque minima labore rem vero fugit minus culpa cumque atque maiores.",
+      "planned_completion_date": "2026-07-26T21:25:33.138492",
+      "actual_completion_date": "2026-07-26T18:25:33.138492",
+      "task_status": "Виконано",
+      "employee_id": 24,
+      "order_id": 12
+    },
+    {
+      "task_id": 76,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "At ea culpa expedita temporibus labore in vel.",
+      "planned_completion_date": "2026-04-14T21:25:33.138522",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 21,
+      "order_id": 12
+    },
+    {
+      "task_id": 77,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Veritatis expedita accusantium possimus velit eum repellendus aspernatur officia.",
+      "planned_completion_date": "2026-06-14T21:25:33.138544",
+      "actual_completion_date": "2026-05-02T21:25:33.140638",
+      "task_status": "Виконано",
+      "employee_id": 22,
+      "order_id": 1
+    },
+    {
+      "task_id": 78,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Reprehenderit voluptatem numquam ad temporibus quaerat vitae nobis placeat neque.",
+      "planned_completion_date": "2026-04-21T21:25:33.138570",
+      "actual_completion_date": "2026-04-21T15:25:33.138570",
+      "task_status": "Виконано",
+      "employee_id": 21,
+      "order_id": 29
+    },
+    {
+      "task_id": 79,
+      "task_name": "Аналіз вимог",
+      "description": "Magni fuga ratione et atque dolorem quisquam.",
+      "planned_completion_date": "2026-05-30T21:25:33.138600",
+      "actual_completion_date": "2026-05-30T13:25:33.138600",
+      "task_status": "Виконано",
+      "employee_id": 11,
+      "order_id": 4
+    },
+    {
+      "task_id": 80,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Eius quod odio ducimus totam fugiat.",
+      "planned_completion_date": "2026-05-27T21:25:33.138631",
+      "actual_completion_date": "2026-05-04T21:25:33.140886",
+      "task_status": "Виконано",
+      "employee_id": 11,
+      "order_id": 29
+    },
+    {
+      "task_id": 81,
+      "task_name": "Інтеграція бази даних",
+      "description": "Suscipit debitis facilis neque error.",
+      "planned_completion_date": "2026-03-10T21:25:33.138654",
+      "actual_completion_date": "2026-03-10T20:25:33.138654",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 21
+    },
+    {
+      "task_id": 82,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Iure occaecati voluptate odit fugiat vel sint autem provident suscipit fuga.",
+      "planned_completion_date": "2026-08-08T21:25:33.138682",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 23,
+      "order_id": 36
+    },
+    {
+      "task_id": 83,
+      "task_name": "Налаштування серверів",
+      "description": "Eum laboriosam facilis nesciunt qui cum inventore.",
+      "planned_completion_date": "2026-07-10T21:25:33.138724",
+      "actual_completion_date": "2026-07-10T15:25:33.138724",
+      "task_status": "Виконано",
+      "employee_id": 2,
+      "order_id": 12
+    },
+    {
+      "task_id": 84,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Commodi beatae expedita culpa ipsum quisquam modi eligendi.",
+      "planned_completion_date": "2026-06-04T21:25:33.138754",
+      "actual_completion_date": "2026-06-04T17:25:33.138754",
+      "task_status": "Виконано",
+      "employee_id": 14,
+      "order_id": 1
+    },
+    {
+      "task_id": 85,
+      "task_name": "Створення dashboard",
+      "description": "Ea sed sunt id laborum neque sint nemo occaecati deserunt.",
+      "planned_completion_date": "2026-07-26T21:25:33.138782",
+      "actual_completion_date": "2026-07-26T18:25:33.138782",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 35
+    },
+    {
+      "task_id": 86,
+      "task_name": "Налаштування серверів",
+      "description": "Cupiditate ut possimus recusandae est odit alias odit.",
+      "planned_completion_date": "2026-02-28T21:25:33.138811",
+      "actual_completion_date": "2026-02-28T15:25:33.138811",
+      "task_status": "Виконано",
+      "employee_id": 2,
       "order_id": 8
+    },
+    {
+      "task_id": 87,
+      "task_name": "Підготовка документації",
+      "description": "Tempora corporis commodi quos tempora nulla incidunt officia odio earum similique.",
+      "planned_completion_date": "2026-06-22T21:25:33.138840",
+      "actual_completion_date": "2026-06-22T20:25:33.138840",
+      "task_status": "Виконано",
+      "employee_id": 16,
+      "order_id": 33
+    },
+    {
+      "task_id": 88,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Quisquam consequuntur perferendis ullam quis velit dolore quo necessitatibus.",
+      "planned_completion_date": "2026-08-09T21:25:33.138870",
+      "actual_completion_date": "2026-08-09T13:25:33.138870",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 12
+    },
+    {
+      "task_id": 89,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Veniam doloremque quaerat atque ea quae voluptates dicta optio.",
+      "planned_completion_date": "2026-05-05T21:25:33.138899",
+      "actual_completion_date": "2026-05-05T14:25:33.138899",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 26
+    },
+    {
+      "task_id": 90,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Aperiam voluptatibus qui nulla molestiae in sed tenetur minima iste reiciendis.",
+      "planned_completion_date": "2026-06-20T21:25:33.138930",
+      "actual_completion_date": "2026-06-20T14:25:33.138930",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 17
+    },
+    {
+      "task_id": 91,
+      "task_name": "Тестування системи",
+      "description": "Asperiores sunt facilis minima dolorum eligendi sunt eaque nulla maxime reiciendis.",
+      "planned_completion_date": "2026-03-12T21:25:33.138961",
+      "actual_completion_date": "2026-03-12T15:25:33.138961",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 6
+    },
+    {
+      "task_id": 92,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Dolore eligendi aspernatur inventore quaerat.",
+      "planned_completion_date": "2026-05-29T21:25:33.138993",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 24,
+      "order_id": 28
+    },
+    {
+      "task_id": 93,
+      "task_name": "Аналіз вимог",
+      "description": "Est nemo natus odit animi numquam.",
+      "planned_completion_date": "2026-02-20T21:25:33.139018",
+      "actual_completion_date": null,
+      "task_status": "Очікує",
+      "employee_id": 2,
+      "order_id": 7
+    },
+    {
+      "task_id": 94,
+      "task_name": "Аналіз вимог",
+      "description": "Quisquam laborum et distinctio quam explicabo ipsum mollitia tempora.",
+      "planned_completion_date": "2026-06-19T21:25:33.139044",
+      "actual_completion_date": "2026-05-07T21:25:33.140748",
+      "task_status": "Виконано",
+      "employee_id": 13,
+      "order_id": 22
+    },
+    {
+      "task_id": 95,
+      "task_name": "Підготовка документації",
+      "description": "Ea laudantium ducimus minus possimus numquam ratione odit nulla.",
+      "planned_completion_date": "2026-02-26T21:25:33.139068",
+      "actual_completion_date": "2026-02-26T15:25:33.139068",
+      "task_status": "Виконано",
+      "employee_id": 6,
+      "order_id": 8
+    },
+    {
+      "task_id": 96,
+      "task_name": "Розробка API",
+      "description": "Magni ratione voluptatibus voluptatem architecto.",
+      "planned_completion_date": "2026-05-21T21:25:33.139099",
+      "actual_completion_date": "2026-05-21T15:25:33.139099",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 19
+    },
+    {
+      "task_id": 97,
+      "task_name": "Інтеграція бази даних",
+      "description": "Officiis dolorem iure qui rem asperiores.",
+      "planned_completion_date": "2026-04-24T21:25:33.139127",
+      "actual_completion_date": "2026-04-24T18:25:33.139127",
+      "task_status": "Виконано",
+      "employee_id": 20,
+      "order_id": 31
+    },
+    {
+      "task_id": 98,
+      "task_name": "Підготовка документації",
+      "description": "Odio velit ea veniam dolores tempore voluptate.",
+      "planned_completion_date": "2026-06-26T21:25:33.139155",
+      "actual_completion_date": "2026-06-26T20:25:33.139155",
+      "task_status": "Виконано",
+      "employee_id": 16,
+      "order_id": 10
+    },
+    {
+      "task_id": 99,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Recusandae repellendus tempora culpa odit voluptatum reprehenderit asperiores.",
+      "planned_completion_date": "2026-04-12T21:25:33.139185",
+      "actual_completion_date": "2026-04-12T13:25:33.139185",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 20
+    },
+    {
+      "task_id": 100,
+      "task_name": "Налаштування серверів",
+      "description": "Nostrum voluptates enim corrupti magni ullam.",
+      "planned_completion_date": "2026-03-23T21:25:33.139215",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 15,
+      "order_id": 31
+    },
+    {
+      "task_id": 101,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Aliquid nam impedit deserunt provident expedita.",
+      "planned_completion_date": "2026-06-11T21:25:33.139240",
+      "actual_completion_date": "2026-05-04T21:25:33.140568",
+      "task_status": "Виконано",
+      "employee_id": 15,
+      "order_id": 18
+    },
+    {
+      "task_id": 102,
+      "task_name": "Аналіз вимог",
+      "description": "Similique ipsa ipsa saepe dolorem quam sit alias ut consequuntur possimus illum.",
+      "planned_completion_date": "2026-04-26T21:25:33.139265",
+      "actual_completion_date": "2026-04-26T19:25:33.139265",
+      "task_status": "Виконано",
+      "employee_id": 15,
+      "order_id": 7
+    },
+    {
+      "task_id": 103,
+      "task_name": "Інтеграція бази даних",
+      "description": "Voluptatum laboriosam mollitia quis nobis modi.",
+      "planned_completion_date": "2026-07-16T21:25:33.139296",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 13,
+      "order_id": 37
+    },
+    {
+      "task_id": 104,
+      "task_name": "Налаштування серверів",
+      "description": "Mollitia quis nulla omnis nostrum magni labore.",
+      "planned_completion_date": "2026-06-25T21:25:33.139321",
+      "actual_completion_date": "2026-06-25T18:25:33.139321",
+      "task_status": "Виконано",
+      "employee_id": 25,
+      "order_id": 4
+    },
+    {
+      "task_id": 105,
+      "task_name": "Підготовка документації",
+      "description": "Commodi nisi voluptatum iure inventore laborum.",
+      "planned_completion_date": "2026-05-27T21:25:33.139351",
+      "actual_completion_date": "2026-05-27T13:25:33.139351",
+      "task_status": "Виконано",
+      "employee_id": 9,
+      "order_id": 39
+    },
+    {
+      "task_id": 106,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Libero blanditiis facere officiis nulla temporibus.",
+      "planned_completion_date": "2026-04-25T21:25:33.139380",
+      "actual_completion_date": "2026-04-25T18:25:33.139380",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 27
+    },
+    {
+      "task_id": 107,
+      "task_name": "Підготовка документації",
+      "description": "Totam enim error alias quasi totam dignissimos est culpa excepturi.",
+      "planned_completion_date": "2026-03-03T21:25:33.139410",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 13,
+      "order_id": 36
+    },
+    {
+      "task_id": 108,
+      "task_name": "Тестування системи",
+      "description": "Sit error id a tenetur temporibus.",
+      "planned_completion_date": "2026-06-09T21:25:33.139436",
+      "actual_completion_date": "2026-06-09T18:25:33.139436",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 38
+    },
+    {
+      "task_id": 109,
+      "task_name": "Тестування системи",
+      "description": "Quisquam repellendus facilis officiis laborum ad.",
+      "planned_completion_date": "2026-04-28T21:25:33.139464",
+      "actual_completion_date": "2026-04-28T14:25:33.139464",
+      "task_status": "Виконано",
+      "employee_id": 6,
+      "order_id": 30
+    },
+    {
+      "task_id": 110,
+      "task_name": "Створення dashboard",
+      "description": "Culpa amet consequuntur voluptate ipsam velit laudantium magnam.",
+      "planned_completion_date": "2026-04-10T21:25:33.139496",
+      "actual_completion_date": "2026-04-10T17:25:33.139496",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 38
+    },
+    {
+      "task_id": 111,
+      "task_name": "Налаштування серверів",
+      "description": "Facilis ullam quod est rerum nihil dicta ipsa enim hic unde.",
+      "planned_completion_date": "2026-04-30T21:25:33.139526",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 20,
+      "order_id": 29
+    },
+    {
+      "task_id": 112,
+      "task_name": "Підготовка документації",
+      "description": "Ratione eligendi sint quae rerum dolore atque.",
+      "planned_completion_date": "2026-03-22T21:25:33.139550",
+      "actual_completion_date": "2026-03-22T15:25:33.139550",
+      "task_status": "Виконано",
+      "employee_id": 22,
+      "order_id": 11
+    },
+    {
+      "task_id": 113,
+      "task_name": "Розробка API",
+      "description": "Consectetur aspernatur modi excepturi officiis debitis.",
+      "planned_completion_date": "2026-03-07T21:25:33.139579",
+      "actual_completion_date": "2026-03-07T17:25:33.139579",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 14
+    },
+    {
+      "task_id": 114,
+      "task_name": "Тестування системи",
+      "description": "Suscipit in tenetur unde doloremque mollitia tempora iste corrupti.",
+      "planned_completion_date": "2026-06-08T21:25:33.139608",
+      "actual_completion_date": "2026-06-08T14:25:33.139608",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 36
+    },
+    {
+      "task_id": 115,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Fuga laboriosam quaerat in atque eos enim laborum quis.",
+      "planned_completion_date": "2026-07-15T21:25:33.139638",
+      "actual_completion_date": "2026-07-15T17:25:33.139638",
+      "task_status": "Виконано",
+      "employee_id": 14,
+      "order_id": 10
+    },
+    {
+      "task_id": 116,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Veritatis velit aspernatur aut maxime debitis exercitationem ab nulla nostrum animi.",
+      "planned_completion_date": "2026-04-29T21:25:33.139667",
+      "actual_completion_date": "2026-04-29T18:25:33.139667",
+      "task_status": "Виконано",
+      "employee_id": 25,
+      "order_id": 9
+    },
+    {
+      "task_id": 117,
+      "task_name": "Розробка API",
+      "description": "Excepturi laborum sint labore impedit debitis tenetur minus autem.",
+      "planned_completion_date": "2026-05-23T21:25:33.139697",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 20,
+      "order_id": 32
+    },
+    {
+      "task_id": 118,
+      "task_name": "Підготовка документації",
+      "description": "Tempora enim voluptates perferendis incidunt maxime.",
+      "planned_completion_date": "2026-05-31T21:25:33.139721",
+      "actual_completion_date": "2026-05-31T18:25:33.139721",
+      "task_status": "Виконано",
+      "employee_id": 5,
+      "order_id": 13
+    },
+    {
+      "task_id": 119,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Quia deserunt assumenda nemo culpa eius maiores optio quaerat.",
+      "planned_completion_date": "2026-08-01T21:25:33.139751",
+      "actual_completion_date": "2026-08-01T13:25:33.139751",
+      "task_status": "Виконано",
+      "employee_id": 5,
+      "order_id": 38
+    },
+    {
+      "task_id": 120,
+      "task_name": "Тестування системи",
+      "description": "Doloremque rerum aspernatur repudiandae quos veniam.",
+      "planned_completion_date": "2026-04-01T21:25:33.139779",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 17,
+      "order_id": 11
+    },
+    {
+      "task_id": 121,
+      "task_name": "Створення dashboard",
+      "description": "Quos fuga explicabo commodi corrupti tenetur non dicta commodi.",
+      "planned_completion_date": "2026-03-12T21:25:33.139804",
+      "actual_completion_date": "2026-03-12T19:25:33.139804",
+      "task_status": "Виконано",
+      "employee_id": 21,
+      "order_id": 12
+    },
+    {
+      "task_id": 122,
+      "task_name": "Аналіз вимог",
+      "description": "Saepe cumque vero est nobis temporibus corrupti natus.",
+      "planned_completion_date": "2026-06-17T21:25:33.139834",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 8,
+      "order_id": 36
+    },
+    {
+      "task_id": 123,
+      "task_name": "Підготовка документації",
+      "description": "Deleniti quaerat sapiente veritatis quia consequuntur consectetur tempore.",
+      "planned_completion_date": "2026-04-10T21:25:33.139859",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 14,
+      "order_id": 5
+    },
+    {
+      "task_id": 124,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Cumque possimus eaque modi sed dolorum quasi omnis aliquam debitis.",
+      "planned_completion_date": "2026-04-15T21:25:33.139883",
+      "actual_completion_date": "2026-04-22T21:25:33.140918",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 18
+    },
+    {
+      "task_id": 125,
+      "task_name": "Налаштування серверів",
+      "description": "Quasi sint at laboriosam ea laboriosam.",
+      "planned_completion_date": "2026-03-20T21:25:33.139903",
+      "actual_completion_date": "2026-03-20T17:25:33.139903",
+      "task_status": "Виконано",
+      "employee_id": 1,
+      "order_id": 6
+    },
+    {
+      "task_id": 126,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Eum qui nam tenetur hic reprehenderit temporibus.",
+      "planned_completion_date": "2026-04-28T21:25:33.139920",
+      "actual_completion_date": "2026-04-28T13:25:33.139920",
+      "task_status": "Виконано",
+      "employee_id": 6,
+      "order_id": 30
+    },
+    {
+      "task_id": 127,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Accusantium necessitatibus quibusdam molestias beatae nostrum corporis eligendi.",
+      "planned_completion_date": "2026-02-28T21:25:33.139937",
+      "actual_completion_date": "2026-02-28T14:25:33.139937",
+      "task_status": "Виконано",
+      "employee_id": 10,
+      "order_id": 7
+    },
+    {
+      "task_id": 128,
+      "task_name": "Розробка API",
+      "description": "Incidunt cumque mollitia libero dignissimos tenetur possimus ab autem possimus consectetur sit.",
+      "planned_completion_date": "2026-07-23T21:25:33.139955",
+      "actual_completion_date": "2026-04-24T21:25:33.140995",
+      "task_status": "Виконано",
+      "employee_id": 5,
+      "order_id": 17
+    },
+    {
+      "task_id": 129,
+      "task_name": "Створення dashboard",
+      "description": "Sit dolor sunt totam ratione est magni expedita rem dolore illo alias.",
+      "planned_completion_date": "2026-06-02T21:25:33.139970",
+      "actual_completion_date": "2026-06-02T13:25:33.139970",
+      "task_status": "Виконано",
+      "employee_id": 4,
+      "order_id": 32
+    },
+    {
+      "task_id": 130,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Praesentium incidunt exercitationem dolores aliquid quos pariatur iste eligendi.",
+      "planned_completion_date": "2026-05-10T21:25:33.139989",
+      "actual_completion_date": "2026-05-10T15:25:33.139989",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 23
+    },
+    {
+      "task_id": 131,
+      "task_name": "Створення dashboard",
+      "description": "Nesciunt deserunt magni eius nobis voluptatum molestias recusandae amet voluptatum.",
+      "planned_completion_date": "2026-08-08T21:25:33.140006",
+      "actual_completion_date": "2026-04-22T21:25:33.140953",
+      "task_status": "Виконано",
+      "employee_id": 9,
+      "order_id": 37
+    },
+    {
+      "task_id": 132,
+      "task_name": "Інтеграція бази даних",
+      "description": "Voluptatem assumenda deleniti officia temporibus maxime soluta animi.",
+      "planned_completion_date": "2026-03-08T21:25:33.140020",
+      "actual_completion_date": "2026-03-08T20:25:33.140020",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 29
+    },
+    {
+      "task_id": 133,
+      "task_name": "Налаштування серверів",
+      "description": "Tempore veniam cumque eum magnam earum aut sunt consequatur minus ut.",
+      "planned_completion_date": "2026-03-20T21:25:33.140037",
+      "actual_completion_date": "2026-03-20T18:25:33.140037",
+      "task_status": "Виконано",
+      "employee_id": 6,
+      "order_id": 22
+    },
+    {
+      "task_id": 134,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Quasi rerum ea saepe a iusto beatae aut ab dignissimos.",
+      "planned_completion_date": "2026-06-05T21:25:33.140054",
+      "actual_completion_date": "2026-06-05T18:25:33.140054",
+      "task_status": "Виконано",
+      "employee_id": 8,
+      "order_id": 28
+    },
+    {
+      "task_id": 135,
+      "task_name": "Підготовка документації",
+      "description": "Aliquam ratione odio quis nihil molestiae.",
+      "planned_completion_date": "2026-03-23T21:25:33.140070",
+      "actual_completion_date": "2026-03-23T16:25:33.140070",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 26
+    },
+    {
+      "task_id": 136,
+      "task_name": "Налаштування серверів",
+      "description": "Nemo exercitationem deserunt at quasi molestiae nostrum provident.",
+      "planned_completion_date": "2026-05-31T21:25:33.140086",
+      "actual_completion_date": "2026-05-31T20:25:33.140086",
+      "task_status": "Виконано",
+      "employee_id": 16,
+      "order_id": 15
+    },
+    {
+      "task_id": 137,
+      "task_name": "Тестування системи",
+      "description": "Animi consectetur maiores dolores amet beatae.",
+      "planned_completion_date": "2026-04-09T21:25:33.140102",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 20,
+      "order_id": 23
+    },
+    {
+      "task_id": 138,
+      "task_name": "Розробка API",
+      "description": "Nisi nesciunt corrupti aliquam architecto iste eaque ut.",
+      "planned_completion_date": "2026-07-16T21:25:33.140115",
+      "actual_completion_date": "2026-07-16T15:25:33.140115",
+      "task_status": "Виконано",
+      "employee_id": 21,
+      "order_id": 30
+    },
+    {
+      "task_id": 139,
+      "task_name": "Налаштування серверів",
+      "description": "Accusantium sint officia similique odio beatae ullam doloremque aliquam.",
+      "planned_completion_date": "2026-07-31T21:25:33.140131",
+      "actual_completion_date": "2026-07-31T20:25:33.140131",
+      "task_status": "Виконано",
+      "employee_id": 1,
+      "order_id": 17
+    },
+    {
+      "task_id": 140,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "Libero accusamus autem fugit nobis blanditiis ipsa porro accusantium dolorem dolores ea.",
+      "planned_completion_date": "2026-04-20T21:25:33.140147",
+      "actual_completion_date": "2026-04-20T18:25:33.140147",
+      "task_status": "Виконано",
+      "employee_id": 6,
+      "order_id": 11
+    },
+    {
+      "task_id": 141,
+      "task_name": "Створення dashboard",
+      "description": "Cupiditate sunt asperiores deleniti eos dolore vero libero debitis.",
+      "planned_completion_date": "2026-03-14T21:25:33.140165",
+      "actual_completion_date": "2026-03-14T18:25:33.140165",
+      "task_status": "Виконано",
+      "employee_id": 13,
+      "order_id": 36
+    },
+    {
+      "task_id": 142,
+      "task_name": "Створення dashboard",
+      "description": "Deserunt quibusdam est quibusdam nihil reprehenderit perferendis ipsam eaque sapiente id.",
+      "planned_completion_date": "2026-05-18T21:25:33.140180",
+      "actual_completion_date": "2026-05-18T14:25:33.140180",
+      "task_status": "Виконано",
+      "employee_id": 23,
+      "order_id": 21
+    },
+    {
+      "task_id": 143,
+      "task_name": "Налаштування серверів",
+      "description": "Tempora suscipit asperiores qui dolorum molestias voluptate ullam repellat.",
+      "planned_completion_date": "2026-03-01T21:25:33.140199",
+      "actual_completion_date": null,
+      "task_status": "На перевірці",
+      "employee_id": 24,
+      "order_id": 29
+    },
+    {
+      "task_id": 144,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Excepturi neque nulla sit deserunt consequuntur doloremque expedita.",
+      "planned_completion_date": "2026-04-28T21:25:33.140213",
+      "actual_completion_date": "2026-05-08T21:25:33.141350",
+      "task_status": "Виконано",
+      "employee_id": 12,
+      "order_id": 11
+    },
+    {
+      "task_id": 145,
+      "task_name": "Розгортання Docker-контейнерів",
+      "description": "A dolore molestias mollitia eveniet ad magni fugiat vero odit non libero.",
+      "planned_completion_date": "2026-04-22T21:25:33.140228",
+      "actual_completion_date": "2026-05-09T21:25:33.140799",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 31
+    },
+    {
+      "task_id": 146,
+      "task_name": "Налаштування серверів",
+      "description": "Quas rerum similique quod aspernatur at repellat dolorum eius.",
+      "planned_completion_date": "2026-02-24T21:25:33.140255",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 5,
+      "order_id": 30
+    },
+    {
+      "task_id": 147,
+      "task_name": "Верстка інтерфейсу",
+      "description": "Perferendis recusandae unde voluptas amet earum dolore.",
+      "planned_completion_date": "2026-04-09T21:25:33.140276",
+      "actual_completion_date": null,
+      "task_status": "В роботі",
+      "employee_id": 17,
+      "order_id": 32
+    },
+    {
+      "task_id": 148,
+      "task_name": "Тестування системи",
+      "description": "Sunt minus non enim voluptas.",
+      "planned_completion_date": "2026-07-19T21:25:33.140290",
+      "actual_completion_date": "2026-07-19T15:25:33.140290",
+      "task_status": "Виконано",
+      "employee_id": 7,
+      "order_id": 15
+    },
+    {
+      "task_id": 149,
+      "task_name": "Оптимізація SQL-запитів",
+      "description": "Veritatis vitae perspiciatis reiciendis corporis eligendi dignissimos explicabo quaerat vero soluta.",
+      "planned_completion_date": "2026-02-26T21:25:33.140306",
+      "actual_completion_date": "2026-02-26T19:25:33.140306",
+      "task_status": "Виконано",
+      "employee_id": 18,
+      "order_id": 33
+    },
+    {
+      "task_id": 150,
+      "task_name": "Створення dashboard",
+      "description": "Vel in repellendus laboriosam cumque distinctio eligendi ducimus officia.",
+      "planned_completion_date": "2026-07-20T21:25:33.140326",
+      "actual_completion_date": "2026-07-20T13:25:33.140326",
+      "task_status": "Виконано",
+      "employee_id": 21,
+      "order_id": 13
     }
   ],
   "task_results": [
     {
       "result_id": 1,
-      "completion_date": "2024-03-10T16:45:00",
-      "actual_execution_time": 8.5,
-      "comment": "Робота завершена з випередженням",
+      "completion_date": "2026-05-08T21:25:33.141225",
+      "actual_execution_time": 13.83,
+      "comment": "Потрібна додаткова оптимізація",
       "performance_rating": 9,
-      "task_id": 1
-    },
-    {
-      "result_id": 2,
-      "completion_date": null,
-      "actual_execution_time": null,
-      "comment": "Робота в процесі",
-      "performance_rating": null,
       "task_id": 2
     },
     {
-      "result_id": 3,
-      "completion_date": null,
-      "actual_execution_time": null,
-      "comment": "Планове завдання на наступний тиждень",
-      "performance_rating": null,
+      "result_id": 2,
+      "completion_date": "2026-08-01T18:25:33.137153",
+      "actual_execution_time": 23.53,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 7,
       "task_id": 3
     },
     {
-      "result_id": 4,
-      "completion_date": null,
-      "actual_execution_time": null,
-      "comment": "Очікує технічного брифу від клієнта",
-      "performance_rating": null,
+      "result_id": 3,
+      "completion_date": "2026-06-25T17:25:33.137175",
+      "actual_execution_time": 20.47,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 7,
       "task_id": 4
     },
     {
-      "result_id": 5,
-      "completion_date": "2024-04-22T16:20:00",
-      "actual_execution_time": 14.75,
-      "comment": "Макети погоджено з першого раунду",
+      "result_id": 4,
+      "completion_date": "2026-06-25T19:25:33.137196",
+      "actual_execution_time": 9.2,
+      "comment": "Потрібна додаткова оптимізація",
       "performance_rating": 10,
       "task_id": 5
     },
     {
-      "result_id": 6,
-      "completion_date": null,
-      "actual_execution_time": 11.2,
-      "comment": "Реалізовано авторизацію та контролери контактів",
-      "performance_rating": 8,
+      "result_id": 5,
+      "completion_date": "2026-04-22T17:25:33.137214",
+      "actual_execution_time": 17.93,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 6,
       "task_id": 6
     },
     {
-      "result_id": 7,
-      "completion_date": null,
-      "actual_execution_time": 9.6,
-      "comment": "Завершено сітку dashboard та почато верстку віджетів",
+      "result_id": 6,
+      "completion_date": "2026-06-04T19:25:33.137233",
+      "actual_execution_time": 6.07,
+      "comment": "Результат відповідає вимогам",
       "performance_rating": 8,
       "task_id": 7
     },
     {
-      "result_id": 8,
-      "completion_date": "2024-04-26T14:10:00",
-      "actual_execution_time": 6.4,
-      "comment": "Вимоги декомпозовано на 24 user stories",
-      "performance_rating": 9,
-      "task_id": 8
-    },
-    {
-      "result_id": 9,
-      "completion_date": null,
-      "actual_execution_time": 7.9,
-      "comment": "Pipeline на stage QA, очікує схвалення по security checklist",
-      "performance_rating": 8,
+      "result_id": 7,
+      "completion_date": "2026-03-31T17:25:33.137275",
+      "actual_execution_time": 19.1,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 6,
       "task_id": 9
     },
     {
-      "result_id": 10,
-      "completion_date": null,
-      "actual_execution_time": null,
-      "comment": "Завдання заплановано на наступний sprint",
-      "performance_rating": null,
-      "task_id": 10
-    },
-    {
-      "result_id": 11,
-      "completion_date": "2024-05-08T16:35:00",
-      "actual_execution_time": 18.3,
-      "comment": "ETL-пайплайн виконується щогодини, latency менше 5 хвилин",
+      "result_id": 8,
+      "completion_date": "2026-05-03T20:25:33.137313",
+      "actual_execution_time": 2.41,
+      "comment": "Роботу виконано успішно",
       "performance_rating": 10,
       "task_id": 11
     },
     {
+      "result_id": 9,
+      "completion_date": "2026-04-29T21:25:33.141035",
+      "actual_execution_time": 22.56,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 9,
+      "task_id": 13
+    },
+    {
+      "result_id": 10,
+      "completion_date": "2026-04-25T21:25:33.141270",
+      "actual_execution_time": 3.38,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 6,
+      "task_id": 14
+    },
+    {
+      "result_id": 11,
+      "completion_date": "2026-07-29T14:25:33.137377",
+      "actual_execution_time": 4.91,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 7,
+      "task_id": 15
+    },
+    {
       "result_id": 12,
-      "completion_date": null,
-      "actual_execution_time": null,
-      "comment": "Очікує надходження test data для benchmark",
-      "performance_rating": null,
-      "task_id": 12
+      "completion_date": "2026-06-17T20:25:33.137394",
+      "actual_execution_time": 21.37,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 16
+    },
+    {
+      "result_id": 13,
+      "completion_date": "2026-05-06T21:25:33.141007",
+      "actual_execution_time": 18.54,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 6,
+      "task_id": 17
+    },
+    {
+      "result_id": 14,
+      "completion_date": "2026-05-11T16:25:33.137445",
+      "actual_execution_time": 2.8,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 19
+    },
+    {
+      "result_id": 15,
+      "completion_date": "2026-04-29T21:25:33.140725",
+      "actual_execution_time": 12.49,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 20
+    },
+    {
+      "result_id": 16,
+      "completion_date": "2026-02-11T18:25:33.137505",
+      "actual_execution_time": 17.23,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 9,
+      "task_id": 23
+    },
+    {
+      "result_id": 17,
+      "completion_date": "2026-04-07T13:25:33.137521",
+      "actual_execution_time": 18.32,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 10,
+      "task_id": 24
+    },
+    {
+      "result_id": 18,
+      "completion_date": "2026-03-20T19:25:33.137538",
+      "actual_execution_time": 7.23,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 6,
+      "task_id": 25
+    },
+    {
+      "result_id": 19,
+      "completion_date": "2026-02-20T15:25:33.137554",
+      "actual_execution_time": 12.15,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 8,
+      "task_id": 26
+    },
+    {
+      "result_id": 20,
+      "completion_date": "2026-05-31T15:25:33.137571",
+      "actual_execution_time": 20.64,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 6,
+      "task_id": 27
+    },
+    {
+      "result_id": 21,
+      "completion_date": "2026-07-31T14:25:33.137588",
+      "actual_execution_time": 5.14,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 10,
+      "task_id": 28
+    },
+    {
+      "result_id": 22,
+      "completion_date": "2026-02-26T19:25:33.137604",
+      "actual_execution_time": 13.73,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 29
+    },
+    {
+      "result_id": 23,
+      "completion_date": "2026-02-10T16:25:33.137622",
+      "actual_execution_time": 7.48,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 30
+    },
+    {
+      "result_id": 24,
+      "completion_date": "2026-03-15T14:25:33.137639",
+      "actual_execution_time": 3.87,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 10,
+      "task_id": 31
+    },
+    {
+      "result_id": 25,
+      "completion_date": "2026-08-05T20:25:33.137655",
+      "actual_execution_time": 8.74,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 32
+    },
+    {
+      "result_id": 26,
+      "completion_date": "2026-05-03T21:25:33.140702",
+      "actual_execution_time": 2.09,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 8,
+      "task_id": 33
+    },
+    {
+      "result_id": 27,
+      "completion_date": "2026-05-12T14:25:33.137719",
+      "actual_execution_time": 22.18,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 7,
+      "task_id": 36
+    },
+    {
+      "result_id": 28,
+      "completion_date": "2026-04-27T21:25:33.141021",
+      "actual_execution_time": 13.31,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 6,
+      "task_id": 37
+    },
+    {
+      "result_id": 29,
+      "completion_date": "2026-03-07T18:25:33.137764",
+      "actual_execution_time": 19.68,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 8,
+      "task_id": 39
+    },
+    {
+      "result_id": 30,
+      "completion_date": "2026-02-28T15:25:33.137780",
+      "actual_execution_time": 3.73,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 40
+    },
+    {
+      "result_id": 31,
+      "completion_date": "2026-05-26T19:25:33.137797",
+      "actual_execution_time": 16.33,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 9,
+      "task_id": 41
+    },
+    {
+      "result_id": 32,
+      "completion_date": "2026-07-23T16:25:33.137827",
+      "actual_execution_time": 7.4,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 9,
+      "task_id": 43
+    },
+    {
+      "result_id": 33,
+      "completion_date": "2026-03-10T19:25:33.137845",
+      "actual_execution_time": 20.92,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 44
+    },
+    {
+      "result_id": 34,
+      "completion_date": "2026-04-12T20:25:33.137878",
+      "actual_execution_time": 11.61,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 6,
+      "task_id": 46
+    },
+    {
+      "result_id": 35,
+      "completion_date": "2026-04-19T14:25:33.137896",
+      "actual_execution_time": 19.21,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 6,
+      "task_id": 47
+    },
+    {
+      "result_id": 36,
+      "completion_date": "2026-07-05T20:25:33.137927",
+      "actual_execution_time": 4.22,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 9,
+      "task_id": 49
+    },
+    {
+      "result_id": 37,
+      "completion_date": "2026-05-09T21:25:33.140605",
+      "actual_execution_time": 6.33,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 50
+    },
+    {
+      "result_id": 38,
+      "completion_date": "2026-05-01T21:25:33.140850",
+      "actual_execution_time": 17.78,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 10,
+      "task_id": 51
+    },
+    {
+      "result_id": 39,
+      "completion_date": "2026-02-26T18:25:33.137982",
+      "actual_execution_time": 17.95,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 8,
+      "task_id": 53
+    },
+    {
+      "result_id": 40,
+      "completion_date": "2026-02-26T13:25:33.137998",
+      "actual_execution_time": 18.01,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 54
+    },
+    {
+      "result_id": 41,
+      "completion_date": "2026-06-01T15:25:33.138017",
+      "actual_execution_time": 22.98,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 55
+    },
+    {
+      "result_id": 42,
+      "completion_date": "2026-06-26T16:25:33.138033",
+      "actual_execution_time": 15.71,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 8,
+      "task_id": 56
+    },
+    {
+      "result_id": 43,
+      "completion_date": "2026-07-24T19:25:33.138050",
+      "actual_execution_time": 20.81,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 9,
+      "task_id": 57
+    },
+    {
+      "result_id": 44,
+      "completion_date": "2026-05-05T21:25:33.141118",
+      "actual_execution_time": 2.4,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 8,
+      "task_id": 59
+    },
+    {
+      "result_id": 45,
+      "completion_date": "2026-07-28T18:25:33.138104",
+      "actual_execution_time": 20.72,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 8,
+      "task_id": 60
+    },
+    {
+      "result_id": 46,
+      "completion_date": "2026-08-09T16:25:33.138130",
+      "actual_execution_time": 11.04,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 9,
+      "task_id": 61
+    },
+    {
+      "result_id": 47,
+      "completion_date": "2026-07-29T19:25:33.138153",
+      "actual_execution_time": 9.45,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 62
+    },
+    {
+      "result_id": 48,
+      "completion_date": "2026-04-26T21:25:33.140873",
+      "actual_execution_time": 16.72,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 10,
+      "task_id": 63
+    },
+    {
+      "result_id": 49,
+      "completion_date": "2026-07-27T17:25:33.138207",
+      "actual_execution_time": 22.3,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 8,
+      "task_id": 64
+    },
+    {
+      "result_id": 50,
+      "completion_date": "2026-06-09T15:25:33.138235",
+      "actual_execution_time": 13.73,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 8,
+      "task_id": 65
+    },
+    {
+      "result_id": 51,
+      "completion_date": "2026-04-25T21:25:33.140930",
+      "actual_execution_time": 21.45,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 66
+    },
+    {
+      "result_id": 52,
+      "completion_date": "2026-02-23T19:25:33.138289",
+      "actual_execution_time": 22.7,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 67
+    },
+    {
+      "result_id": 53,
+      "completion_date": "2026-05-03T21:25:33.141142",
+      "actual_execution_time": 19.11,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 9,
+      "task_id": 68
+    },
+    {
+      "result_id": 54,
+      "completion_date": "2026-06-13T18:25:33.138436",
+      "actual_execution_time": 8.92,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 9,
+      "task_id": 73
+    },
+    {
+      "result_id": 55,
+      "completion_date": "2026-05-06T21:25:33.140662",
+      "actual_execution_time": 21.26,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 74
+    },
+    {
+      "result_id": 56,
+      "completion_date": "2026-07-26T18:25:33.138492",
+      "actual_execution_time": 10.69,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 9,
+      "task_id": 75
+    },
+    {
+      "result_id": 57,
+      "completion_date": "2026-05-02T21:25:33.140638",
+      "actual_execution_time": 8.81,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 10,
+      "task_id": 77
+    },
+    {
+      "result_id": 58,
+      "completion_date": "2026-04-21T15:25:33.138570",
+      "actual_execution_time": 17.51,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 10,
+      "task_id": 78
+    },
+    {
+      "result_id": 59,
+      "completion_date": "2026-05-30T13:25:33.138600",
+      "actual_execution_time": 15.01,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 6,
+      "task_id": 79
+    },
+    {
+      "result_id": 60,
+      "completion_date": "2026-05-04T21:25:33.140886",
+      "actual_execution_time": 17.96,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 9,
+      "task_id": 80
+    },
+    {
+      "result_id": 61,
+      "completion_date": "2026-03-10T20:25:33.138654",
+      "actual_execution_time": 17.03,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 81
+    },
+    {
+      "result_id": 62,
+      "completion_date": "2026-07-10T15:25:33.138724",
+      "actual_execution_time": 21.49,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 83
+    },
+    {
+      "result_id": 63,
+      "completion_date": "2026-06-04T17:25:33.138754",
+      "actual_execution_time": 17.9,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 8,
+      "task_id": 84
+    },
+    {
+      "result_id": 64,
+      "completion_date": "2026-07-26T18:25:33.138782",
+      "actual_execution_time": 5.08,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 6,
+      "task_id": 85
+    },
+    {
+      "result_id": 65,
+      "completion_date": "2026-02-28T15:25:33.138811",
+      "actual_execution_time": 4.18,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 8,
+      "task_id": 86
+    },
+    {
+      "result_id": 66,
+      "completion_date": "2026-06-22T20:25:33.138840",
+      "actual_execution_time": 9.43,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 9,
+      "task_id": 87
+    },
+    {
+      "result_id": 67,
+      "completion_date": "2026-08-09T13:25:33.138870",
+      "actual_execution_time": 8.5,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 88
+    },
+    {
+      "result_id": 68,
+      "completion_date": "2026-05-05T14:25:33.138899",
+      "actual_execution_time": 18.49,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 9,
+      "task_id": 89
+    },
+    {
+      "result_id": 69,
+      "completion_date": "2026-06-20T14:25:33.138930",
+      "actual_execution_time": 10.16,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 6,
+      "task_id": 90
+    },
+    {
+      "result_id": 70,
+      "completion_date": "2026-03-12T15:25:33.138961",
+      "actual_execution_time": 7.76,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 8,
+      "task_id": 91
+    },
+    {
+      "result_id": 71,
+      "completion_date": "2026-05-07T21:25:33.140748",
+      "actual_execution_time": 12.16,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 94
+    },
+    {
+      "result_id": 72,
+      "completion_date": "2026-02-26T15:25:33.139068",
+      "actual_execution_time": 12.05,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 95
+    },
+    {
+      "result_id": 73,
+      "completion_date": "2026-05-21T15:25:33.139099",
+      "actual_execution_time": 21.19,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 96
+    },
+    {
+      "result_id": 74,
+      "completion_date": "2026-04-24T18:25:33.139127",
+      "actual_execution_time": 21.02,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 7,
+      "task_id": 97
+    },
+    {
+      "result_id": 75,
+      "completion_date": "2026-06-26T20:25:33.139155",
+      "actual_execution_time": 8.9,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 6,
+      "task_id": 98
+    },
+    {
+      "result_id": 76,
+      "completion_date": "2026-04-12T13:25:33.139185",
+      "actual_execution_time": 10.88,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 99
+    },
+    {
+      "result_id": 77,
+      "completion_date": "2026-05-04T21:25:33.140568",
+      "actual_execution_time": 22.92,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 7,
+      "task_id": 101
+    },
+    {
+      "result_id": 78,
+      "completion_date": "2026-04-26T19:25:33.139265",
+      "actual_execution_time": 2.17,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 10,
+      "task_id": 102
+    },
+    {
+      "result_id": 79,
+      "completion_date": "2026-06-25T18:25:33.139321",
+      "actual_execution_time": 2.17,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 7,
+      "task_id": 104
+    },
+    {
+      "result_id": 80,
+      "completion_date": "2026-05-27T13:25:33.139351",
+      "actual_execution_time": 11.64,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 8,
+      "task_id": 105
+    },
+    {
+      "result_id": 81,
+      "completion_date": "2026-04-25T18:25:33.139380",
+      "actual_execution_time": 8.87,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 7,
+      "task_id": 106
+    },
+    {
+      "result_id": 82,
+      "completion_date": "2026-06-09T18:25:33.139436",
+      "actual_execution_time": 23.53,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 7,
+      "task_id": 108
+    },
+    {
+      "result_id": 83,
+      "completion_date": "2026-04-28T14:25:33.139464",
+      "actual_execution_time": 2.0,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 8,
+      "task_id": 109
+    },
+    {
+      "result_id": 84,
+      "completion_date": "2026-04-10T17:25:33.139496",
+      "actual_execution_time": 8.45,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 110
+    },
+    {
+      "result_id": 85,
+      "completion_date": "2026-03-22T15:25:33.139550",
+      "actual_execution_time": 21.65,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 112
+    },
+    {
+      "result_id": 86,
+      "completion_date": "2026-03-07T17:25:33.139579",
+      "actual_execution_time": 3.41,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 7,
+      "task_id": 113
+    },
+    {
+      "result_id": 87,
+      "completion_date": "2026-06-08T14:25:33.139608",
+      "actual_execution_time": 2.49,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 114
+    },
+    {
+      "result_id": 88,
+      "completion_date": "2026-07-15T17:25:33.139638",
+      "actual_execution_time": 4.7,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 115
+    },
+    {
+      "result_id": 89,
+      "completion_date": "2026-04-29T18:25:33.139667",
+      "actual_execution_time": 20.79,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 10,
+      "task_id": 116
+    },
+    {
+      "result_id": 90,
+      "completion_date": "2026-05-31T18:25:33.139721",
+      "actual_execution_time": 2.14,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 7,
+      "task_id": 118
+    },
+    {
+      "result_id": 91,
+      "completion_date": "2026-08-01T13:25:33.139751",
+      "actual_execution_time": 12.23,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 10,
+      "task_id": 119
+    },
+    {
+      "result_id": 92,
+      "completion_date": "2026-03-12T19:25:33.139804",
+      "actual_execution_time": 13.26,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 9,
+      "task_id": 121
+    },
+    {
+      "result_id": 93,
+      "completion_date": "2026-04-22T21:25:33.140918",
+      "actual_execution_time": 21.2,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 6,
+      "task_id": 124
+    },
+    {
+      "result_id": 94,
+      "completion_date": "2026-03-20T17:25:33.139903",
+      "actual_execution_time": 20.59,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 8,
+      "task_id": 125
+    },
+    {
+      "result_id": 95,
+      "completion_date": "2026-04-28T13:25:33.139920",
+      "actual_execution_time": 6.68,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 9,
+      "task_id": 126
+    },
+    {
+      "result_id": 96,
+      "completion_date": "2026-02-28T14:25:33.139937",
+      "actual_execution_time": 15.21,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 10,
+      "task_id": 127
+    },
+    {
+      "result_id": 97,
+      "completion_date": "2026-04-24T21:25:33.140995",
+      "actual_execution_time": 14.68,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 7,
+      "task_id": 128
+    },
+    {
+      "result_id": 98,
+      "completion_date": "2026-06-02T13:25:33.139970",
+      "actual_execution_time": 5.81,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 7,
+      "task_id": 129
+    },
+    {
+      "result_id": 99,
+      "completion_date": "2026-05-10T15:25:33.139989",
+      "actual_execution_time": 12.99,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 7,
+      "task_id": 130
+    },
+    {
+      "result_id": 100,
+      "completion_date": "2026-04-22T21:25:33.140953",
+      "actual_execution_time": 8.9,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 10,
+      "task_id": 131
+    },
+    {
+      "result_id": 101,
+      "completion_date": "2026-03-08T20:25:33.140020",
+      "actual_execution_time": 12.12,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 7,
+      "task_id": 132
+    },
+    {
+      "result_id": 102,
+      "completion_date": "2026-03-20T18:25:33.140037",
+      "actual_execution_time": 19.66,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 133
+    },
+    {
+      "result_id": 103,
+      "completion_date": "2026-06-05T18:25:33.140054",
+      "actual_execution_time": 12.38,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 6,
+      "task_id": 134
+    },
+    {
+      "result_id": 104,
+      "completion_date": "2026-03-23T16:25:33.140070",
+      "actual_execution_time": 21.58,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 6,
+      "task_id": 135
+    },
+    {
+      "result_id": 105,
+      "completion_date": "2026-05-31T20:25:33.140086",
+      "actual_execution_time": 6.47,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 9,
+      "task_id": 136
+    },
+    {
+      "result_id": 106,
+      "completion_date": "2026-07-16T15:25:33.140115",
+      "actual_execution_time": 2.78,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 138
+    },
+    {
+      "result_id": 107,
+      "completion_date": "2026-07-31T20:25:33.140131",
+      "actual_execution_time": 20.0,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 9,
+      "task_id": 139
+    },
+    {
+      "result_id": 108,
+      "completion_date": "2026-04-20T18:25:33.140147",
+      "actual_execution_time": 6.88,
+      "comment": "Результат відповідає вимогам",
+      "performance_rating": 6,
+      "task_id": 140
+    },
+    {
+      "result_id": 109,
+      "completion_date": "2026-03-14T18:25:33.140165",
+      "actual_execution_time": 14.49,
+      "comment": "Виявлено незначні зауваження",
+      "performance_rating": 9,
+      "task_id": 141
+    },
+    {
+      "result_id": 110,
+      "completion_date": "2026-05-18T14:25:33.140180",
+      "actual_execution_time": 9.61,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 7,
+      "task_id": 142
+    },
+    {
+      "result_id": 111,
+      "completion_date": "2026-05-08T21:25:33.141350",
+      "actual_execution_time": 6.35,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 10,
+      "task_id": 144
+    },
+    {
+      "result_id": 112,
+      "completion_date": "2026-05-09T21:25:33.140799",
+      "actual_execution_time": 19.14,
+      "comment": "Проведено додаткове тестування",
+      "performance_rating": 10,
+      "task_id": 145
+    },
+    {
+      "result_id": 113,
+      "completion_date": "2026-07-19T15:25:33.140290",
+      "actual_execution_time": 22.35,
+      "comment": "Задача завершена раніше терміну",
+      "performance_rating": 7,
+      "task_id": 148
+    },
+    {
+      "result_id": 114,
+      "completion_date": "2026-02-26T19:25:33.140306",
+      "actual_execution_time": 7.67,
+      "comment": "Потрібна додаткова оптимізація",
+      "performance_rating": 7,
+      "task_id": 149
+    },
+    {
+      "result_id": 115,
+      "completion_date": "2026-07-20T13:25:33.140326",
+      "actual_execution_time": 14.86,
+      "comment": "Роботу виконано успішно",
+      "performance_rating": 8,
+      "task_id": 150
     }
   ],
   "performance_reports": [
     {
       "report_id": 1,
-      "period_start_date": "2024-03-01",
-      "period_end_date": "2024-03-31",
-      "avg_task_completion_time": 7.25,
-      "total_work_time": 132.5,
-      "completed_task_count": 12,
-      "efficiency_level": 8.5,
-      "report_created_at": "2024-04-01T09:30:00",
+      "period_start_date": "2025-09-06",
+      "period_end_date": "2025-10-06",
+      "avg_task_completion_time": 8.62,
+      "total_work_time": 127.05,
+      "completed_task_count": 17,
+      "efficiency_level": 6.3,
+      "report_created_at": "2025-10-06T00:00:00",
       "ai_report_id": 1,
-      "employee_id": 3
+      "employee_id": 11
     },
     {
       "report_id": 2,
-      "period_start_date": "2024-02-01",
-      "period_end_date": "2024-02-29",
-      "avg_task_completion_time": 8.1,
-      "total_work_time": 118.75,
-      "completed_task_count": 10,
-      "efficiency_level": 7.9,
-      "report_created_at": "2024-03-01T10:00:00",
+      "period_start_date": "2025-07-03",
+      "period_end_date": "2025-08-02",
+      "avg_task_completion_time": 5.9,
+      "total_work_time": 187.72,
+      "completed_task_count": 11,
+      "efficiency_level": 8.8,
+      "report_created_at": "2025-08-02T00:00:00",
       "ai_report_id": 2,
-      "employee_id": 3
+      "employee_id": 11
     },
     {
       "report_id": 3,
-      "period_start_date": "2024-04-01",
-      "period_end_date": "2024-04-30",
-      "avg_task_completion_time": 6.85,
-      "total_work_time": 164.2,
-      "completed_task_count": 18,
-      "efficiency_level": 9.1,
-      "report_created_at": "2024-05-01T09:10:00",
+      "period_start_date": "2025-11-21",
+      "period_end_date": "2025-12-21",
+      "avg_task_completion_time": 8.6,
+      "total_work_time": 202.37,
+      "completed_task_count": 27,
+      "efficiency_level": 9.6,
+      "report_created_at": "2025-12-21T00:00:00",
       "ai_report_id": 3,
-      "employee_id": 4
+      "employee_id": 14
     },
     {
       "report_id": 4,
-      "period_start_date": "2024-04-01",
-      "period_end_date": "2024-04-30",
-      "avg_task_completion_time": 7.4,
-      "total_work_time": 171.8,
-      "completed_task_count": 16,
-      "efficiency_level": 8.7,
-      "report_created_at": "2024-05-01T09:20:00",
+      "period_start_date": "2025-09-11",
+      "period_end_date": "2025-10-11",
+      "avg_task_completion_time": 9.79,
+      "total_work_time": 146.86,
+      "completed_task_count": 10,
+      "efficiency_level": 7.7,
+      "report_created_at": "2025-10-11T00:00:00",
       "ai_report_id": 4,
-      "employee_id": 5
+      "employee_id": 11
     },
     {
       "report_id": 5,
-      "period_start_date": "2024-04-01",
-      "period_end_date": "2024-04-30",
-      "avg_task_completion_time": 5.95,
-      "total_work_time": 149.5,
+      "period_start_date": "2025-10-25",
+      "period_end_date": "2025-11-24",
+      "avg_task_completion_time": 4.5,
+      "total_work_time": 143.42,
       "completed_task_count": 14,
-      "efficiency_level": 9.3,
-      "report_created_at": "2024-05-01T09:35:00",
+      "efficiency_level": 6.4,
+      "report_created_at": "2025-11-24T00:00:00",
       "ai_report_id": 5,
-      "employee_id": 6
+      "employee_id": 17
     },
     {
       "report_id": 6,
-      "period_start_date": "2024-04-01",
-      "period_end_date": "2024-04-30",
-      "avg_task_completion_time": 7.95,
-      "total_work_time": 156.6,
+      "period_start_date": "2026-02-25",
+      "period_end_date": "2026-03-27",
+      "avg_task_completion_time": 5.09,
+      "total_work_time": 105.78,
       "completed_task_count": 13,
-      "efficiency_level": 8.2,
-      "report_created_at": "2024-05-01T09:50:00",
+      "efficiency_level": 8.5,
+      "report_created_at": "2026-03-27T00:00:00",
       "ai_report_id": 6,
+      "employee_id": 5
+    },
+    {
+      "report_id": 7,
+      "period_start_date": "2026-03-31",
+      "period_end_date": "2026-04-30",
+      "avg_task_completion_time": 9.27,
+      "total_work_time": 94.58,
+      "completed_task_count": 9,
+      "efficiency_level": 9.5,
+      "report_created_at": "2026-04-30T00:00:00",
+      "ai_report_id": 7,
+      "employee_id": 3
+    },
+    {
+      "report_id": 8,
+      "period_start_date": "2025-12-05",
+      "period_end_date": "2026-01-04",
+      "avg_task_completion_time": 6.88,
+      "total_work_time": 204.34,
+      "completed_task_count": 21,
+      "efficiency_level": 9.6,
+      "report_created_at": "2026-01-04T00:00:00",
+      "ai_report_id": 8,
+      "employee_id": 20
+    },
+    {
+      "report_id": 9,
+      "period_start_date": "2025-07-04",
+      "period_end_date": "2025-08-03",
+      "avg_task_completion_time": 8.91,
+      "total_work_time": 198.59,
+      "completed_task_count": 20,
+      "efficiency_level": 7.2,
+      "report_created_at": "2025-08-03T00:00:00",
+      "ai_report_id": 9,
       "employee_id": 7
+    },
+    {
+      "report_id": 10,
+      "period_start_date": "2026-02-01",
+      "period_end_date": "2026-03-03",
+      "avg_task_completion_time": 8.29,
+      "total_work_time": 120.9,
+      "completed_task_count": 13,
+      "efficiency_level": 6.5,
+      "report_created_at": "2026-03-03T00:00:00",
+      "ai_report_id": 10,
+      "employee_id": 25
+    },
+    {
+      "report_id": 11,
+      "period_start_date": "2025-06-16",
+      "period_end_date": "2025-07-16",
+      "avg_task_completion_time": 7.0,
+      "total_work_time": 160.95,
+      "completed_task_count": 26,
+      "efficiency_level": 6.2,
+      "report_created_at": "2025-07-16T00:00:00",
+      "ai_report_id": 11,
+      "employee_id": 4
+    },
+    {
+      "report_id": 12,
+      "period_start_date": "2025-06-12",
+      "period_end_date": "2025-07-12",
+      "avg_task_completion_time": 5.79,
+      "total_work_time": 144.95,
+      "completed_task_count": 30,
+      "efficiency_level": 6.2,
+      "report_created_at": "2025-07-12T00:00:00",
+      "ai_report_id": 12,
+      "employee_id": 25
+    },
+    {
+      "report_id": 13,
+      "period_start_date": "2026-03-18",
+      "period_end_date": "2026-04-17",
+      "avg_task_completion_time": 5.85,
+      "total_work_time": 133.12,
+      "completed_task_count": 25,
+      "efficiency_level": 8.4,
+      "report_created_at": "2026-04-17T00:00:00",
+      "ai_report_id": 13,
+      "employee_id": 11
+    },
+    {
+      "report_id": 14,
+      "period_start_date": "2025-06-28",
+      "period_end_date": "2025-07-28",
+      "avg_task_completion_time": 7.42,
+      "total_work_time": 120.58,
+      "completed_task_count": 5,
+      "efficiency_level": 9.6,
+      "report_created_at": "2025-07-28T00:00:00",
+      "ai_report_id": 14,
+      "employee_id": 18
+    },
+    {
+      "report_id": 15,
+      "period_start_date": "2026-04-13",
+      "period_end_date": "2026-05-13",
+      "avg_task_completion_time": 5.55,
+      "total_work_time": 127.99,
+      "completed_task_count": 22,
+      "efficiency_level": 7.1,
+      "report_created_at": "2026-05-13T00:00:00",
+      "ai_report_id": 15,
+      "employee_id": 12
+    },
+    {
+      "report_id": 16,
+      "period_start_date": "2026-01-29",
+      "period_end_date": "2026-02-28",
+      "avg_task_completion_time": 6.85,
+      "total_work_time": 127.45,
+      "completed_task_count": 24,
+      "efficiency_level": 7.8,
+      "report_created_at": "2026-02-28T00:00:00",
+      "ai_report_id": 16,
+      "employee_id": 17
+    },
+    {
+      "report_id": 17,
+      "period_start_date": "2026-04-04",
+      "period_end_date": "2026-05-04",
+      "avg_task_completion_time": 4.55,
+      "total_work_time": 189.38,
+      "completed_task_count": 14,
+      "efficiency_level": 6.2,
+      "report_created_at": "2026-05-04T00:00:00",
+      "ai_report_id": 17,
+      "employee_id": 22
+    },
+    {
+      "report_id": 18,
+      "period_start_date": "2026-03-14",
+      "period_end_date": "2026-04-13",
+      "avg_task_completion_time": 10.41,
+      "total_work_time": 138.95,
+      "completed_task_count": 15,
+      "efficiency_level": 7.3,
+      "report_created_at": "2026-04-13T00:00:00",
+      "ai_report_id": 18,
+      "employee_id": 5
+    },
+    {
+      "report_id": 19,
+      "period_start_date": "2025-09-07",
+      "period_end_date": "2025-10-07",
+      "avg_task_completion_time": 10.21,
+      "total_work_time": 103.9,
+      "completed_task_count": 15,
+      "efficiency_level": 7.2,
+      "report_created_at": "2025-10-07T00:00:00",
+      "ai_report_id": 19,
+      "employee_id": 14
+    },
+    {
+      "report_id": 20,
+      "period_start_date": "2025-05-15",
+      "period_end_date": "2025-06-14",
+      "avg_task_completion_time": 7.6,
+      "total_work_time": 115.67,
+      "completed_task_count": 22,
+      "efficiency_level": 8.1,
+      "report_created_at": "2025-06-14T00:00:00",
+      "ai_report_id": 20,
+      "employee_id": 21
+    },
+    {
+      "report_id": 21,
+      "period_start_date": "2025-11-29",
+      "period_end_date": "2025-12-29",
+      "avg_task_completion_time": 8.13,
+      "total_work_time": 130.01,
+      "completed_task_count": 16,
+      "efficiency_level": 8.9,
+      "report_created_at": "2025-12-29T00:00:00",
+      "ai_report_id": 21,
+      "employee_id": 24
+    },
+    {
+      "report_id": 22,
+      "period_start_date": "2026-02-07",
+      "period_end_date": "2026-03-09",
+      "avg_task_completion_time": 8.25,
+      "total_work_time": 87.38,
+      "completed_task_count": 29,
+      "efficiency_level": 9.8,
+      "report_created_at": "2026-03-09T00:00:00",
+      "ai_report_id": 22,
+      "employee_id": 22
+    },
+    {
+      "report_id": 23,
+      "period_start_date": "2025-10-04",
+      "period_end_date": "2025-11-03",
+      "avg_task_completion_time": 4.14,
+      "total_work_time": 192.09,
+      "completed_task_count": 19,
+      "efficiency_level": 6.2,
+      "report_created_at": "2025-11-03T00:00:00",
+      "ai_report_id": 23,
+      "employee_id": 21
+    },
+    {
+      "report_id": 24,
+      "period_start_date": "2025-09-26",
+      "period_end_date": "2025-10-26",
+      "avg_task_completion_time": 4.24,
+      "total_work_time": 195.59,
+      "completed_task_count": 11,
+      "efficiency_level": 6.9,
+      "report_created_at": "2025-10-26T00:00:00",
+      "ai_report_id": 24,
+      "employee_id": 15
+    },
+    {
+      "report_id": 25,
+      "period_start_date": "2026-04-02",
+      "period_end_date": "2026-05-02",
+      "avg_task_completion_time": 5.28,
+      "total_work_time": 193.22,
+      "completed_task_count": 28,
+      "efficiency_level": 6.9,
+      "report_created_at": "2026-05-02T00:00:00",
+      "ai_report_id": 25,
+      "employee_id": 17
+    },
+    {
+      "report_id": 26,
+      "period_start_date": "2026-03-12",
+      "period_end_date": "2026-04-11",
+      "avg_task_completion_time": 4.33,
+      "total_work_time": 164.3,
+      "completed_task_count": 21,
+      "efficiency_level": 9.1,
+      "report_created_at": "2026-04-11T00:00:00",
+      "ai_report_id": 26,
+      "employee_id": 6
+    },
+    {
+      "report_id": 27,
+      "period_start_date": "2025-07-08",
+      "period_end_date": "2025-08-07",
+      "avg_task_completion_time": 9.37,
+      "total_work_time": 135.17,
+      "completed_task_count": 23,
+      "efficiency_level": 6.9,
+      "report_created_at": "2025-08-07T00:00:00",
+      "ai_report_id": 27,
+      "employee_id": 7
+    },
+    {
+      "report_id": 28,
+      "period_start_date": "2025-10-09",
+      "period_end_date": "2025-11-08",
+      "avg_task_completion_time": 7.97,
+      "total_work_time": 197.99,
+      "completed_task_count": 7,
+      "efficiency_level": 7.9,
+      "report_created_at": "2025-11-08T00:00:00",
+      "ai_report_id": 28,
+      "employee_id": 12
+    },
+    {
+      "report_id": 29,
+      "period_start_date": "2025-06-07",
+      "period_end_date": "2025-07-07",
+      "avg_task_completion_time": 10.74,
+      "total_work_time": 215.24,
+      "completed_task_count": 27,
+      "efficiency_level": 8.7,
+      "report_created_at": "2025-07-07T00:00:00",
+      "ai_report_id": 29,
+      "employee_id": 22
+    },
+    {
+      "report_id": 30,
+      "period_start_date": "2026-04-02",
+      "period_end_date": "2026-05-02",
+      "avg_task_completion_time": 8.51,
+      "total_work_time": 133.41,
+      "completed_task_count": 18,
+      "efficiency_level": 7.4,
+      "report_created_at": "2026-05-02T00:00:00",
+      "ai_report_id": 30,
+      "employee_id": 20
+    },
+    {
+      "report_id": 31,
+      "period_start_date": "2025-10-21",
+      "period_end_date": "2025-11-20",
+      "avg_task_completion_time": 4.3,
+      "total_work_time": 178.34,
+      "completed_task_count": 25,
+      "efficiency_level": 9.4,
+      "report_created_at": "2025-11-20T00:00:00",
+      "ai_report_id": 31,
+      "employee_id": 9
+    },
+    {
+      "report_id": 32,
+      "period_start_date": "2025-08-07",
+      "period_end_date": "2025-09-06",
+      "avg_task_completion_time": 8.5,
+      "total_work_time": 208.77,
+      "completed_task_count": 20,
+      "efficiency_level": 7.0,
+      "report_created_at": "2025-09-06T00:00:00",
+      "ai_report_id": 32,
+      "employee_id": 16
+    },
+    {
+      "report_id": 33,
+      "period_start_date": "2026-04-06",
+      "period_end_date": "2026-05-06",
+      "avg_task_completion_time": 9.52,
+      "total_work_time": 191.33,
+      "completed_task_count": 15,
+      "efficiency_level": 8.7,
+      "report_created_at": "2026-05-06T00:00:00",
+      "ai_report_id": 33,
+      "employee_id": 24
+    },
+    {
+      "report_id": 34,
+      "period_start_date": "2026-02-22",
+      "period_end_date": "2026-03-24",
+      "avg_task_completion_time": 4.15,
+      "total_work_time": 130.89,
+      "completed_task_count": 19,
+      "efficiency_level": 7.0,
+      "report_created_at": "2026-03-24T00:00:00",
+      "ai_report_id": 34,
+      "employee_id": 12
+    },
+    {
+      "report_id": 35,
+      "period_start_date": "2025-10-03",
+      "period_end_date": "2025-11-02",
+      "avg_task_completion_time": 10.75,
+      "total_work_time": 84.33,
+      "completed_task_count": 27,
+      "efficiency_level": 6.1,
+      "report_created_at": "2025-11-02T00:00:00",
+      "ai_report_id": 35,
+      "employee_id": 6
+    },
+    {
+      "report_id": 36,
+      "period_start_date": "2025-12-05",
+      "period_end_date": "2026-01-04",
+      "avg_task_completion_time": 11.76,
+      "total_work_time": 142.16,
+      "completed_task_count": 20,
+      "efficiency_level": 8.9,
+      "report_created_at": "2026-01-04T00:00:00",
+      "ai_report_id": 36,
+      "employee_id": 15
+    },
+    {
+      "report_id": 37,
+      "period_start_date": "2025-08-26",
+      "period_end_date": "2025-09-25",
+      "avg_task_completion_time": 9.07,
+      "total_work_time": 215.97,
+      "completed_task_count": 10,
+      "efficiency_level": 7.6,
+      "report_created_at": "2025-09-25T00:00:00",
+      "ai_report_id": 37,
+      "employee_id": 25
+    },
+    {
+      "report_id": 38,
+      "period_start_date": "2025-11-20",
+      "period_end_date": "2025-12-20",
+      "avg_task_completion_time": 7.15,
+      "total_work_time": 203.9,
+      "completed_task_count": 16,
+      "efficiency_level": 8.8,
+      "report_created_at": "2025-12-20T00:00:00",
+      "ai_report_id": 38,
+      "employee_id": 16
+    },
+    {
+      "report_id": 39,
+      "period_start_date": "2026-04-20",
+      "period_end_date": "2026-05-20",
+      "avg_task_completion_time": 8.27,
+      "total_work_time": 130.76,
+      "completed_task_count": 15,
+      "efficiency_level": 7.5,
+      "report_created_at": "2026-05-20T00:00:00",
+      "ai_report_id": 39,
+      "employee_id": 20
+    },
+    {
+      "report_id": 40,
+      "period_start_date": "2025-10-01",
+      "period_end_date": "2025-10-31",
+      "avg_task_completion_time": 6.35,
+      "total_work_time": 153.86,
+      "completed_task_count": 15,
+      "efficiency_level": 8.1,
+      "report_created_at": "2025-10-31T00:00:00",
+      "ai_report_id": 40,
+      "employee_id": 17
+    },
+    {
+      "report_id": 41,
+      "period_start_date": "2026-03-17",
+      "period_end_date": "2026-04-16",
+      "avg_task_completion_time": 6.2,
+      "total_work_time": 186.37,
+      "completed_task_count": 17,
+      "efficiency_level": 8.9,
+      "report_created_at": "2026-04-16T00:00:00",
+      "ai_report_id": 41,
+      "employee_id": 25
+    },
+    {
+      "report_id": 42,
+      "period_start_date": "2025-09-17",
+      "period_end_date": "2025-10-17",
+      "avg_task_completion_time": 8.51,
+      "total_work_time": 163.25,
+      "completed_task_count": 5,
+      "efficiency_level": 8.9,
+      "report_created_at": "2025-10-17T00:00:00",
+      "ai_report_id": 42,
+      "employee_id": 6
+    },
+    {
+      "report_id": 43,
+      "period_start_date": "2025-06-11",
+      "period_end_date": "2025-07-11",
+      "avg_task_completion_time": 11.46,
+      "total_work_time": 194.96,
+      "completed_task_count": 8,
+      "efficiency_level": 9.0,
+      "report_created_at": "2025-07-11T00:00:00",
+      "ai_report_id": 43,
+      "employee_id": 16
+    },
+    {
+      "report_id": 44,
+      "period_start_date": "2025-11-23",
+      "period_end_date": "2025-12-23",
+      "avg_task_completion_time": 9.67,
+      "total_work_time": 219.71,
+      "completed_task_count": 7,
+      "efficiency_level": 7.2,
+      "report_created_at": "2025-12-23T00:00:00",
+      "ai_report_id": 44,
+      "employee_id": 25
+    },
+    {
+      "report_id": 45,
+      "period_start_date": "2026-03-23",
+      "period_end_date": "2026-04-22",
+      "avg_task_completion_time": 8.59,
+      "total_work_time": 116.67,
+      "completed_task_count": 10,
+      "efficiency_level": 9.0,
+      "report_created_at": "2026-04-22T00:00:00",
+      "ai_report_id": 45,
+      "employee_id": 9
+    },
+    {
+      "report_id": 46,
+      "period_start_date": "2025-10-09",
+      "period_end_date": "2025-11-08",
+      "avg_task_completion_time": 10.65,
+      "total_work_time": 80.63,
+      "completed_task_count": 13,
+      "efficiency_level": 9.8,
+      "report_created_at": "2025-11-08T00:00:00",
+      "ai_report_id": 46,
+      "employee_id": 18
+    },
+    {
+      "report_id": 47,
+      "period_start_date": "2026-04-19",
+      "period_end_date": "2026-05-19",
+      "avg_task_completion_time": 10.08,
+      "total_work_time": 129.59,
+      "completed_task_count": 18,
+      "efficiency_level": 8.9,
+      "report_created_at": "2026-05-19T00:00:00",
+      "ai_report_id": 47,
+      "employee_id": 2
+    },
+    {
+      "report_id": 48,
+      "period_start_date": "2026-04-24",
+      "period_end_date": "2026-05-24",
+      "avg_task_completion_time": 9.92,
+      "total_work_time": 165.39,
+      "completed_task_count": 26,
+      "efficiency_level": 6.3,
+      "report_created_at": "2026-05-24T00:00:00",
+      "ai_report_id": 48,
+      "employee_id": 20
+    },
+    {
+      "report_id": 49,
+      "period_start_date": "2026-03-16",
+      "period_end_date": "2026-04-15",
+      "avg_task_completion_time": 11.73,
+      "total_work_time": 118.16,
+      "completed_task_count": 25,
+      "efficiency_level": 6.5,
+      "report_created_at": "2026-04-15T00:00:00",
+      "ai_report_id": 49,
+      "employee_id": 7
+    },
+    {
+      "report_id": 50,
+      "period_start_date": "2025-09-29",
+      "period_end_date": "2025-10-29",
+      "avg_task_completion_time": 11.98,
+      "total_work_time": 146.5,
+      "completed_task_count": 27,
+      "efficiency_level": 7.4,
+      "report_created_at": "2025-10-29T00:00:00",
+      "ai_report_id": 50,
+      "employee_id": 1
+    },
+    {
+      "report_id": 51,
+      "period_start_date": "2025-06-26",
+      "period_end_date": "2025-07-26",
+      "avg_task_completion_time": 10.99,
+      "total_work_time": 146.22,
+      "completed_task_count": 15,
+      "efficiency_level": 7.9,
+      "report_created_at": "2025-07-26T00:00:00",
+      "ai_report_id": 51,
+      "employee_id": 4
+    },
+    {
+      "report_id": 52,
+      "period_start_date": "2026-01-15",
+      "period_end_date": "2026-02-14",
+      "avg_task_completion_time": 8.67,
+      "total_work_time": 163.7,
+      "completed_task_count": 25,
+      "efficiency_level": 7.3,
+      "report_created_at": "2026-02-14T00:00:00",
+      "ai_report_id": 52,
+      "employee_id": 8
+    },
+    {
+      "report_id": 53,
+      "period_start_date": "2025-06-05",
+      "period_end_date": "2025-07-05",
+      "avg_task_completion_time": 6.63,
+      "total_work_time": 169.49,
+      "completed_task_count": 14,
+      "efficiency_level": 8.3,
+      "report_created_at": "2025-07-05T00:00:00",
+      "ai_report_id": 53,
+      "employee_id": 14
+    },
+    {
+      "report_id": 54,
+      "period_start_date": "2026-02-15",
+      "period_end_date": "2026-03-17",
+      "avg_task_completion_time": 7.28,
+      "total_work_time": 183.38,
+      "completed_task_count": 13,
+      "efficiency_level": 8.6,
+      "report_created_at": "2026-03-17T00:00:00",
+      "ai_report_id": 54,
+      "employee_id": 4
+    },
+    {
+      "report_id": 55,
+      "period_start_date": "2025-11-16",
+      "period_end_date": "2025-12-16",
+      "avg_task_completion_time": 6.98,
+      "total_work_time": 215.48,
+      "completed_task_count": 13,
+      "efficiency_level": 8.3,
+      "report_created_at": "2025-12-16T00:00:00",
+      "ai_report_id": 55,
+      "employee_id": 10
+    },
+    {
+      "report_id": 56,
+      "period_start_date": "2025-10-25",
+      "period_end_date": "2025-11-24",
+      "avg_task_completion_time": 5.81,
+      "total_work_time": 91.99,
+      "completed_task_count": 20,
+      "efficiency_level": 8.7,
+      "report_created_at": "2025-11-24T00:00:00",
+      "ai_report_id": 56,
+      "employee_id": 10
+    },
+    {
+      "report_id": 57,
+      "period_start_date": "2025-10-06",
+      "period_end_date": "2025-11-05",
+      "avg_task_completion_time": 5.16,
+      "total_work_time": 87.89,
+      "completed_task_count": 17,
+      "efficiency_level": 6.3,
+      "report_created_at": "2025-11-05T00:00:00",
+      "ai_report_id": 57,
+      "employee_id": 4
+    },
+    {
+      "report_id": 58,
+      "period_start_date": "2025-08-07",
+      "period_end_date": "2025-09-06",
+      "avg_task_completion_time": 9.15,
+      "total_work_time": 184.46,
+      "completed_task_count": 12,
+      "efficiency_level": 9.8,
+      "report_created_at": "2025-09-06T00:00:00",
+      "ai_report_id": 58,
+      "employee_id": 13
+    },
+    {
+      "report_id": 59,
+      "period_start_date": "2025-06-24",
+      "period_end_date": "2025-07-24",
+      "avg_task_completion_time": 4.59,
+      "total_work_time": 106.64,
+      "completed_task_count": 23,
+      "efficiency_level": 7.1,
+      "report_created_at": "2025-07-24T00:00:00",
+      "ai_report_id": 59,
+      "employee_id": 13
+    },
+    {
+      "report_id": 60,
+      "period_start_date": "2025-11-04",
+      "period_end_date": "2025-12-04",
+      "avg_task_completion_time": 4.56,
+      "total_work_time": 108.33,
+      "completed_task_count": 29,
+      "efficiency_level": 7.8,
+      "report_created_at": "2025-12-04T00:00:00",
+      "ai_report_id": 60,
+      "employee_id": 19
+    },
+    {
+      "report_id": 61,
+      "period_start_date": "2025-10-12",
+      "period_end_date": "2025-11-11",
+      "avg_task_completion_time": 9.98,
+      "total_work_time": 183.38,
+      "completed_task_count": 12,
+      "efficiency_level": 7.7,
+      "report_created_at": "2025-11-11T00:00:00",
+      "ai_report_id": 61,
+      "employee_id": 25
+    },
+    {
+      "report_id": 62,
+      "period_start_date": "2025-10-28",
+      "period_end_date": "2025-11-27",
+      "avg_task_completion_time": 10.19,
+      "total_work_time": 130.87,
+      "completed_task_count": 20,
+      "efficiency_level": 6.3,
+      "report_created_at": "2025-11-27T00:00:00",
+      "ai_report_id": 62,
+      "employee_id": 13
+    },
+    {
+      "report_id": 63,
+      "period_start_date": "2026-03-28",
+      "period_end_date": "2026-04-27",
+      "avg_task_completion_time": 7.84,
+      "total_work_time": 110.74,
+      "completed_task_count": 27,
+      "efficiency_level": 7.7,
+      "report_created_at": "2026-04-27T00:00:00",
+      "ai_report_id": 63,
+      "employee_id": 17
+    },
+    {
+      "report_id": 64,
+      "period_start_date": "2025-07-21",
+      "period_end_date": "2025-08-20",
+      "avg_task_completion_time": 7.75,
+      "total_work_time": 149.43,
+      "completed_task_count": 5,
+      "efficiency_level": 7.8,
+      "report_created_at": "2025-08-20T00:00:00",
+      "ai_report_id": 64,
+      "employee_id": 20
+    },
+    {
+      "report_id": 65,
+      "period_start_date": "2025-07-02",
+      "period_end_date": "2025-08-01",
+      "avg_task_completion_time": 8.11,
+      "total_work_time": 148.32,
+      "completed_task_count": 23,
+      "efficiency_level": 6.4,
+      "report_created_at": "2025-08-01T00:00:00",
+      "ai_report_id": 65,
+      "employee_id": 13
+    },
+    {
+      "report_id": 66,
+      "period_start_date": "2026-03-15",
+      "period_end_date": "2026-04-14",
+      "avg_task_completion_time": 4.56,
+      "total_work_time": 162.92,
+      "completed_task_count": 6,
+      "efficiency_level": 6.2,
+      "report_created_at": "2026-04-14T00:00:00",
+      "ai_report_id": 66,
+      "employee_id": 22
+    },
+    {
+      "report_id": 67,
+      "period_start_date": "2025-06-30",
+      "period_end_date": "2025-07-30",
+      "avg_task_completion_time": 9.52,
+      "total_work_time": 123.25,
+      "completed_task_count": 11,
+      "efficiency_level": 8.1,
+      "report_created_at": "2025-07-30T00:00:00",
+      "ai_report_id": 67,
+      "employee_id": 4
+    },
+    {
+      "report_id": 68,
+      "period_start_date": "2025-10-12",
+      "period_end_date": "2025-11-11",
+      "avg_task_completion_time": 5.17,
+      "total_work_time": 208.68,
+      "completed_task_count": 6,
+      "efficiency_level": 8.8,
+      "report_created_at": "2025-11-11T00:00:00",
+      "ai_report_id": 68,
+      "employee_id": 25
+    },
+    {
+      "report_id": 69,
+      "period_start_date": "2026-01-26",
+      "period_end_date": "2026-02-25",
+      "avg_task_completion_time": 5.63,
+      "total_work_time": 144.81,
+      "completed_task_count": 7,
+      "efficiency_level": 7.8,
+      "report_created_at": "2026-02-25T00:00:00",
+      "ai_report_id": 69,
+      "employee_id": 4
+    },
+    {
+      "report_id": 70,
+      "period_start_date": "2025-12-23",
+      "period_end_date": "2026-01-22",
+      "avg_task_completion_time": 10.54,
+      "total_work_time": 209.5,
+      "completed_task_count": 19,
+      "efficiency_level": 9.5,
+      "report_created_at": "2026-01-22T00:00:00",
+      "ai_report_id": 70,
+      "employee_id": 3
+    },
+    {
+      "report_id": 71,
+      "period_start_date": "2025-12-23",
+      "period_end_date": "2026-01-22",
+      "avg_task_completion_time": 4.6,
+      "total_work_time": 205.96,
+      "completed_task_count": 6,
+      "efficiency_level": 8.9,
+      "report_created_at": "2026-01-22T00:00:00",
+      "ai_report_id": 71,
+      "employee_id": 24
+    },
+    {
+      "report_id": 72,
+      "period_start_date": "2025-11-27",
+      "period_end_date": "2025-12-27",
+      "avg_task_completion_time": 5.36,
+      "total_work_time": 80.74,
+      "completed_task_count": 8,
+      "efficiency_level": 6.7,
+      "report_created_at": "2025-12-27T00:00:00",
+      "ai_report_id": 72,
+      "employee_id": 3
+    },
+    {
+      "report_id": 73,
+      "period_start_date": "2025-06-21",
+      "period_end_date": "2025-07-21",
+      "avg_task_completion_time": 6.35,
+      "total_work_time": 218.61,
+      "completed_task_count": 7,
+      "efficiency_level": 6.4,
+      "report_created_at": "2025-07-21T00:00:00",
+      "ai_report_id": 73,
+      "employee_id": 22
+    },
+    {
+      "report_id": 74,
+      "period_start_date": "2026-04-18",
+      "period_end_date": "2026-05-18",
+      "avg_task_completion_time": 8.82,
+      "total_work_time": 186.32,
+      "completed_task_count": 17,
+      "efficiency_level": 7.8,
+      "report_created_at": "2026-05-18T00:00:00",
+      "ai_report_id": 74,
+      "employee_id": 14
+    },
+    {
+      "report_id": 75,
+      "period_start_date": "2025-08-27",
+      "period_end_date": "2025-09-26",
+      "avg_task_completion_time": 11.92,
+      "total_work_time": 107.87,
+      "completed_task_count": 7,
+      "efficiency_level": 7.2,
+      "report_created_at": "2025-09-26T00:00:00",
+      "ai_report_id": 75,
+      "employee_id": 8
+    },
+    {
+      "report_id": 76,
+      "period_start_date": "2025-07-12",
+      "period_end_date": "2025-08-11",
+      "avg_task_completion_time": 8.89,
+      "total_work_time": 119.8,
+      "completed_task_count": 9,
+      "efficiency_level": 8.5,
+      "report_created_at": "2025-08-11T00:00:00",
+      "ai_report_id": 76,
+      "employee_id": 2
+    },
+    {
+      "report_id": 77,
+      "period_start_date": "2026-04-10",
+      "period_end_date": "2026-05-10",
+      "avg_task_completion_time": 7.38,
+      "total_work_time": 176.86,
+      "completed_task_count": 18,
+      "efficiency_level": 9.2,
+      "report_created_at": "2026-05-10T00:00:00",
+      "ai_report_id": 77,
+      "employee_id": 5
+    },
+    {
+      "report_id": 78,
+      "period_start_date": "2026-04-24",
+      "period_end_date": "2026-05-24",
+      "avg_task_completion_time": 7.48,
+      "total_work_time": 132.06,
+      "completed_task_count": 24,
+      "efficiency_level": 7.3,
+      "report_created_at": "2026-05-24T00:00:00",
+      "ai_report_id": 78,
+      "employee_id": 7
+    },
+    {
+      "report_id": 79,
+      "period_start_date": "2025-05-11",
+      "period_end_date": "2025-06-10",
+      "avg_task_completion_time": 10.17,
+      "total_work_time": 105.87,
+      "completed_task_count": 29,
+      "efficiency_level": 7.0,
+      "report_created_at": "2025-06-10T00:00:00",
+      "ai_report_id": 79,
+      "employee_id": 25
+    },
+    {
+      "report_id": 80,
+      "period_start_date": "2025-07-11",
+      "period_end_date": "2025-08-10",
+      "avg_task_completion_time": 6.51,
+      "total_work_time": 126.71,
+      "completed_task_count": 17,
+      "efficiency_level": 9.4,
+      "report_created_at": "2025-08-10T00:00:00",
+      "ai_report_id": 80,
+      "employee_id": 22
     }
   ],
   "ai_performance_reports": [
     {
       "ai_report_id": 1,
-      "productivity_score": 8.8,
-      "efficiency_forecast": 8.7,
-      "recommendations": "Збільшити частоту профілактичних перевірок обладнання"
+      "productivity_score": 8.4,
+      "efficiency_forecast": 8.0,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
     },
     {
       "ai_report_id": 2,
-      "productivity_score": 7.5,
-      "efficiency_forecast": 7.8,
-      "recommendations": "Оптимізувати розподіл задач між відділами"
+      "productivity_score": 6.5,
+      "efficiency_forecast": 8.8,
+      "recommendations": "Збільшити кількість code review"
     },
     {
       "ai_report_id": 3,
-      "productivity_score": 9.2,
-      "efficiency_forecast": 9.0,
-      "recommendations": "Підтримувати темп ведення design system та масштабувати UI-компоненти"
+      "productivity_score": 9.8,
+      "efficiency_forecast": 9.5,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
     },
     {
       "ai_report_id": 4,
-      "productivity_score": 8.6,
-      "efficiency_forecast": 8.8,
-      "recommendations": "Винести частину синхронних операцій у асинхронні worker-и та оптимізувати SQL-запити"
+      "productivity_score": 9.4,
+      "efficiency_forecast": 8.4,
+      "recommendations": "Збільшити кількість code review"
     },
     {
       "ai_report_id": 5,
-      "productivity_score": 9.4,
-      "efficiency_forecast": 9.1,
-      "recommendations": "Додати більше UX-валідацій на ранніх етапах discovery для зменшення переробок"
+      "productivity_score": 9.9,
+      "efficiency_forecast": 9.8,
+      "recommendations": "Збільшити кількість code review"
     },
     {
       "ai_report_id": 6,
+      "productivity_score": 7.0,
+      "efficiency_forecast": 9.0,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 7,
+      "productivity_score": 9.7,
+      "efficiency_forecast": 9.6,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 8,
+      "productivity_score": 6.8,
+      "efficiency_forecast": 7.2,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 9,
+      "productivity_score": 6.7,
+      "efficiency_forecast": 9.4,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 10,
+      "productivity_score": 9.6,
+      "efficiency_forecast": 9.9,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 11,
+      "productivity_score": 8.7,
+      "efficiency_forecast": 9.7,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 12,
+      "productivity_score": 7.6,
+      "efficiency_forecast": 7.7,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 13,
+      "productivity_score": 8.4,
+      "efficiency_forecast": 7.5,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 14,
+      "productivity_score": 8.3,
+      "efficiency_forecast": 9.9,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 15,
+      "productivity_score": 6.6,
+      "efficiency_forecast": 7.5,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 16,
+      "productivity_score": 6.6,
+      "efficiency_forecast": 6.7,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 17,
+      "productivity_score": 7.7,
+      "efficiency_forecast": 6.8,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 18,
+      "productivity_score": 9.6,
+      "efficiency_forecast": 8.3,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 19,
+      "productivity_score": 8.3,
+      "efficiency_forecast": 9.6,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 20,
+      "productivity_score": 8.8,
+      "efficiency_forecast": 8.1,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 21,
+      "productivity_score": 6.9,
+      "efficiency_forecast": 7.4,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 22,
+      "productivity_score": 8.4,
+      "efficiency_forecast": 7.4,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 23,
+      "productivity_score": 8.4,
+      "efficiency_forecast": 9.5,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 24,
+      "productivity_score": 9.7,
+      "efficiency_forecast": 8.1,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 25,
+      "productivity_score": 7.3,
+      "efficiency_forecast": 7.1,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 26,
+      "productivity_score": 7.9,
+      "efficiency_forecast": 8.2,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 27,
+      "productivity_score": 7.5,
+      "efficiency_forecast": 8.9,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 28,
       "productivity_score": 8.1,
+      "efficiency_forecast": 9.5,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 29,
+      "productivity_score": 8.9,
+      "efficiency_forecast": 7.8,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 30,
+      "productivity_score": 9.8,
+      "efficiency_forecast": 9.5,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 31,
+      "productivity_score": 6.7,
+      "efficiency_forecast": 8.7,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 32,
+      "productivity_score": 9.6,
+      "efficiency_forecast": 7.1,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 33,
+      "productivity_score": 7.4,
+      "efficiency_forecast": 8.2,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 34,
+      "productivity_score": 9.6,
+      "efficiency_forecast": 9.0,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 35,
+      "productivity_score": 8.1,
+      "efficiency_forecast": 8.9,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 36,
+      "productivity_score": 9.5,
+      "efficiency_forecast": 7.3,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 37,
+      "productivity_score": 8.8,
+      "efficiency_forecast": 9.1,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 38,
+      "productivity_score": 9.4,
+      "efficiency_forecast": 7.9,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 39,
+      "productivity_score": 9.1,
+      "efficiency_forecast": 8.2,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 40,
+      "productivity_score": 8.5,
+      "efficiency_forecast": 8.7,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 41,
+      "productivity_score": 8.4,
+      "efficiency_forecast": 8.3,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 42,
+      "productivity_score": 9.8,
+      "efficiency_forecast": 9.6,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 43,
+      "productivity_score": 7.4,
+      "efficiency_forecast": 6.9,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 44,
+      "productivity_score": 9.8,
+      "efficiency_forecast": 7.7,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 45,
+      "productivity_score": 8.6,
+      "efficiency_forecast": 8.9,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 46,
+      "productivity_score": 9.2,
+      "efficiency_forecast": 9.4,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 47,
+      "productivity_score": 6.8,
+      "efficiency_forecast": 6.9,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 48,
+      "productivity_score": 8.7,
+      "efficiency_forecast": 6.7,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 49,
+      "productivity_score": 9.8,
+      "efficiency_forecast": 7.1,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 50,
+      "productivity_score": 6.7,
+      "efficiency_forecast": 7.2,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 51,
+      "productivity_score": 7.1,
+      "efficiency_forecast": 8.7,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 52,
+      "productivity_score": 9.9,
       "efficiency_forecast": 8.4,
-      "recommendations": "Автоматизувати regression-набір та додати performance smoke tests у release pipeline"
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 53,
+      "productivity_score": 9.1,
+      "efficiency_forecast": 7.3,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 54,
+      "productivity_score": 8.3,
+      "efficiency_forecast": 9.3,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 55,
+      "productivity_score": 8.1,
+      "efficiency_forecast": 7.8,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 56,
+      "productivity_score": 7.6,
+      "efficiency_forecast": 7.0,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 57,
+      "productivity_score": 9.4,
+      "efficiency_forecast": 6.9,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 58,
+      "productivity_score": 8.6,
+      "efficiency_forecast": 6.7,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 59,
+      "productivity_score": 9.9,
+      "efficiency_forecast": 6.7,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 60,
+      "productivity_score": 9.0,
+      "efficiency_forecast": 6.8,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 61,
+      "productivity_score": 8.8,
+      "efficiency_forecast": 9.1,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 62,
+      "productivity_score": 9.3,
+      "efficiency_forecast": 7.9,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 63,
+      "productivity_score": 6.7,
+      "efficiency_forecast": 6.7,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 64,
+      "productivity_score": 6.6,
+      "efficiency_forecast": 7.8,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 65,
+      "productivity_score": 7.2,
+      "efficiency_forecast": 9.1,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 66,
+      "productivity_score": 9.5,
+      "efficiency_forecast": 8.5,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 67,
+      "productivity_score": 8.1,
+      "efficiency_forecast": 8.3,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 68,
+      "productivity_score": 8.1,
+      "efficiency_forecast": 9.8,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 69,
+      "productivity_score": 7.9,
+      "efficiency_forecast": 9.0,
+      "recommendations": "Підвищити рівень автоматизації тестування"
+    },
+    {
+      "ai_report_id": 70,
+      "productivity_score": 6.9,
+      "efficiency_forecast": 9.6,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 71,
+      "productivity_score": 8.2,
+      "efficiency_forecast": 7.8,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 72,
+      "productivity_score": 7.0,
+      "efficiency_forecast": 6.8,
+      "recommendations": "Оптимізувати розподіл задач між співробітниками"
+    },
+    {
+      "ai_report_id": 73,
+      "productivity_score": 9.1,
+      "efficiency_forecast": 9.3,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 74,
+      "productivity_score": 9.0,
+      "efficiency_forecast": 8.1,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 75,
+      "productivity_score": 8.3,
+      "efficiency_forecast": 7.6,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 76,
+      "productivity_score": 9.3,
+      "efficiency_forecast": 9.7,
+      "recommendations": "Оптимізувати SQL-запити та кешування"
+    },
+    {
+      "ai_report_id": 77,
+      "productivity_score": 7.7,
+      "efficiency_forecast": 6.6,
+      "recommendations": "Збільшити кількість code review"
+    },
+    {
+      "ai_report_id": 78,
+      "productivity_score": 7.9,
+      "efficiency_forecast": 9.0,
+      "recommendations": "Посилити контроль якості релізів"
+    },
+    {
+      "ai_report_id": 79,
+      "productivity_score": 8.0,
+      "efficiency_forecast": 7.5,
+      "recommendations": "Покращити моніторинг серверної інфраструктури"
+    },
+    {
+      "ai_report_id": 80,
+      "productivity_score": 9.6,
+      "efficiency_forecast": 8.2,
+      "recommendations": "Підвищити рівень автоматизації тестування"
     }
   ]
 }
