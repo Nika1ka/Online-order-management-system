@@ -1,7 +1,9 @@
+/* Imports shared layout, component, and utility layers before page-level globals. */
 @import "layout.css";
 @import "components.css";
 @import "utils.css";
 
+/* Defines project-wide design tokens: colors, radii, and shadows used across the dashboard. */
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
@@ -25,54 +27,63 @@
   --shadow-soft: 0 6px 18px rgba(24, 39, 75, 0.06);
 }
 
+/* Uses border-box sizing everywhere so padding and borders stay inside declared element dimensions. */
 * {
   box-sizing: border-box;
 }
 
+/* Registers the Ubuntu font used as the primary typeface for the dashboard UI. */
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('../fonts/Ubuntu-R.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-R.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* Resets base page spacing and applies the global typography and page background. */
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   background: var(--bg);
   color: var(--text);
   line-height: 1.4;
 }
 
+/* Makes links inherit the surrounding text color and removes default underlines. */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Prevents images from overflowing containers and removes inline-image baseline gaps. */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* Keeps form controls on the same font settings as the rest of the interface. */
 button,
 input,
 select {
   font: inherit;
 }
 
+/* Ensures each page wrapper can fill the viewport height. */
 .page {
   min-height: 100vh;
 }
 
+/* Creates the main two-column application shell: sidebar on the left, content on the right. */
 .app-shell {
   display: grid;
   grid-template-columns: 312px 1fr;
   min-height: 100vh;
 }
 
+/* Styles the left sidebar with dashboard branding colors and a vertical shadow separator. */
 .sidebar {
   padding: 10px 10px 24px;
   background: linear-gradient(180deg, #324866 0%, #485f7d 100%);
@@ -80,6 +91,7 @@ select {
   box-shadow: 10px 0 24px rgba(24, 39, 75, 0.14);
 }
 
+/* Aligns the logo icon and product name in the sidebar header. */
 .sidebar__brand {
   display: inline-flex;
   align-items: center;
@@ -90,6 +102,7 @@ select {
   color: #ffffff;
 }
 
+/* Provides the fixed square slot used for the sidebar brand icon. */
 .sidebar__brand-icon {
   display: inline-flex;
   align-items: center;
@@ -99,10 +112,12 @@ select {
   color: #ffffff;
 }
 
+/* Adds vertical spacing between sidebar navigation groups. */
 .sidebar__group + .sidebar__group {
   margin-top: 16px;
 }
 
+/* Styles group headings inside the sidebar navigation. */
 .sidebar__group-title {
   margin: 0 16px 8px;
   font-size: 0.72rem;
@@ -110,6 +125,7 @@ select {
   color: rgba(255, 255, 255, 0.68);
 }
 
+/* Resets list styling and stacks sidebar links with a compact vertical rhythm. */
 .sidebar__list {
   list-style: none;
   padding: 0;
@@ -118,6 +134,7 @@ select {
   gap: 2px;
 }
 
+/* Defines the default look and alignment of a sidebar navigation link. */
 .sidebar__link {
   display: flex;
   align-items: center;
@@ -129,15 +146,18 @@ select {
   line-height: 1.25;
 }
 
+/* Applies the shared highlighted background for hovered and active sidebar items. */
 .sidebar__link:hover,
 .sidebar__link--active {
   background: rgba(111, 151, 201, 0.44);
 }
 
+/* Increases contrast of the currently active sidebar link. */
 .sidebar__link--active {
   color: #ffffff;
 }
 
+/* Reserves a fixed icon column for each sidebar item. */
 .sidebar__icon {
   display: inline-flex;
   align-items: center;
@@ -148,12 +168,14 @@ select {
   color: #ffffff;
 }
 
+/* Builds the right-side page area and stacks topbar above main content. */
 .content-area {
   display: flex;
   flex-direction: column;
   background: var(--bg);
 }
 
+/* Styles the top application bar with breadcrumb area on the left and account actions on the right. */
 .topbar {
   display: flex;
   align-items: center;
@@ -165,6 +187,7 @@ select {
   border-bottom: 1px solid #d4dbe5;
 }
 
+/* Aligns breadcrumb items and sets their shared typography. */
 .breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -174,6 +197,7 @@ select {
   font-weight: 600;
 }
 
+/* Renders the menu icon at the start of the breadcrumb trail. */
 .breadcrumb::before {
   content: url("../assets/icons/menu.png");
   width: 24px;
@@ -184,6 +208,7 @@ select {
   mask: url("../assets/icons/menu.png") center / contain no-repeat;
 }
 
+/* Displays the breadcrumb chevron separator between hierarchy levels. */
 .breadcrumb__separator {
   content: url("../assets/icons/next.png");
   width: 12px;
@@ -194,16 +219,19 @@ select {
   mask: url("../assets/icons/next.png") center / contain no-repeat;
 }
 
+/* Emphasizes the current breadcrumb item. */
 .breadcrumb__current {
   color: var(--text);
 }
 
+/* Arranges notification/help/settings controls and avatar inside the topbar. */
 .topbar__actions {
   display: inline-flex;
   align-items: center;
   gap: 18px;
 }
 
+/* Defines the base sizing for reusable inline icon images throughout the app. */
 .icon {
   width: 16px;
   height: 16px;
@@ -211,42 +239,43 @@ select {
   vertical-align: middle;
 }
 
-/* Основна іконка меню */
+/* Enlarges the brand icon used in the sidebar header. */
 .icon--brand {
   width: 32px;
   height: 32px;
 }
 
-/* Іконки в бічному меню */
+/* Sets sidebar navigation icon dimensions. */
 .icon--sidebar {
   width: 22px;
   height: 22px;
 }
 
-/* Сортування в таблицях */
+/* Sets compact icon dimensions for sortable table headers. */
 .icon--sort {
   width: 14px;
   height: 14px;
 }
 
-/* Іконки виконаних та не виконаних завдань співробітника */
+/* Sets icon dimensions for metric rows in dashboards and analytics cards. */
 .icon--metric {
   width: 18px;
   height: 18px;
 }
 
-/* Дії над аккаунтом (у topbar) */
+/* Sets icon dimensions for topbar action buttons. */
 .icon--button {
   width: 20px;
   height: 20px;
 }
 
-/* Дії елемента */
+/* Sets icon dimensions for row-level action buttons and similar controls. */
 .icon--action {
   width: 22px;
   height: 22px;
 }
 
+/* Inverts specific icons so they remain visible on dark or primary-colored backgrounds. */
 .sidebar__brand-icon .icon,
 .sidebar__icon .icon,
 .icon-button--action--primary .icon,
@@ -254,15 +283,18 @@ select {
   filter: brightness(0) invert(1);
 }
 
+/* Recolors analytics metric icons to match the blue accent used inside performance cards. */
 .dashboard-card__metric-icon .icon {
   filter: brightness(0) saturate(100%) invert(39%) sepia(37%) saturate(1157%) hue-rotate(182deg) brightness(92%) contrast(87%);
 }
 
+/* Recolors secondary action icons and sort indicators to the standard interface blue. */
 .icon-button--action--secondary .icon,
 .sort-indicator .icon {
   filter: brightness(0) saturate(100%) invert(39%) sepia(37%) saturate(1157%) hue-rotate(182deg) brightness(92%) contrast(87%);
 }
 
+/* Provides the base reset and interaction behavior for icon-only buttons. */
 .icon-button {
   width: 36px;
   height: 36px;
@@ -276,11 +308,13 @@ select {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+/* Adds hover feedback to icon-only buttons. */
 .icon-button:hover {
   opacity: 0.82;
   transform: translateY(-1px);
 }
 
+/* Creates the compact filled icon button used for AI or utility shortcuts. */
 .icon-button--small {
   width: 32px;
   height: 32px;
@@ -289,6 +323,7 @@ select {
   color: #ffffff;
 }
 
+/* Defines the size and shape of the topbar avatar container. */
 .topbar__avatar {
   width: 44px;
   height: 44px;
@@ -296,12 +331,14 @@ select {
   overflow: hidden;
 }
 
+/* Makes the avatar image cover the full avatar frame. */
 .topbar__avatar-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Applies the shared page-padding and vertical spacing pattern to all implemented main content areas. */
 .main-content--employees,
 .main-content--production-tasks,
 .main-content--order-management,
@@ -321,7 +358,7 @@ select {
   gap: 18px;
 }
 
-
+/* Lays out a page hero section with title copy on the left and optional actions on the right. */
 .panel--hero {
   display: flex;
   align-items: center;
@@ -332,16 +369,19 @@ select {
   border: none;
 }
 
+/* Hides the eyebrow helper label in the current visual design. */
 .eyebrow {
   display: none;
 }
 
+/* Styles the main heading for page hero sections and panels. */
 .panel__title {
   margin: 0;
   font-size: 1.32rem;
   line-height: 1.25;
 }
 
+/* Styles the descriptive text shown below page and panel headings. */
 .panel__description {
   margin: 6px 0 0;
   max-width: 940px;
@@ -350,11 +390,13 @@ select {
   line-height: 1.4;
 }
 
+/* Adds global pointer cursor and transition behavior to all buttons. */
 button {
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
+/* Provides the base layout for reusable text buttons across the dashboard. */
 .button {
   display: inline-flex;
   align-items: center;
@@ -366,33 +408,39 @@ button {
   font-weight: 500;
 }
 
+/* Adds a shared subtle lift effect to all buttons on hover. */
 button:hover {
   transform: translateY(-1px);
 }
 
+/* Styles the primary call-to-action button variant. */
 .button--primary {
   background: var(--info);
   color: #ffffff;
 }
 
+/* Styles the muted secondary button variant used for reset or non-primary actions. */
 .button--secondary {
   background: #f4f4f4;
   color: #697488;
   border-color: var(--border);
 }
 
+/* Styles the ghost button variant used in pagination and low-emphasis actions. */
 .button--ghost {
   background: #ffffff;
   color: #4f5b71;
   border-color: var(--border);
 }
 
+/* Styles the active pagination or active-state button variant. */
 .button--active {
   background: var(--info);
   color: #ffffff;
   border-color: var(--info);
 }
 
+/* Styles the shared filter panel container used on data pages. */
 .panel--filters {
   position: relative;
   padding: 48px 20px 12px;
@@ -402,6 +450,7 @@ button:hover {
   box-shadow: none;
 }
 
+/* Injects the "Фільтри" heading into the top-left corner of filter panels. */
 .panel--filters::before {
   content: "Фільтри";
   position: absolute;
@@ -412,6 +461,7 @@ button:hover {
   color: var(--text);
 }
 
+/* Arranges first-row filter controls with wrapping support. */
 .filter-grid {
   display: flex;
   flex-wrap: wrap;
@@ -419,18 +469,21 @@ button:hover {
   align-items: center;
 }
 
+/* Aligns a single label-control pair inside filter forms. */
 .field {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Styles field labels inside filters and compact form layouts. */
 .field__label {
   font-size: 0.82rem;
   color: var(--text);
   white-space: nowrap;
 }
 
+/* Defines the shared look of select and text-like input controls. */
 .field__select,
 .field__input {
   min-width: 150px;
@@ -443,6 +496,7 @@ button:hover {
   font-size: 0.82rem;
 }
 
+/* Replaces the native select arrow with the project dropdown icon. */
 .field__select {
   appearance: none;
   background-image: url("../assets/icons/droplist.png");
@@ -451,26 +505,31 @@ button:hover {
   background-size: 10px;
 }
 
+/* Adds extra spacing for grouped range-based filter fields. */
 .field--range {
   gap: 12px;
 }
 
+/* Aligns start/end date fields inside a date range group. */
 .date-range {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Aligns a single item inside a date range pair. */
 .date-range__item {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
+/* Hides duplicate inline labels inside compact date range controls. */
 .date-range__item .field__label {
   display: none;
 }
 
+/* Styles date inputs used inside filter ranges. */
 .date-range__input {
   min-height: 34px;
   padding: 0 12px 0 12px;
@@ -481,6 +540,7 @@ button:hover {
   font-size: 0.82rem;
 }
 
+/* Splits the second row of the filter panel into search input and action buttons. */
 .filter-search {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -489,14 +549,17 @@ button:hover {
   margin-top: 14px;
 }
 
+/* Lets the search field grow to fill the available filter row width. */
 .field--search {
   width: 100%;
 }
 
+/* Hides the visual label for search fields because the placeholder/icon communicate the role. */
 .field--search > .field__label {
   display: none;
 }
 
+/* Adds the search icon and extra left padding to search inputs. */
 .field--search .field__input {
   width: 100%;
   min-width: 0;
@@ -504,16 +567,19 @@ button:hover {
   background: #ffffff url("../assets/icons/search.svg") no-repeat 12px center / 16px 16px;
 }
 
+/* Right-aligns filter action buttons and controls spacing between them. */
 .filter-actions {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
 }
 
+/* Adds internal spacing between the icon and text in primary buttons. */
 .button--primary {
   gap: 10px;
 }
 
+/* Prepends the filter icon to primary buttons inside filter action rows. */
 .filter-actions .button--primary::before {
   content: url("../assets/icons/filter.png");
   width: 16px;
@@ -523,6 +589,7 @@ button:hover {
   mask: url("../assets/icons/filter.png") center / contain no-repeat;
 }
 
+/* Prepends the add icon to create buttons on pages that use the add-actions modifier. */
 .add-actions::before {
   content: url("../assets/icons/add.png");
   width: 10px;
@@ -532,6 +599,7 @@ button:hover {
   mask: url("../assets/icons/add.png") center / contain no-repeat;
 }
 
+/* Provides the card shell used by analytics and dashboard widgets. */
 .dashboard-card {
   background: var(--surface);
   border: 1px solid var(--border-soft);
@@ -539,6 +607,7 @@ button:hover {
   padding: 22px;
 }
 
+/* Creates the two-column hero analytics card with score visualization and metrics. */
 .dashboard-card--primary {
   display: grid;
   grid-template-columns: 238px 1fr;
@@ -546,16 +615,19 @@ button:hover {
   align-items: center;
 }
 
+/* Stacks text and metric rows inside analytics hero cards. */
 .dashboard-card__stat {
   display: grid;
   gap: 10px;
 }
 
+/* Styles titles inside dashboard and analytics cards. */
 .dashboard-card__title {
   margin: 0;
   font-size: 1.02rem;
 }
 
+/* Styles supporting copy inside dashboard and analytics cards. */
 .dashboard-card__text {
   margin: 0;
   color: var(--gray);
@@ -563,12 +635,14 @@ button:hover {
   line-height: 1.45;
 }
 
+/* Aligns icon and value blocks inside a dashboard metric row. */
 .dashboard-card__metric {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+/* Provides the icon slot used in dashboard metric rows. */
 .dashboard-card__metric-icon {
   width: 18px;
   height: 18px;
@@ -578,27 +652,32 @@ button:hover {
   color: var(--info);
 }
 
+/* Styles the label portion of a dashboard metric row. */
 .dashboard-card__metric-label {
   color: var(--text);
   font-size: 0.83rem;
 }
 
+/* Styles the emphasized numeric value in dashboard metric rows. */
 .dashboard-card__metric-value {
   font-weight: 700;
   font-size: 0.83rem;
 }
 
+/* Splits the employee-performance analytics area into main content and aside column. */
 .analytics-grid {
   display: grid;
   grid-template-columns: 1.45fr 0.75fr;
   gap: 20px;
 }
 
+/* Stacks analytics aside cards vertically. */
 .analytics-aside {
   display: grid;
   gap: 20px;
 }
 
+/* Defines the compact secondary card shell used in side panels. */
 .small-card {
   background: var(--surface);
   border: 1px solid var(--border-soft);
@@ -606,11 +685,13 @@ button:hover {
   padding: 14px 18px;
 }
 
+/* Styles the heading of compact side cards. */
 .small-card__title {
   margin: 0 0 14px;
   font-size: 0.98rem;
 }
 
+/* Removes list defaults and stacks compact card items. */
 .small-card__list {
   list-style: none;
   margin: 0;
@@ -619,11 +700,13 @@ button:hover {
   gap: 12px;
 }
 
+/* Stacks content inside a single small card list item. */
 .small-card__item {
   display: grid;
   gap: 8px;
 }
 
+/* Renders the circular AI score badge with background artwork and centered percentage. */
 .score-badge {
   display: inline-flex;
   align-items: flex-start;
@@ -641,6 +724,7 @@ button:hover {
   text-shadow: 0 2px 4px rgba(26, 64, 129, 0.25);
 }
 
+/* Creates the shared horizontal progress track used in analytics and ranking widgets. */
 .progress-inline {
   width: 100%;
   height: 18px;
@@ -649,36 +733,49 @@ button:hover {
   background: #e7ecf3;
 }
 
+/* Styles the fill element inside inline progress bars. */
 .progress-inline__bar {
   height: 100%;
   border-radius: 999px;
   background: var(--info);
 }
 
+/* Colors an inline progress bar green for strong performance. */
 .progress-inline--success .progress-inline__bar {
   background: #66ca5d;
 }
 
+/* Colors an inline progress bar blue for informational/normal performance. */
 .progress-inline--info .progress-inline__bar {
   background: #6ea6e6;
 }
 
+/* Colors an inline progress bar yellow for mid-level performance. */
 .progress-inline--purple .progress-inline__bar {
   background: #ffd856;
 }
 
+/* Colors an inline progress bar red for bad-level performance. */
+.progress-inline--red .progress-inline__bar {
+  background: #ff5656;
+}
+
+/* Colors an inline progress bar gray for muted or placeholder state. */
 .progress-inline--gray .progress-inline__bar {
   background: #d4dae2;
 }
 
+/* Keeps table cards from leaking internal borders or backgrounds past rounded corners. */
 .table-card {
   overflow: hidden;
 }
 
+/* Hides unused explicit table-card headings in pages that rely on external titles. */
 .table-card__header {
   display: none;
 }
 
+/* Creates the shared bordered wrapper around data tables and timeline grids. */
 .table-wrap {
   overflow-x: auto;
   background: var(--surface);
@@ -687,12 +784,14 @@ button:hover {
   box-shadow: none;
 }
 
+/* Defines base table sizing and minimum width for wide admin tables. */
 .table {
   width: 100%;
   min-width: 1180px;
   border-spacing: 0;
 }
 
+/* Applies shared cell spacing, borders, and typography to admin tables. */
 .table th,
 .table td {
   padding: 8px 10px;
@@ -702,14 +801,18 @@ button:hover {
   font-size: 0.82rem;
 }
 
-.table th:last-child, .table td:last-child {
+/* Removes the trailing vertical border from the last column in each row. */
+.table th:last-child,
+.table td:last-child {
   border-right: none;
 }
 
+/* Removes the bottom border from the final table row container. */
 .table tr:last-child {
   border-bottom: none;
 }
 
+/* Styles table header cells with muted background and stronger typography. */
 .table thead th {
   text-align: center;
   background: #eef2f7;
@@ -719,23 +822,27 @@ button:hover {
   border-right: 1px solid #e3e8ef;
 }
 
+/* Styles table body cells and their vertical separators. */
 .table tbody td {
   background: #ffffff;
   border-right: 1px solid #eef2f6;
 }
 
+/* Aligns the sort icon next to sortable header labels. */
 .sort-indicator {
   display: inline-flex;
   margin-left: 4px;
   color: #304768;
 }
 
+/* Aligns avatar and text inside user-related table cells. */
 .user-cell {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Displays a circular user avatar placeholder/background in tables and lists. */
 .user-avatar {
   width: 32px;
   height: 32px;
@@ -746,16 +853,19 @@ button:hover {
   font-size: 0;
 }
 
+/* Styles the primary user name text in user cells. */
 .user-name {
   font-weight: 500;
   line-height: 1.2;
 }
 
+/* Styles secondary role/department text in user cells. */
 .user-role {
   color: var(--gray);
   font-size: 0.78rem;
 }
 
+/* Defines the shared badge shell for statuses in tables. */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -770,6 +880,7 @@ button:hover {
   font-weight: 500;
 }
 
+/* Adds the leading status dot to all badges. */
 .badge::before {
   content: "";
   width: 10px;
@@ -778,26 +889,31 @@ button:hover {
   background: currentColor;
 }
 
+/* Colors success/completed badges. */
 .badge--success {
   color: #73dd2b;
   background: #edffe5;
 }
 
+/* Colors in-progress/info badges. */
 .badge--info {
   color: #2d9cf4;
   background: #dcefff;
 }
 
+/* Colors review-related badges. */
 .badge--purple {
   color: #7b2ff7;
   background: #f0e6ff;
 }
 
+/* Colors waiting/inactive badges. */
 .badge--gray {
   color: #d5d8dd;
   background: #fbfbfb;
 }
 
+/* Creates the compact progress bar shell used in order-management tables. */
 .progress {
   width: 130px;
   height: 14px;
@@ -806,27 +922,29 @@ button:hover {
   background: #e7ecf2;
 }
 
+/* Styles the fill element inside compact progress bars. */
 .progress__bar {
   height: 100%;
   border-radius: 20px;
   background: var(--info);
 }
 
-/* Завершена задача */
+/* Colors a compact progress bar green for completed work. */
 .progress--success .progress__bar {
   background: #66ca5d;
 }
 
-/* Прогрес по задачі 1-99% */
+/* Colors a compact progress bar blue for work that is in progress. */
 .progress--info .progress__bar {
   background: var(--info);
 }
 
-/* Ще не почата задача */
+/* Colors a compact progress bar gray for not-yet-started work. */
 .progress--gray .progress__bar {
   background: #d3d9e0;
 }
 
+/* Defines the base bordered square action button used inside table rows. */
 .icon-button--action {
   width: 32px;
   height: 32px;
@@ -839,18 +957,21 @@ button:hover {
   color: var(--info);
 }
 
+/* Styles the primary filled variant of row action buttons. */
 .icon-button--action--primary {
   border-color: var(--info);
   background: var(--info);
   color: #ffffff;
 }
 
+/* Styles the outlined secondary variant of row action buttons. */
 .icon-button--action--secondary {
   border-color: #d4dbe6;
   background: #ffffff;
   color: var(--info);
 }
 
+/* Aligns summary text and controls in table footers such as pagination rows. */
 .table-footer {
   display: flex;
   flex-wrap: wrap;
@@ -861,11 +982,13 @@ button:hover {
   background: transparent;
 }
 
+/* Styles the informational text at the start of a table footer. */
 .table-footer__text {
   color: var(--gray);
   font-size: 0.83rem;
 }
 
+/* Aligns the select and pagination controls inside table footers. */
 .table-footer__controls {
   display: flex;
   flex-wrap: wrap;
@@ -873,6 +996,7 @@ button:hover {
   gap: 12px;
 }
 
+/* Aligns the "rows per page" label with its select field. */
 .footer-select {
   display: inline-flex;
   align-items: center;
@@ -881,6 +1005,7 @@ button:hover {
   font-size: 0.83rem;
 }
 
+/* Styles the select control used in table footers. */
 .footer-select select {
   min-width: 70px;
   min-height: 34px;
@@ -891,20 +1016,24 @@ button:hover {
   color: var(--text);
 }
 
+/* Arranges pagination buttons in a wrapping horizontal row. */
 .pagination {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
+/* Hides the hero action button on the production-schedule page because that page has no create CTA. */
 .page--production-schedule .panel--hero .button {
   display: none;
 }
 
+/* !! to review !! Redefines the same gap already provided by the shared main-content block for this page. */
 .page--production-schedule .main-content--production-schedule {
   gap: 18px;
 }
 
+/* Rebuilds the first row of production-schedule filters into a fixed column grid for the schedule layout. */
 .page--production-schedule .panel--filters .filter-grid {
   display: grid;
   grid-template-columns: auto auto 1fr auto auto;
@@ -912,33 +1041,31 @@ button:hover {
   align-items: center;
 }
 
+/* Lets the schedule filter search area participate directly in the outer filter grid. */
 .page--production-schedule .panel--filters .filter-search {
   display: contents;
   margin-top: 0;
 }
 
+/* Forces the schedule-page search input to shrink and stretch correctly inside the grid. */
 .page--production-schedule .panel--filters .field--search .field__input {
   min-width: 0;
   width: 100%;
 }
 
+/* Removes panel chrome from the schedule section because the inner card provides the visible frame. */
 .page--production-schedule .panel--schedule {
   border: none;
   padding: 0;
   background: transparent;
 }
 
-.schedule-card {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: #ffffff;
-}
-
+/* Adds top padding so tabs can sit visually attached to the schedule card. */
 .schedule-card__header {
   padding: 18px 18px 0;
 }
 
+/* Defines the shared tab strip container for schedule subviews. */
 .tabs {
   display: inline-flex;
   gap: 0;
@@ -946,6 +1073,7 @@ button:hover {
   overflow: hidden;
 }
 
+/* Styles an individual schedule tab with icon slot and card-like borders. */
 .tab {
   position: relative;
   min-width: 138px;
@@ -959,10 +1087,12 @@ button:hover {
   cursor: pointer;
 }
 
+/* Collapses adjacent tab borders so the tab strip reads as a single control. */
 .tab + .tab {
   margin-left: -1px;
 }
 
+/* Reserves and positions the icon slot inside schedule tabs. */
 .tab::before {
   content: "";
   position: absolute;
@@ -974,22 +1104,26 @@ button:hover {
   background: currentColor;
 }
 
+/* Uses the employees icon for the first schedule tab. */
 .tab:first-child::before {
   -webkit-mask: url("../assets/icons/employees.png") center / contain no-repeat;
   mask: url("../assets/icons/employees.png") center / contain no-repeat;
 }
 
+/* Uses the orders icon for the second schedule tab. */
 .tab:last-child::before {
   -webkit-mask: url("../assets/icons/orders.png") center / contain no-repeat;
   mask: url("../assets/icons/orders.png") center / contain no-repeat;
 }
 
+/* Highlights the active schedule tab. */
 .tab--active {
   background: var(--info);
   border-color: var(--info);
   color: #ffffff;
 }
 
+/* Builds the empty-state chart area on the parent production-schedule page. */
 .schedule-chart {
   position: relative;
   min-height: 172px;
@@ -997,6 +1131,7 @@ button:hover {
   background: #ffffff;
 }
 
+/* Draws the muted header band across the top of the empty-state schedule chart. */
 .schedule-chart::before {
   content: "";
   position: absolute;
@@ -1007,6 +1142,7 @@ button:hover {
   background: #eef2f7;
 }
 
+/* Displays the instructional empty-state message inside the parent schedule chart. */
 .schedule-chart::after {
   content: "Для початку роботи почніть вводити назву відділу чи замовлення в полі фільтрів";
   position: absolute;
@@ -1020,28 +1156,32 @@ button:hover {
   color: #2b3140;
 }
 
+/* Hides legacy schedule markup because the parent page currently uses the empty-state presentation only. */
 .schedule-chart__header,
 .schedule-row {
   display: none;
 }
 
+/* Builds the timeline grid used in schedule department and task variants. */
 .schedule-grid {
   display: grid;
   grid-template-columns: var(--name-col) repeat(var(--columns), minmax(0, 1fr));
-  border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
   background: #ffffff;
 }
 
+/* Sets the minimum width needed for the department schedule timeline. */
 .schedule-grid--department {
   min-width: 1640px;
 }
 
+/* Sets the minimum width needed for the task schedule timeline. */
 .schedule-grid--tasks {
   min-width: 1320px;
 }
 
+/* Styles a single header cell in the schedule timeline grid. */
 .schedule-grid__head {
   min-height: 40px;
   padding: 8px 8px 8px 7px;
@@ -1053,10 +1193,12 @@ button:hover {
   color: #1f2635;
 }
 
+/* Adds extra left padding to the first schedule grid header so it aligns with avatar rows below. */
 .schedule-grid__head--name {
   padding-left: 65px;
 }
 
+/* Styles the left name cell for each schedule grid row, including avatar offset space. */
 .schedule-grid__name {
   position: relative;
   display: flex;
@@ -1070,6 +1212,7 @@ button:hover {
   color: #252c39;
 }
 
+/* Positions the avatar marker inside the schedule grid name column. */
 .schedule-grid__avatar {
   position: absolute;
   left: 10px;
@@ -1081,6 +1224,7 @@ button:hover {
   background: url("../assets/icons/avatar-user.png") center / cover no-repeat;
 }
 
+/* Creates the timeline track cell with vertical day separators for schedule rows. */
 .schedule-grid__track {
   grid-column: 2 / -1;
   position: relative;
@@ -1096,10 +1240,12 @@ button:hover {
     );
 }
 
+/* Removes the bottom border from the last visual row in the schedule grid. */
 .schedule-grid > :nth-last-child(-n + 2) {
   border-bottom: none;
 }
 
+/* Styles a positioned task block inside the schedule timeline. */
 .schedule-pill {
   position: absolute;
   left: calc(((var(--start) - 1) * (100% / var(--columns))) + 3px);
@@ -1117,30 +1263,37 @@ button:hover {
   text-overflow: ellipsis;
 }
 
+/* Colors a schedule task block red. */
 .schedule-pill--red {
   background: #f59aa0;
   border-color: #e3838a;
 }
 
+/* Colors a schedule task block green. */
 .schedule-pill--green {
   background: #b8ef9a;
   border-color: #9fdc7c;
 }
 
+/* Colors a schedule task block blue. */
 .schedule-pill--blue {
   background: #99c5ec;
   border-color: #82b3de;
 }
 
+/* Tightens the footer spacing specifically on production-schedule pages. */
 .page--production-schedule .table-footer {
   padding-top: 4px;
 }
 
+/* Adjusts the overall app shell, page paddings, and schedule filter layout for medium screens. */
 @media (max-width: 1200px) {
+  /* Collapses the two-column shell into a single-column flow on narrower screens. */
   .app-shell {
     grid-template-columns: 1fr;
   }
 
+  /* Reduces page padding across implemented content areas on medium screens. */
   .main-content--employees,
   .main-content--production-tasks,
   .main-content--order-management,
@@ -1158,25 +1311,31 @@ button:hover {
     padding: 20px;
   }
 
+  /* Stacks schedule filter controls into a single column on medium screens. */
   .page--production-schedule .panel--filters .filter-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Restores the search/actions block structure for stacked schedule filters. */
   .page--production-schedule .panel--filters .filter-search {
     display: grid;
     grid-template-columns: 1fr;
   }
 }
 
+/* Adjusts topbar, hero/card flow, and form wrapping for smaller screens. */
 @media (max-width: 900px) {
+  /* Reduces topbar horizontal padding on small screens. */
   .topbar {
     padding: 12px 20px;
   }
 
+  /* Reduces spacing between topbar action controls on small screens. */
   .topbar__actions {
     gap: 12px;
   }
 
+  /* Stacks hero sections, filter rows, analytics grids, and primary dashboard cards vertically on small screens. */
   .panel--hero,
   .filter-search,
   .analytics-grid,
@@ -1186,16 +1345,19 @@ button:hover {
     align-items: flex-start;
   }
 
+  /* Reduces the spacing between wrapped filter controls on small screens. */
   .filter-grid {
     gap: 12px;
   }
 
+  /* Allows field groups and date range controls to wrap when horizontal space is limited. */
   .field,
   .field--range,
   .date-range {
     flex-wrap: wrap;
   }
 
+  /* Reduces the space after the breadcrumb menu icon on small screens. */
   .breadcrumb::before {
     margin-right: 6px;
   }
