@@ -27,16 +27,11 @@ order-production_schedule_management_system/
 │   │   ├── main.css                        # Основні стилі, змінні, макети
 │   │   ├── layout.css                      # Макети сторінок
 │   │   ├── components.css                  # Компоненти (кнопки, форми, тощо)
-│   │   ├── utils.css                       # Утилітарні класи
-│   │   └── pages/                          # Сторінкові модулі
-│   │       ├── dashboard.css
-│   │       ├── production-schedule.css
-│   │       ├── order-management.css
-│   │       ├── production-tasks.css
-│   │       ├── employees.css
-│   │       ├── employee-performance.css
-│   │       └── ...
-│   └── assets/                             # Зображення, іконки, шрифти
+│   │   └── utils.css                       # Утилітарні класи
+│   ├── assets/                             
+│   │   ├── images/                         # Зображення
+│   ├── └── icons/                          # Іконки
+│   └── fonts/                              # Шрифти
 ├── database.json                           # Тестова база даних
 ├── README.md                               # Цей файл
 └── .gitignore
