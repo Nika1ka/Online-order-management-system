@@ -139,131 +139,141 @@
       </header>
 
       <main class="main-content main-content--production-schedule">
-        <section class="panel panel--hero panel--hero-compact">
+        <section class="panel panel--hero">
           <div>
+            <p class="eyebrow">Керування</p>
             <h1 class="panel__title">Графік виробництва</h1>
             <p class="panel__description">Графік роботи відділу “Маркетинг” в період 13.03.2026–12.04.2026</p>
           </div>
         </section>
 
-        <section class="panel panel--filters schedule-filters">
-          <div class="schedule-filters__row">
-            <label class="field field--inline">
-              <span class="field__label">Початкова дата:</span>
+        <section class="panel panel--filters">
+          <div class="filter-grid">
+            <label class="field">
+              <span class="field__label">Початкова дата</span>
               <input class="date-range__input" type="date" value="2026-03-13">
             </label>
-            <label class="field field--inline">
-              <span class="field__label">Термін:</span>
-              <select class="field__select field__select--term">
+            <label class="field">
+              <span class="field__label">Термін</span>
+              <select class="field__select">
                 <option>Місяць</option>
               </select>
             </label>
-            <label class="field field--search schedule-filters__search">
-              <input class="field__input" type="search" value="Маркетинг" aria-label="Пошук за відділом">
-            </label>
-            <div class="filter-actions">
-              <button class="button button--primary">Фільтрувати</button>
-              <button class="button button--secondary">Скинути</button>
+            <div class="filter-search">
+              <label class="field field--search">
+                <span class="field__label">Пошук</span>
+                <input class="field__input" type="search" value="Маркетинг" aria-label="Пошук за відділом">
+              </label>
+              <div class="filter-actions">
+                <button class="button button--secondary">Скинути</button>
+                <button class="button button--primary">Фільтрувати</button>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="panel panel--schedule-variant">
-          <div class="schedule-tabs">
-            <a class="schedule-tabs__item schedule-tabs__item--active" href="production-schedule-department.html">Відділ</a>
-            <a class="schedule-tabs__item" href="production-schedule-tasks.html">Замовлення</a>
+        <section class="panel panel--schedule">
+          <div class="schedule-card">
+            <div class="schedule-card__header">
+              <div class="tabs">
+                <a class="tab tab--active" href="production-schedule-department.html">Відділ</a>
+                <a class="tab" href="production-schedule-tasks.html">Замовлення</a>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <div class="schedule-grid schedule-grid--department" style="--name-col: 244px; --columns: 11;">
+                <div class="schedule-grid__head schedule-grid__head--name">Співробітник</div>
+                <div class="schedule-grid__head">13 березня</div>
+                <div class="schedule-grid__head">16 березня</div>
+                <div class="schedule-grid__head">19 березня</div>
+                <div class="schedule-grid__head">22 березня</div>
+                <div class="schedule-grid__head">25 березня</div>
+                <div class="schedule-grid__head">28 березня</div>
+                <div class="schedule-grid__head">31 березня</div>
+                <div class="schedule-grid__head">3 квітня</div>
+                <div class="schedule-grid__head">6 квітня</div>
+                <div class="schedule-grid__head">9 квітня</div>
+                <div class="schedule-grid__head">12 квітня</div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олександр Шевченко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 1; --span: 3;">Аналіз цільової аудиторії</span>
+                  <span class="schedule-pill schedule-pill--red" style="--start: 6; --span: 4.75;">Аналіз конкурентів</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Ірина Коваленко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 1.65; --span: 3.35;">Розробка маркетингової стратегії</span>
+                  <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 3.05;">Запуск Google Ads кампанії</span>
+                  <span class="schedule-pill schedule-pill--green" style="--start: 9.05; --span: 2.9;">Запуск таргетованої реклами</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Дмитро Мельник</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 1; --span: 2.55;">Аналіз ефективності реклами</span>
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 4.05; --span: 5.3;">SEO-оптимізація сайту</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олена Бондаренко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 3.05; --span: 7.55;">Email-маркетинг кампанія</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Андрій Ткаченко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 1.25; --span: 2.75;">Розробка USP</span>
+                  <span class="schedule-pill schedule-pill--green" style="--start: 5.7; --span: 5.25;">A/B тестування реклами</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Марія Кравченко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 1; --span: 5.65;">Створення рекламних креативів</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Владислав Петренко</div>
+                <div class="schedule-grid__track"></div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Наталія Іваненко</div>
+                <div class="schedule-grid__track"></div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Максим Шульц</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 1.05; --span: 2.95;">Підготовка маркетингового звіту</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Софія Кім</div>
+                <div class="schedule-grid__track"></div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Артем Новак</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 6.7; --span: 4;">Опитування клієнтів</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Вадим Мирний</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 8.05; --span: 3.9;">Розробка брендбуку</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Станіслава Курченко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 2.05; --span: 9.9;">Робота з інфлюенсерами</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олег Ляшко</div>
+                <div class="schedule-grid__track"></div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Степан Стерненко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 3.7; --span: 5.3;">Оптимізація конверсій (CRO)</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="schedule-grid schedule-grid--department" style="--name-col: 244px; --columns: 11;">
-            <div class="schedule-grid__head schedule-grid__head--name">Співробітник</div>
-            <div class="schedule-grid__head">13 березня</div>
-            <div class="schedule-grid__head">16 березня</div>
-            <div class="schedule-grid__head">19 березня</div>
-            <div class="schedule-grid__head">22 березня</div>
-            <div class="schedule-grid__head">25 березня</div>
-            <div class="schedule-grid__head">28 березня</div>
-            <div class="schedule-grid__head">31 березня</div>
-            <div class="schedule-grid__head">3 квітня</div>
-            <div class="schedule-grid__head">6 квітня</div>
-            <div class="schedule-grid__head">9 квітня</div>
-            <div class="schedule-grid__head">12 квітня</div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олександр Шевченко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 1; --span: 3;">Аналіз цільової аудиторії</span>
-              <span class="schedule-pill schedule-pill--red" style="--start: 6; --span: 4.75;">Аналіз конкурентів</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Ірина Коваленко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 1.65; --span: 3.35;">Розробка маркетингової стратегії</span>
-              <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 3.05;">Запуск Google Ads кампанії</span>
-              <span class="schedule-pill schedule-pill--green" style="--start: 9.05; --span: 2.9;">Запуск таргетованої реклами</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Дмитро Мельник</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 1; --span: 2.55;">Аналіз ефективності реклами</span>
-              <span class="schedule-pill schedule-pill--blue" style="--start: 4.05; --span: 5.3;">SEO-оптимізація сайту</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олена Бондаренко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 3.05; --span: 7.55;">Email-маркетинг кампанія</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Андрій Ткаченко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 1.25; --span: 2.75;">Розробка USP</span>
-              <span class="schedule-pill schedule-pill--green" style="--start: 5.7; --span: 5.25;">A/B тестування реклами</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Марія Кравченко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 1; --span: 5.65;">Створення рекламних креативів</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Владислав Петренко</div>
-            <div class="schedule-grid__track"></div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Наталія Іваненко</div>
-            <div class="schedule-grid__track"></div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Максим Шульц</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 1.05; --span: 2.95;">Підготовка маркетингового звіту</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Софія Кім</div>
-            <div class="schedule-grid__track"></div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Артем Новак</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 6.7; --span: 4.0;">Опитування клієнтів</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Вадим Мирний</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 8.05; --span: 3.9;">Розробка брендбуку</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Станіслава Курченко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 2.05; --span: 9.9;">Робота з інфлюенсерами</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Олег Ляшко</div>
-            <div class="schedule-grid__track"></div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Степан Стерненко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 3.7; --span: 5.3;">Оптимізація конверсії (CRO)</span>
-            </div>
-          </div>
-
-          <div class="schedule-footer">
-            <span class="schedule-footer__text">Показано 1–15 із 18 співробітників відділу “Маркетинг”</span>
-            <div class="schedule-footer__controls">
+          <div class="table-footer">
+            <span class="table-footer__text">Показано 1–15 із 18 співробітників відділу “Маркетинг”</span>
+            <div class="table-footer__controls">
               <label class="footer-select">
                 <span>Рядків на сторінці:</span>
                 <select>

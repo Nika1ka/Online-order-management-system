@@ -139,102 +139,112 @@
       </header>
 
       <main class="main-content main-content--production-schedule">
-        <section class="panel panel--hero panel--hero-compact">
+        <section class="panel panel--hero">
           <div>
+            <p class="eyebrow">Керування</p>
             <h1 class="panel__title">Графік виробництва</h1>
             <p class="panel__description">Графік роботи над замовленням 135 - “Landing page “Еко Туризм”” в період 13.03.2026–19.03.2026</p>
           </div>
         </section>
 
-        <section class="panel panel--filters schedule-filters">
-          <div class="schedule-filters__row">
-            <label class="field field--inline">
-              <span class="field__label">Початкова дата:</span>
+        <section class="panel panel--filters">
+          <div class="filter-grid">
+            <label class="field">
+              <span class="field__label">Початкова дата</span>
               <input class="date-range__input" type="date" value="2026-03-13">
             </label>
-            <label class="field field--inline">
-              <span class="field__label">Термін:</span>
-              <select class="field__select field__select--term">
+            <label class="field">
+              <span class="field__label">Термін</span>
+              <select class="field__select">
                 <option>Тиждень</option>
               </select>
             </label>
-            <label class="field field--search schedule-filters__search">
-              <input class="field__input" type="search" value="Landing page “Еко Туризм”" aria-label="Пошук за замовленням">
-            </label>
-            <div class="filter-actions">
-              <button class="button button--primary">Фільтрувати</button>
-              <button class="button button--secondary">Скинути</button>
+            <div class="filter-search">
+              <label class="field field--search">
+                <span class="field__label">Пошук</span>
+                <input class="field__input" type="search" value="Landing page “Еко Туризм”" aria-label="Пошук за замовленням">
+              </label>
+              <div class="filter-actions">
+                <button class="button button--secondary">Скинути</button>
+                <button class="button button--primary">Фільтрувати</button>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="panel panel--schedule-variant">
-          <div class="schedule-tabs">
-            <a class="schedule-tabs__item" href="production-schedule-department.html">Відділ</a>
-            <a class="schedule-tabs__item schedule-tabs__item--active" href="production-schedule-tasks.html">Замовлення</a>
+        <section class="panel panel--schedule">
+          <div class="schedule-card">
+            <div class="schedule-card__header">
+              <div class="tabs">
+                <a class="tab" href="production-schedule-department.html">Відділ</a>
+                <a class="tab tab--active" href="production-schedule-tasks.html">Замовлення</a>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <div class="schedule-grid schedule-grid--tasks" style="--name-col: 244px; --columns: 7;">
+                <div class="schedule-grid__head schedule-grid__head--name">Співробітник</div>
+                <div class="schedule-grid__head">13 березня</div>
+                <div class="schedule-grid__head">14 березня</div>
+                <div class="schedule-grid__head">15 березня</div>
+                <div class="schedule-grid__head">16 березня</div>
+                <div class="schedule-grid__head">17 березня</div>
+                <div class="schedule-grid__head">18 березня</div>
+                <div class="schedule-grid__head">19 березня</div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Майкл Джонсон</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 1.05; --span: 2;">Визначення цільової аудиторії</span>
+                  <span class="schedule-pill schedule-pill--red" style="--start: 3.05; --span: 2;">Формування цілей сторінки</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Карлос Гарсія</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 3.05; --span: 3.95;">Підбір шрифтів та іконок</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Анна Добуа</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 1.05; --span: 4;">Формування структури landing page</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Томас Мюллер</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 4.05; --span: 3.9;">Верстка сторінки</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Богдан Романюк</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 2.05; --span: 3;">Кросбраузерна сумісність</span>
+                  <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1.9;">Оптимізація швидкості завантаження</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Юлія Савченко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 3;">Оптимізація мета-тегів</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Віктор Черненко</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--red" style="--start: 6.05; --span: 1.9;">Кросбраузерна сумісність</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Вей Лі</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1;">Інтеграція з БД</span>
+                </div>
+
+                <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Ілля Смирнов</div>
+                <div class="schedule-grid__track">
+                  <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 4;">Перевірка швидкості (PageSpeed)</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="schedule-grid schedule-grid--tasks" style="--name-col: 244px; --columns: 7;">
-            <div class="schedule-grid__head schedule-grid__head--name">Співробітник</div>
-            <div class="schedule-grid__head">13 березня</div>
-            <div class="schedule-grid__head">14 березня</div>
-            <div class="schedule-grid__head">15 березня</div>
-            <div class="schedule-grid__head">16 березня</div>
-            <div class="schedule-grid__head">17 березня</div>
-            <div class="schedule-grid__head">18 березня</div>
-            <div class="schedule-grid__head">19 березня</div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Майкл Джонсон</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 1.05; --span: 2.0;">Визначення цільової аудиторії</span>
-              <span class="schedule-pill schedule-pill--red" style="--start: 3.05; --span: 2.0;">Формування цілей сторінки</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Карлос Гарсія</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 3.05; --span: 3.95;">Підбір шрифтів та іконок</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Анна Добуа</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 1.05; --span: 4.0;">Формування структури landing page</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Томас Мюллер</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 4.05; --span: 3.9;">Верстка сторінки</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Богдан Романюк</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 2.05; --span: 3.0;">Кросбраузерна сумісність</span>
-              <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1.9;">Оптимізація швидкості завантаження</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Юлія Савченко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 3.0;">Оптимізація мета-тегів</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Віктор Черненко</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--red" style="--start: 6.05; --span: 1.9;">Кросбраузерна сумісність</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Вей Лі</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--green" style="--start: 6.05; --span: 1.0;">Інтеграція з БД</span>
-            </div>
-
-            <div class="schedule-grid__name"><span class="schedule-grid__avatar"></span>Ілля Смирнов</div>
-            <div class="schedule-grid__track">
-              <span class="schedule-pill schedule-pill--blue" style="--start: 3.05; --span: 4.0;">Перевірка швидкості (PageSpeed)</span>
-            </div>
-          </div>
-
-          <div class="schedule-footer schedule-footer--compact">
-            <span class="schedule-footer__text">Показано 1–9 із 9 співробітників</span>
-            <div class="schedule-footer__controls">
+          <div class="table-footer">
+            <span class="table-footer__text">Показано 1–9 із 9 співробітників</span>
+            <div class="table-footer__controls">
               <label class="footer-select">
                 <span>Рядків на сторінці:</span>
                 <select>
