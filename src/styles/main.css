@@ -306,7 +306,16 @@ select {
 .main-content--production-tasks,
 .main-content--order-management,
 .main-content--employee-performance,
-.main-content--production-schedule {
+.main-content--production-schedule,
+.main-content--dashboard,
+.main-content--departments,
+.main-content--products-services,
+.main-content--inventory-resources,
+.main-content--resource-usage,
+.main-content--finance-report,
+.main-content--activity-log,
+.main-content--roles-permissions,
+.main-content--settings {
   padding: 24px 36px 34px;
   display: grid;
   gap: 18px;
@@ -1136,7 +1145,16 @@ button:hover {
   .main-content--production-tasks,
   .main-content--order-management,
   .main-content--employee-performance,
-  .main-content--production-schedule {
+  .main-content--production-schedule,
+  .main-content--dashboard,
+  .main-content--departments,
+  .main-content--products-services,
+  .main-content--inventory-resources,
+  .main-content--resource-usage,
+  .main-content--finance-report,
+  .main-content--activity-log,
+  .main-content--roles-permissions,
+  .main-content--settings {
     padding: 20px;
   }
 

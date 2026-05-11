@@ -5,30 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Використання ресурсів</title>
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/pages/resource-usage.css">
 </head>
 <body class="page page--resource-usage">
-  <header class="header">
-    <div class="header__brand">Система управління</div>
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="index.html">Головна панель</a></li>
-        <li class="nav__item"><a class="nav__link" href="production-schedule.html">Графік виробництва</a></li>
-        <li class="nav__item"><a class="nav__link" href="order-management.html">Управління замовленнями</a></li>
-        <li class="nav__item"><a class="nav__link" href="production-tasks.html">Виробничі задачі</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <section class="resource-usage">
-      <h1 class="resource-usage__title">Використання ресурсів</h1>
-      <p class="resource-usage__intro">Аналіз завантаження обладнання та матеріалів.</p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__text">© 2026 Система управління замовленнями та виробничим графіком</p>
-  </footer>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__brand"><span class="sidebar__brand-icon"><img src="assets/icons/shield.png" alt="" class="icon icon--brand"></span><span>Система</span></div>
+      <nav class="sidebar__group" aria-label="Керування"><h2 class="sidebar__group-title">КЕРУВАННЯ</h2><ul class="sidebar__list"><li class="sidebar__item"><a class="sidebar__link" href="index.html"><span class="sidebar__icon"><img src="assets/icons/dashboard.svg" alt="" class="icon icon--sidebar"></span>Головна панель</a></li><li class="sidebar__item"><a class="sidebar__link" href="production-schedule.html"><span class="sidebar__icon"><img src="assets/icons/schedule.png" alt="" class="icon icon--sidebar"></span>Графік виробництва</a></li><li class="sidebar__item"><a class="sidebar__link" href="order-management.html"><span class="sidebar__icon"><img src="assets/icons/orders.png" alt="" class="icon icon--sidebar"></span>Управління замовленнями</a></li><li class="sidebar__item"><a class="sidebar__link" href="production-tasks.html"><span class="sidebar__icon"><img src="assets/icons/tasks.png" alt="" class="icon icon--sidebar"></span>Виробничі задачі</a></li></ul></nav>
+      <nav class="sidebar__group" aria-label="Ресурси"><h2 class="sidebar__group-title">РЕСУРСИ</h2><ul class="sidebar__list"><li class="sidebar__item"><a class="sidebar__link" href="employees.html"><span class="sidebar__icon"><img src="assets/icons/employees.png" alt="" class="icon icon--sidebar"></span>Співробітники</a></li><li class="sidebar__item"><a class="sidebar__link" href="departments.html"><span class="sidebar__icon"><img src="assets/icons/departments.png" alt="" class="icon icon--sidebar"></span>Підрозділи</a></li><li class="sidebar__item"><a class="sidebar__link" href="products-services.html"><span class="sidebar__icon"><img src="assets/icons/products.png" alt="" class="icon icon--sidebar"></span>Продукція та послуги</a></li><li class="sidebar__item"><a class="sidebar__link" href="inventory-resources.html"><span class="sidebar__icon"><img src="assets/icons/inventory.png" alt="" class="icon icon--sidebar"></span>Склад та ресурси</a></li></ul></nav>
+      <nav class="sidebar__group" aria-label="Аналітика"><h2 class="sidebar__group-title">АНАЛІТИКА</h2><ul class="sidebar__list"><li class="sidebar__item"><a class="sidebar__link" href="employee-performance.html"><span class="sidebar__icon"><img src="assets/icons/analytics.png" alt="" class="icon icon--sidebar"></span>Ефективність співробітників</a></li><li class="sidebar__item"><a class="sidebar__link sidebar__link--active" href="resource-usage.html"><span class="sidebar__icon"><img src="assets/icons/resource-usage.png" alt="" class="icon icon--sidebar"></span>Використання ресурсів</a></li><li class="sidebar__item"><a class="sidebar__link" href="finance-report.html"><span class="sidebar__icon"><img src="assets/icons/finance.png" alt="" class="icon icon--sidebar"></span>Витрати та прибуток</a></li></ul></nav>
+      <nav class="sidebar__group" aria-label="Система"><h2 class="sidebar__group-title">СИСТЕМА</h2><ul class="sidebar__list"><li class="sidebar__item"><a class="sidebar__link" href="roles-permissions.html"><span class="sidebar__icon"><img src="assets/icons/roles.png" alt="" class="icon icon--sidebar"></span>Ролі та права</a></li><li class="sidebar__item"><a class="sidebar__link" href="activity-log.html"><span class="sidebar__icon"><img src="assets/icons/log.png" alt="" class="icon icon--sidebar"></span>Журнал подій</a></li><li class="sidebar__item"><a class="sidebar__link" href="settings.html"><span class="sidebar__icon"><img src="assets/icons/settings.png" alt="" class="icon icon--sidebar"></span>Налаштування</a></li></ul></nav>
+    </aside>
+    <div class="content-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span class="breadcrumb__label">Аналітика</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__current">Використання ресурсів</span></div>
+        <div class="topbar__actions"><button class="icon-button" aria-label="Сповіщення"><img src="assets/icons/account_notification.png" alt="" class="icon icon--button"></button><button class="icon-button" aria-label="Допомога"><img src="assets/icons/account_question.png" alt="" class="icon icon--button"></button><button class="icon-button" aria-label="Налаштування"><img src="assets/icons/account_settings.png" alt="" class="icon icon--button"></button><div class="topbar__avatar" aria-label="Профіль користувача"><img src="assets/icons/avatar-admin.png" alt="Профіль користувача" class="topbar__avatar-image"></div></div>
+      </header>
+      <main class="main-content main-content--resource-usage"></main>
+    </div>
+  </div>
 </body>
 </html>
