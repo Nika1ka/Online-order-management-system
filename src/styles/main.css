@@ -290,7 +290,8 @@ select {
 
 /* Recolors secondary action icons and sort indicators to the standard interface blue. */
 .icon-button--action--secondary .icon,
-.sort-indicator .icon {
+.sort-indicator .icon, 
+.topbar__actions .icon--button {
   filter: brightness(0) saturate(100%) invert(39%) sepia(37%) saturate(1157%) hue-rotate(182deg) brightness(92%) contrast(87%);
 }
 
