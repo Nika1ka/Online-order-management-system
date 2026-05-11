@@ -293,11 +293,6 @@ order-production_schedule_management_system/
 - Display utilities (hide, show)
 - Інші допоміжні класи
 
-### **pages/*.css** — Сторінкові стилі
-- Специфічні стилі для кожної сторінки
-- Переважно містять медіа-запити для responsive
-- Використовують класи з основних CSS-файлів
-
 ---
 
 ## Дизайн-система (Color Tokens)
