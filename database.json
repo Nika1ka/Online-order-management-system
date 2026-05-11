@@ -101,7 +101,7 @@
     },
     {
       "user_id": 12,
-      "full_name": "пан Аарон Дахно",
+      "full_name": "Аарон Дахно",
       "email": "user12@example.com",
       "password_hash": "c20ad4d76fe97759aa27a0c99bff6710",
       "user_role": "Співробітник",
@@ -200,7 +200,7 @@
     },
     {
       "user_id": 23,
-      "full_name": "пан Арсен Засенко",
+      "full_name": "Арсен Засенко",
       "email": "user23@example.com",
       "password_hash": "37693cfc748049e45d87b8c7d8b9aacd",
       "user_role": "Співробітник",
@@ -218,7 +218,7 @@
     },
     {
       "user_id": 25,
-      "full_name": "пан Демʼян Перебийніс",
+      "full_name": "Демʼян Перебийніс",
       "email": "user25@example.com",
       "password_hash": "8e296a067a37563370ded05f5a3bf3ec",
       "user_role": "Адміністратор",

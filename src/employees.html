@@ -152,47 +152,37 @@
           <div class="filter-grid">
             <label class="field">
               <span class="field__label">Посада</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-position-filter">
                 <option>Всі посади</option>
-                <option>Дизайн</option>
-                <option>Веб-розробка</option>
-                <option>Тестування</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Відділ</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-department-filter">
                 <option>Всі відділи</option>
-                <option>UX/UI</option>
-                <option>IT</option>
-                <option>Маркетинг</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Кваліфікація</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-qualification-filter">
                 <option>Будь-яка</option>
-                <option>Вища</option>
-                <option>Середня</option>
-                <option>Практикант</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Дата прийому на роботу</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-hire-date-filter">
                 <option>За весь час</option>
-                <option>Останній місяць</option>
-                <option>Останні 6 місяців</option>
+                <option>За 6 місяців</option>
+                <option>За 1 рік</option>
+                <option>За 2 роки</option>
+                <option>За 5 років</option>
+                <option>Будь-коли</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Статус задачі</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-task-status-filter">
                 <option>Всі статуси</option>
-                <option>Виконано</option>
-                <option>В роботі</option>
-                <option>На перевірці</option>
-                <option>Очікує</option>
               </select>
             </label>
           </div>
@@ -200,11 +190,11 @@
           <div class="filter-search">
             <label class="field field--search">
               <span class="field__label">Пошук за ПІБ співробітника</span>
-              <input class="field__input" type="search" placeholder="Введіть ім'я або email" />
+              <input class="field__input" id="employee-search-input" type="search" placeholder="Введіть ім'я або email" />
             </label>
             <div class="filter-actions">
-              <button class="button button--secondary">Скинути</button>
-              <button class="button button--primary">Фільтрувати</button>
+              <button class="button button--secondary" id="employee-filter-reset" type="button">Скинути</button>
+              <button class="button button--primary" id="employee-filter-submit" type="button">Фільтрувати</button>
             </div>
           </div>
         </section>
@@ -232,216 +222,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">IP</div>
-                        <div>
-                          <div class="user-name">Іван Петренко</div>
-                          <div class="user-role">Design</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Petrenko@company.com</td>
-                    <td>+380721834821</td>
-                    <td>Дизайн</td>
-                    <td>UX/UI</td>
-                    <td>Вища</td>
-                    <td>13.02.2023</td>
-                    <td>Підготовка матеріалів</td>
-                    <td><span class="badge badge--success">Виконано</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">MK</div>
-                        <div>
-                          <div class="user-name">Марія Коваль</div>
-                          <div class="user-role">Web</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Koval@company.com</td>
-                    <td>+380726564821</td>
-                    <td>Веб-розробка</td>
-                    <td>IT</td>
-                    <td>Практикант</td>
-                    <td>24.02.2026</td>
-                    <td>Верстка головної сторінки</td>
-                    <td><span class="badge badge--info">В роботі</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">OS</div>
-                        <div>
-                          <div class="user-name">Олег Сидоренко</div>
-                          <div class="user-role">Backend</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Sidorenko@company.com</td>
-                    <td>+380756648456</td>
-                    <td>Веб-розробка</td>
-                    <td>IT</td>
-                    <td>Вища</td>
-                    <td>01.02.2023</td>
-                    <td>Інтеграція з API</td>
-                    <td><span class="badge badge--success">Виконано</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">DL</div>
-                        <div>
-                          <div class="user-name">Дмитро Лисенко</div>
-                          <div class="user-role">Backend</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Lusenko@company.com</td>
-                    <td>+380900666462</td>
-                    <td>Веб-розробка</td>
-                    <td>IT</td>
-                    <td>Середня</td>
-                    <td>24.02.2024</td>
-                    <td>Налаштування БД</td>
-                    <td><span class="badge badge--info">В роботі</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">AS</div>
-                        <div>
-                          <div class="user-name">Анна Шевченко</div>
-                          <div class="user-role">QA</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Chevchenko@company.com</td>
-                    <td>+380874654336</td>
-                    <td>Тестування</td>
-                    <td>Відділ якості</td>
-                    <td>Низька</td>
-                    <td>03.02.2025</td>
-                    <td>Тестування функціоналу</td>
-                    <td><span class="badge badge--purple">На перевірці</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">SB</div>
-                        <div>
-                          <div class="user-name">Світлана Бондар</div>
-                          <div class="user-role">CMM</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Bondar@company.com</td>
-                    <td>+380967344451</td>
-                    <td>Маркетинг</td>
-                    <td>Маркетинг</td>
-                    <td>Без кваліфікації</td>
-                    <td>15.02.2025</td>
-                    <td>Підготовка розсилки</td>
-                    <td><span class="badge badge--success">Виконано</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">VT</div>
-                        <div>
-                          <div class="user-name">Владислав Ткач</div>
-                          <div class="user-role">Web</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Tkach@company.com</td>
-                    <td>+380155657771</td>
-                    <td>Веб-розробка</td>
-                    <td>IT</td>
-                    <td>Середня</td>
-                    <td>08.02.2020</td>
-                    <td>Верстка сторінки аналізу</td>
-                    <td><span class="badge badge--gray">Очікує</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">EK</div>
-                        <div>
-                          <div class="user-name">Єгор Курченко</div>
-                          <div class="user-role">QA</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Kurchenko@company.com</td>
-                    <td>+380143732475</td>
-                    <td>Тестування</td>
-                    <td>Відділ якості</td>
-                    <td>Практикант</td>
-                    <td>11.01.2026</td>
-                    <td>Тестування функціоналу</td>
-                    <td><span class="badge badge--info">В роботі</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">MK</div>
-                        <div>
-                          <div class="user-name">Марія Кузнєцова</div>
-                          <div class="user-role">Менеджер</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Kuznezova@company.com</td>
-                    <td>+380658537410</td>
-                    <td>Менеджмент</td>
-                    <td>Менеджмент</td>
-                    <td>Вища</td>
-                    <td>28.11.2023</td>
-                    <td>Створення плану виробництва</td>
-                    <td><span class="badge badge--gray">Очікує</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">OM</div>
-                        <div>
-                          <div class="user-name">Олександр Міроненко</div>
-                          <div class="user-role">Design</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Mironenko@company.com</td>
-                    <td>+380885247005</td>
-                    <td>Дизайн</td>
-                    <td>UX/UI</td>
-                    <td>Без кваліфікації</td>
-                    <td>20.05.2024</td>
-                    <td>Узагальнення матеріалів</td>
-                    <td><span class="badge badge--success">Виконано</span></td>
-                    <td><button class="icon-button icon-button--small" aria-label="Редагувати"><img src="assets/icons/edit.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
+                  <!-- Employee rows are rendered dynamically by src/js/employees-data.js -->
                 </tbody>
               </table>
             </div>
@@ -451,9 +232,10 @@
               <div class="table-footer__controls">
                 <label class="footer-select">
                   <span>Рядків на сторінці</span>
-                  <select>
+                  <select id="employee-page-size">
                     <option>10</option>
-                    <option>20</option>
+                    <option>15</option>
+                    <option>25</option>
                     <option>50</option>
                   </select>
                 </label>
@@ -471,6 +253,7 @@
       </main>
     </div>
   </div>
+  <script src="js/employees-data.js"></script>
 </body>
 </html>
 
