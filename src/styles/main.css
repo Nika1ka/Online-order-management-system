@@ -253,8 +253,8 @@ select {
 
 /* Sets compact icon dimensions for sortable table headers. */
 .icon--sort {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 }
 
 /* Sets icon dimensions for metric rows in dashboards and analytics cards. */
@@ -1099,8 +1099,8 @@ button:hover {
   position: absolute;
   left: 14px;
   top: 50%;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transform: translateY(-50%);
   background: currentColor;
 }
@@ -1130,6 +1130,7 @@ button:hover {
   min-height: 172px;
   border-top: 1px solid var(--border);
   background: #ffffff;
+  border-radius: 14px 14px 0 0;
 }
 
 /* Draws the muted header band across the top of the empty-state schedule chart. */
@@ -1141,6 +1142,7 @@ button:hover {
   right: 0;
   height: 40px;
   background: #eef2f7;
+  border-radius: 14px 14px 0 0;
 }
 
 /* Displays the instructional empty-state message inside the parent schedule chart. */
