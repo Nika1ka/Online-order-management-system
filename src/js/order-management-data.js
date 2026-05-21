@@ -3,6 +3,7 @@ const ORDERS_TABLE_SELECTOR = ".table--orders tbody";
 const ORDERS_COUNT_SELECTOR = ".table-footer__text";
 const ORDERS_PAGE_SIZE_SELECTOR = "#order-page-size";
 const ORDERS_PAGINATION_SELECTOR = ".pagination";
+const ORDERS_SORTABLE_HEADERS_SELECTOR = ".table--orders thead th[data-sort-key]";
 
 const ORDERS_FILTER_SELECTORS = {
   plannedDateFrom: "#order-planned-date-from",
@@ -29,6 +30,14 @@ const ORDER_PRIORITY_CLASS_MAP = {
   "Низький": "badge--gray",
 };
 
+const ORDER_STATUS_PRIORITY = {
+  "В роботі": 4,
+  "На перевірці": 3,
+  "Очікує": 2,
+  "Виконано": 1,
+  "Прострочено": 0,
+};
+
 const PAGE_SIZE_OPTIONS = [10, 15, 25, 50];
 
 const ordersTableState = {
@@ -43,6 +52,10 @@ const ordersTableState = {
     actualDateTo: "",
     status: "",
     search: "",
+  },
+  sort: {
+    key: null,
+    direction: "desc",
   },
 };
 
@@ -75,6 +88,31 @@ function getInitials(fullName) {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase() || "")
     .join("");
+}
+
+function getDateTimestamp(dateString) {
+  if (!dateString) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const date = new Date(dateString);
+  return Number.isNaN(date.getTime()) ? Number.NEGATIVE_INFINITY : date.getTime();
+}
+
+function compareValues(valueA, valueB, direction) {
+  if (typeof valueA === "string" || typeof valueB === "string") {
+    const normalizedA = String(valueA ?? "").toLowerCase();
+    const normalizedB = String(valueB ?? "").toLowerCase();
+    const result = normalizedA.localeCompare(normalizedB, "uk");
+
+    return direction === "desc" ? -result : result;
+  }
+
+  const safeA = Number.isFinite(valueA) ? valueA : Number.NEGATIVE_INFINITY;
+  const safeB = Number.isFinite(valueB) ? valueB : Number.NEGATIVE_INFINITY;
+  const result = safeA - safeB;
+
+  return direction === "desc" ? -result : result;
 }
 
 function formatBudget(amount) {
@@ -308,6 +346,40 @@ function createProgressOrderRow(order) {
   `;
 }
 
+function getOrderSortValue(order, sortKey) {
+  switch (sortKey) {
+    case "id":
+      return Number(order.id) || 0;
+    case "name":
+      return order.name || "";
+    case "createdAt":
+      return getDateTimestamp(order.createdAt);
+    case "deadline":
+      return getDateTimestamp(order.deadline);
+    case "actualDate":
+      return getDateTimestamp(order.actualDate);
+    case "status":
+      return ORDER_STATUS_PRIORITY[order.status] ?? Number.NEGATIVE_INFINITY;
+    default:
+      return "";
+  }
+}
+
+function sortFilteredOrders() {
+  const { key, direction } = ordersTableState.sort;
+
+  if (!key) {
+    return;
+  }
+
+  ordersTableState.filteredOrders.sort((orderA, orderB) => {
+    const valueA = getOrderSortValue(orderA, key);
+    const valueB = getOrderSortValue(orderB, key);
+
+    return compareValues(valueA, valueB, direction);
+  });
+}
+
 function getTotalPages() {
   return Math.max(1, Math.ceil(ordersTableState.filteredOrders.length / ordersTableState.pageSize));
 }
@@ -514,6 +586,7 @@ function applyFilters() {
   });
 
   ordersTableState.currentPage = 1;
+  sortFilteredOrders();
 
   console.log("[order-management-data] Filters applied:", ordersTableState.filters);
   console.log(`[order-management-data] ${ordersTableState.filteredOrders.length} orders matched filters`);
@@ -545,11 +618,9 @@ function resetFiltersUI() {
   selectors.forEach((selector) => {
     const element = document.querySelector(selector);
 
-    if (!element) {
-      return;
+    if (element) {
+      element.value = "";
     }
-
-    element.value = "";
   });
 }
 
@@ -566,6 +637,7 @@ function resetFilters() {
   resetFiltersUI();
   ordersTableState.filteredOrders = [...ordersTableState.allOrders];
   ordersTableState.currentPage = 1;
+  sortFilteredOrders();
 
   console.log("[order-management-data] Filters reset");
   renderOrdersTable();
@@ -611,11 +683,35 @@ function handleFilterSubmit() {
   applyFilters();
 }
 
+function handleOrdersSortClick(event) {
+  const sortableHeader = event.target.closest("th[data-sort-key]");
+
+  if (!sortableHeader || !sortableHeader.querySelector(".sort-indicator")) {
+    return;
+  }
+
+  const sortKey = sortableHeader.dataset.sortKey;
+
+  if (ordersTableState.sort.key === sortKey) {
+    ordersTableState.sort.direction = ordersTableState.sort.direction === "desc" ? "asc" : "desc";
+  } else {
+    ordersTableState.sort.key = sortKey;
+    ordersTableState.sort.direction = "desc";
+  }
+
+  ordersTableState.currentPage = 1;
+  sortFilteredOrders();
+
+  console.log("[order-management-data] Sort applied:", ordersTableState.sort);
+  renderOrdersTable();
+}
+
 function bindOrdersTableControls() {
   const pageSizeSelect = document.querySelector(ORDERS_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(ORDERS_PAGINATION_SELECTOR);
   const filterSubmitButton = document.querySelector(ORDERS_FILTER_SELECTORS.submit);
   const filterResetButton = document.querySelector(ORDERS_FILTER_SELECTORS.reset);
+  const sortableHeaders = document.querySelectorAll(ORDERS_SORTABLE_HEADERS_SELECTOR);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -632,6 +728,10 @@ function bindOrdersTableControls() {
   if (filterResetButton) {
     filterResetButton.addEventListener("click", resetFilters);
   }
+
+  sortableHeaders.forEach((header) => {
+    header.addEventListener("click", handleOrdersSortClick);
+  });
 }
 
 async function fetchOrdersData() {

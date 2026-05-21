@@ -3,6 +3,7 @@ const EMPLOYEES_TABLE_SELECTOR = ".table--employees tbody";
 const EMPLOYEES_COUNT_SELECTOR = ".table-footer__text";
 const EMPLOYEES_PAGE_SIZE_SELECTOR = "#employee-page-size";
 const EMPLOYEES_PAGINATION_SELECTOR = ".pagination";
+const EMPLOYEES_SORTABLE_HEADERS_SELECTOR = ".table--employees thead th[data-sort-key]";
 
 const EMPLOYEES_FILTER_SELECTORS = {
   position: "#employee-position-filter",
@@ -55,6 +56,10 @@ const employeesTableState = {
     taskStatus: "",
     search: "",
   },
+  sort: {
+    key: null,
+    direction: "desc",
+  },
 };
 
 function formatDate(dateString) {
@@ -86,6 +91,31 @@ function getInitials(fullName) {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase() || "")
     .join("");
+}
+
+function getDateTimestamp(dateString) {
+  if (!dateString) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const date = new Date(dateString);
+  return Number.isNaN(date.getTime()) ? Number.NEGATIVE_INFINITY : date.getTime();
+}
+
+function compareValues(valueA, valueB, direction) {
+  if (typeof valueA === "string" || typeof valueB === "string") {
+    const normalizedA = String(valueA ?? "").toLowerCase();
+    const normalizedB = String(valueB ?? "").toLowerCase();
+    const result = normalizedA.localeCompare(normalizedB, "uk");
+
+    return direction === "desc" ? -result : result;
+  }
+
+  const safeA = Number.isFinite(valueA) ? valueA : Number.NEGATIVE_INFINITY;
+  const safeB = Number.isFinite(valueB) ? valueB : Number.NEGATIVE_INFINITY;
+  const result = safeA - safeB;
+
+  return direction === "desc" ? -result : result;
 }
 
 function getCurrentTaskForEmployee(employeeId, tasks = []) {
@@ -200,15 +230,43 @@ function createEmployeeRow(employee) {
       <td>${employee.currentTask}</td>
       <td><span class="badge ${badgeClass}">${employee.taskStatus}</span></td>
       <td>
-        <button class="icon-button--action icon-button--action--secondary" aria-label="Переглянути">
+        <button class="icon-button--action icon-button--action--secondary" type="button" aria-label="Переглянути">
           <img src="assets/icons/view.svg" alt="" class="icon icon--action">
         </button>
-        <button class="icon-button--action icon-button--action--primary" aria-label="Редагувати">
+        <button class="icon-button--action icon-button--action--primary" type="button" aria-label="Редагувати">
           <img src="assets/icons/edit.png" alt="" class="icon icon--action">
         </button>
       </td>
     </tr>
   `;
+}
+
+function getEmployeeSortValue(employee, sortKey) {
+  switch (sortKey) {
+    case "id":
+      return Number(employee.id) || 0;
+    case "name":
+      return employee.name || "";
+    case "email":
+      return employee.email || "";
+    default:
+      return "";
+  }
+}
+
+function sortFilteredEmployees() {
+  const { key, direction } = employeesTableState.sort;
+
+  if (!key) {
+    return;
+  }
+
+  employeesTableState.filteredEmployees.sort((employeeA, employeeB) => {
+    const valueA = getEmployeeSortValue(employeeA, key);
+    const valueB = getEmployeeSortValue(employeeB, key);
+
+    return compareValues(valueA, valueB, direction);
+  });
 }
 
 function getTotalPages() {
@@ -326,10 +384,7 @@ function syncPageSizeSelect() {
 }
 
 function createOptionsMarkup(defaultLabel, values) {
-  const options = values
-    .map((value) => `<option value="${value}">${value}</option>`)
-    .join("");
-
+  const options = values.map((value) => `<option value="${value}">${value}</option>`).join("");
   return `<option value="">${defaultLabel}</option>${options}`;
 }
 
@@ -455,6 +510,7 @@ function applyFilters() {
   });
 
   employeesTableState.currentPage = 1;
+  sortFilteredEmployees();
 
   console.log("[employees-data] Filters applied:", employeesTableState.filters);
   console.log(`[employees-data] ${employeesTableState.filteredEmployees.length} employees matched filters`);
@@ -509,6 +565,7 @@ function resetFilters() {
   resetFiltersUI();
   employeesTableState.filteredEmployees = [...employeesTableState.allEmployees];
   employeesTableState.currentPage = 1;
+  sortFilteredEmployees();
 
   console.log("[employees-data] Filters reset");
   renderEmployeesTable();
@@ -553,11 +610,35 @@ function handleFilterSubmit() {
   applyFilters();
 }
 
+function handleEmployeesSortClick(event) {
+  const sortableHeader = event.target.closest("th[data-sort-key]");
+
+  if (!sortableHeader || !sortableHeader.querySelector(".sort-indicator")) {
+    return;
+  }
+
+  const sortKey = sortableHeader.dataset.sortKey;
+
+  if (employeesTableState.sort.key === sortKey) {
+    employeesTableState.sort.direction = employeesTableState.sort.direction === "desc" ? "asc" : "desc";
+  } else {
+    employeesTableState.sort.key = sortKey;
+    employeesTableState.sort.direction = "desc";
+  }
+
+  employeesTableState.currentPage = 1;
+  sortFilteredEmployees();
+
+  console.log("[employees-data] Sort applied:", employeesTableState.sort);
+  renderEmployeesTable();
+}
+
 function bindEmployeesTableControls() {
   const pageSizeSelect = document.querySelector(EMPLOYEES_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(EMPLOYEES_PAGINATION_SELECTOR);
   const filterSubmitButton = document.querySelector(EMPLOYEES_FILTER_SELECTORS.submit);
   const filterResetButton = document.querySelector(EMPLOYEES_FILTER_SELECTORS.reset);
+  const sortableHeaders = document.querySelectorAll(EMPLOYEES_SORTABLE_HEADERS_SELECTOR);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -574,6 +655,10 @@ function bindEmployeesTableControls() {
   if (filterResetButton) {
     filterResetButton.addEventListener("click", resetFilters);
   }
+
+  sortableHeaders.forEach((header) => {
+    header.addEventListener("click", handleEmployeesSortClick);
+  });
 }
 
 async function fetchEmployeesData() {

@@ -3,6 +3,7 @@ const PRODUCTION_TASKS_TABLE_SELECTOR = ".table--production-tasks tbody";
 const PRODUCTION_TASKS_COUNT_SELECTOR = ".table-footer__text";
 const PRODUCTION_TASKS_PAGE_SIZE_SELECTOR = "#production-task-page-size";
 const PRODUCTION_TASKS_PAGINATION_SELECTOR = ".pagination";
+const PRODUCTION_TASKS_SORTABLE_HEADERS_SELECTOR = ".table--production-tasks thead th[data-sort-key]";
 
 const PRODUCTION_TASKS_FILTER_SELECTORS = {
   plannedDateFrom: "#production-task-planned-date-from",
@@ -36,6 +37,10 @@ const productionTasksTableState = {
     actualDateTo: "",
     status: "",
     search: "",
+  },
+  sort: {
+    key: null,
+    direction: "desc",
   },
 };
 
@@ -88,6 +93,31 @@ function getInitials(fullName) {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase() || "")
     .join("");
+}
+
+function getDateTimestamp(dateString) {
+  if (!dateString) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const date = new Date(dateString);
+  return Number.isNaN(date.getTime()) ? Number.NEGATIVE_INFINITY : date.getTime();
+}
+
+function compareValues(valueA, valueB, direction) {
+  if (typeof valueA === "string" || typeof valueB === "string") {
+    const normalizedA = String(valueA ?? "").toLowerCase();
+    const normalizedB = String(valueB ?? "").toLowerCase();
+    const result = normalizedA.localeCompare(normalizedB, "uk");
+
+    return direction === "desc" ? -result : result;
+  }
+
+  const safeA = Number.isFinite(valueA) ? valueA : Number.NEGATIVE_INFINITY;
+  const safeB = Number.isFinite(valueB) ? valueB : Number.NEGATIVE_INFINITY;
+  const result = safeA - safeB;
+
+  return direction === "desc" ? -result : result;
 }
 
 function normalizeDirectTask(task, index) {
@@ -195,6 +225,38 @@ function createTaskRow(task) {
       <td>${createActionsCell()}</td>
     </tr>
   `;
+}
+
+function getProductionTaskSortValue(task, sortKey) {
+  switch (sortKey) {
+    case "id":
+      return Number(task.id) || 0;
+    case "name":
+      return task.name || "";
+    case "orderName":
+      return task.orderName || "";
+    case "plannedDate":
+      return getDateTimestamp(task.plannedDate);
+    case "actualDate":
+      return getDateTimestamp(task.actualDate);
+    default:
+      return "";
+  }
+}
+
+function sortFilteredTasks() {
+  const { key, direction } = productionTasksTableState.sort;
+
+  if (!key) {
+    return;
+  }
+
+  productionTasksTableState.filteredTasks.sort((taskA, taskB) => {
+    const valueA = getProductionTaskSortValue(taskA, key);
+    const valueB = getProductionTaskSortValue(taskB, key);
+
+    return compareValues(valueA, valueB, direction);
+  });
 }
 
 function getTotalPages() {
@@ -401,6 +463,7 @@ function applyFilters() {
   });
 
   productionTasksTableState.currentPage = 1;
+  sortFilteredTasks();
 
   console.log("[production-tasks-data] Filters applied:", productionTasksTableState.filters);
   console.log(`[production-tasks-data] ${productionTasksTableState.filteredTasks.length} tasks matched filters`);
@@ -432,11 +495,9 @@ function resetFiltersUI() {
   selectors.forEach((selector) => {
     const element = document.querySelector(selector);
 
-    if (!element) {
-      return;
+    if (element) {
+      element.value = "";
     }
-
-    element.value = "";
   });
 }
 
@@ -453,6 +514,7 @@ function resetFilters() {
   resetFiltersUI();
   productionTasksTableState.filteredTasks = [...productionTasksTableState.allTasks];
   productionTasksTableState.currentPage = 1;
+  sortFilteredTasks();
 
   console.log("[production-tasks-data] Filters reset");
   renderProductionTasksTable();
@@ -498,11 +560,36 @@ function handleFilterSubmit() {
   applyFilters();
 }
 
+function handleProductionTasksSortClick(event) {
+  const sortableHeader = event.target.closest("th[data-sort-key]");
+
+  if (!sortableHeader || !sortableHeader.querySelector(".sort-indicator")) {
+    return;
+  }
+
+  const sortKey = sortableHeader.dataset.sortKey;
+
+  if (productionTasksTableState.sort.key === sortKey) {
+    productionTasksTableState.sort.direction =
+      productionTasksTableState.sort.direction === "desc" ? "asc" : "desc";
+  } else {
+    productionTasksTableState.sort.key = sortKey;
+    productionTasksTableState.sort.direction = "desc";
+  }
+
+  productionTasksTableState.currentPage = 1;
+  sortFilteredTasks();
+
+  console.log("[production-tasks-data] Sort applied:", productionTasksTableState.sort);
+  renderProductionTasksTable();
+}
+
 function bindProductionTasksTableControls() {
   const pageSizeSelect = document.querySelector(PRODUCTION_TASKS_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(PRODUCTION_TASKS_PAGINATION_SELECTOR);
   const filterSubmitButton = document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.submit);
   const filterResetButton = document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.reset);
+  const sortableHeaders = document.querySelectorAll(PRODUCTION_TASKS_SORTABLE_HEADERS_SELECTOR);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -519,6 +606,10 @@ function bindProductionTasksTableControls() {
   if (filterResetButton) {
     filterResetButton.addEventListener("click", resetFilters);
   }
+
+  sortableHeaders.forEach((header) => {
+    header.addEventListener("click", handleProductionTasksSortClick);
+  });
 }
 
 async function fetchProductionTasksData() {
