@@ -1,8 +1,19 @@
 const PRODUCTION_TASKS_DATA_URL = "../database.json";
 const PRODUCTION_TASKS_TABLE_SELECTOR = ".table--production-tasks tbody";
 const PRODUCTION_TASKS_COUNT_SELECTOR = ".table-footer__text";
-const PRODUCTION_TASKS_PAGE_SIZE_SELECTOR = ".footer-select select";
+const PRODUCTION_TASKS_PAGE_SIZE_SELECTOR = "#production-task-page-size";
 const PRODUCTION_TASKS_PAGINATION_SELECTOR = ".pagination";
+
+const PRODUCTION_TASKS_FILTER_SELECTORS = {
+  plannedDateFrom: "#production-task-planned-date-from",
+  plannedDateTo: "#production-task-planned-date-to",
+  actualDateFrom: "#production-task-actual-date-from",
+  actualDateTo: "#production-task-actual-date-to",
+  status: "#production-task-status-filter",
+  search: "#production-task-search-input",
+  submit: "#production-task-filter-submit",
+  reset: "#production-task-filter-reset",
+};
 
 const PRODUCTION_TASK_STATUS_CLASS_MAP = {
   "Виконано": "badge--success",
@@ -15,8 +26,17 @@ const PAGE_SIZE_OPTIONS = [10, 15, 25, 50];
 
 const productionTasksTableState = {
   allTasks: [],
+  filteredTasks: [],
   currentPage: 1,
   pageSize: 10,
+  filters: {
+    plannedDateFrom: "",
+    plannedDateTo: "",
+    actualDateFrom: "",
+    actualDateTo: "",
+    status: "",
+    search: "",
+  },
 };
 
 function formatDate(dateString) {
@@ -178,14 +198,14 @@ function createTaskRow(task) {
 }
 
 function getTotalPages() {
-  return Math.max(1, Math.ceil(productionTasksTableState.allTasks.length / productionTasksTableState.pageSize));
+  return Math.max(1, Math.ceil(productionTasksTableState.filteredTasks.length / productionTasksTableState.pageSize));
 }
 
 function getVisibleTasks() {
   const startIndex = (productionTasksTableState.currentPage - 1) * productionTasksTableState.pageSize;
   const endIndex = startIndex + productionTasksTableState.pageSize;
 
-  return productionTasksTableState.allTasks.slice(startIndex, endIndex);
+  return productionTasksTableState.filteredTasks.slice(startIndex, endIndex);
 }
 
 function updateCountLabel(visibleTasksCount) {
@@ -195,14 +215,14 @@ function updateCountLabel(visibleTasksCount) {
     return;
   }
 
-  if (!productionTasksTableState.allTasks.length) {
+  if (!productionTasksTableState.filteredTasks.length) {
     countLabel.textContent = "Показано 0 із 0 виробничих задач";
     return;
   }
 
   const start = (productionTasksTableState.currentPage - 1) * productionTasksTableState.pageSize + 1;
   const end = start + visibleTasksCount - 1;
-  const total = productionTasksTableState.allTasks.length;
+  const total = productionTasksTableState.filteredTasks.length;
 
   countLabel.textContent = `Показано ${start}–${end} із ${total} виробничих задач`;
 }
@@ -291,6 +311,153 @@ function syncPageSizeSelect() {
   pageSizeSelect.value = String(productionTasksTableState.pageSize);
 }
 
+function createOptionsMarkup(defaultLabel, values) {
+  const options = values.map((value) => `<option value="${value}">${value}</option>`).join("");
+  return `<option value="">${defaultLabel}</option>${options}`;
+}
+
+function getUniqueSortedValues(items, key) {
+  return [...new Set(items.map((item) => item[key]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "uk"));
+}
+
+function populateDynamicFilters() {
+  const statusSelect = document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.status);
+
+  if (statusSelect) {
+    statusSelect.innerHTML = createOptionsMarkup(
+      "Всі статуси",
+      getUniqueSortedValues(productionTasksTableState.allTasks, "status"),
+    );
+  }
+
+  console.log("[production-tasks-data] Dynamic filter options populated");
+}
+
+function normalizeDateOnly(dateString) {
+  if (!dateString) {
+    return null;
+  }
+
+  const date = new Date(dateString);
+
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
+
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+function matchesDateRange(dateString, fromValue, toValue) {
+  if (!fromValue && !toValue) {
+    return true;
+  }
+
+  const targetDate = normalizeDateOnly(dateString);
+
+  if (!targetDate) {
+    return false;
+  }
+
+  const fromDate = normalizeDateOnly(fromValue);
+  const toDate = normalizeDateOnly(toValue);
+
+  if (fromDate && targetDate < fromDate) {
+    return false;
+  }
+
+  if (toDate && targetDate > toDate) {
+    return false;
+  }
+
+  return true;
+}
+
+function matchesSearchFilter(task, searchValue) {
+  if (!searchValue) {
+    return true;
+  }
+
+  const normalizedSearch = searchValue.trim().toLowerCase();
+
+  return (
+    task.name.toLowerCase().includes(normalizedSearch) ||
+    task.orderName.toLowerCase().includes(normalizedSearch) ||
+    task.employeeName.toLowerCase().includes(normalizedSearch)
+  );
+}
+
+function applyFilters() {
+  const { plannedDateFrom, plannedDateTo, actualDateFrom, actualDateTo, status, search } =
+    productionTasksTableState.filters;
+
+  productionTasksTableState.filteredTasks = productionTasksTableState.allTasks.filter((task) => {
+    const matchesPlannedDate = matchesDateRange(task.plannedDate, plannedDateFrom, plannedDateTo);
+    const matchesActualDate = matchesDateRange(task.actualDate, actualDateFrom, actualDateTo);
+    const matchesStatus = !status || task.status === status;
+    const matchesSearch = matchesSearchFilter(task, search);
+
+    return matchesPlannedDate && matchesActualDate && matchesStatus && matchesSearch;
+  });
+
+  productionTasksTableState.currentPage = 1;
+
+  console.log("[production-tasks-data] Filters applied:", productionTasksTableState.filters);
+  console.log(`[production-tasks-data] ${productionTasksTableState.filteredTasks.length} tasks matched filters`);
+
+  renderProductionTasksTable();
+}
+
+function readFiltersFromUI() {
+  productionTasksTableState.filters = {
+    plannedDateFrom: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.plannedDateFrom)?.value || "",
+    plannedDateTo: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.plannedDateTo)?.value || "",
+    actualDateFrom: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.actualDateFrom)?.value || "",
+    actualDateTo: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.actualDateTo)?.value || "",
+    status: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.status)?.value || "",
+    search: document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.search)?.value?.trim() || "",
+  };
+}
+
+function resetFiltersUI() {
+  const selectors = [
+    PRODUCTION_TASKS_FILTER_SELECTORS.plannedDateFrom,
+    PRODUCTION_TASKS_FILTER_SELECTORS.plannedDateTo,
+    PRODUCTION_TASKS_FILTER_SELECTORS.actualDateFrom,
+    PRODUCTION_TASKS_FILTER_SELECTORS.actualDateTo,
+    PRODUCTION_TASKS_FILTER_SELECTORS.status,
+    PRODUCTION_TASKS_FILTER_SELECTORS.search,
+  ];
+
+  selectors.forEach((selector) => {
+    const element = document.querySelector(selector);
+
+    if (!element) {
+      return;
+    }
+
+    element.value = "";
+  });
+}
+
+function resetFilters() {
+  productionTasksTableState.filters = {
+    plannedDateFrom: "",
+    plannedDateTo: "",
+    actualDateFrom: "",
+    actualDateTo: "",
+    status: "",
+    search: "",
+  };
+
+  resetFiltersUI();
+  productionTasksTableState.filteredTasks = [...productionTasksTableState.allTasks];
+  productionTasksTableState.currentPage = 1;
+
+  console.log("[production-tasks-data] Filters reset");
+  renderProductionTasksTable();
+}
+
 function handlePageSizeChange(event) {
   const nextPageSize = Number(event.target.value);
 
@@ -326,9 +493,16 @@ function handlePaginationClick(event) {
   renderProductionTasksTable();
 }
 
+function handleFilterSubmit() {
+  readFiltersFromUI();
+  applyFilters();
+}
+
 function bindProductionTasksTableControls() {
   const pageSizeSelect = document.querySelector(PRODUCTION_TASKS_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(PRODUCTION_TASKS_PAGINATION_SELECTOR);
+  const filterSubmitButton = document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.submit);
+  const filterResetButton = document.querySelector(PRODUCTION_TASKS_FILTER_SELECTORS.reset);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -336,6 +510,14 @@ function bindProductionTasksTableControls() {
 
   if (paginationElement) {
     paginationElement.addEventListener("click", handlePaginationClick);
+  }
+
+  if (filterSubmitButton) {
+    filterSubmitButton.addEventListener("click", handleFilterSubmit);
+  }
+
+  if (filterResetButton) {
+    filterResetButton.addEventListener("click", resetFilters);
   }
 }
 
@@ -362,11 +544,13 @@ async function initProductionTasksTable() {
     const tasks = getProductionTasksData(database);
 
     productionTasksTableState.allTasks = tasks;
+    productionTasksTableState.filteredTasks = [...tasks];
 
     if (!tasks.length) {
       console.warn("[production-tasks-data] No production tasks found in database.json");
     }
 
+    populateDynamicFilters();
     bindProductionTasksTableControls();
     syncPageSizeSelect();
     renderProductionTasksTable();

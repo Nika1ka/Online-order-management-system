@@ -155,12 +155,12 @@
               <div class="date-range">
                 <span class="date-range__item">
                   <span class="field__label">Від</span>
-                  <input class="date-range__input" type="date" />
+                  <input class="date-range__input" type="date" id="order-planned-date-from" />
                 </span>
                 <span>-</span>
                 <span class="date-range__item">
                   <span class="field__label">До</span>
-                  <input class="date-range__input" type="date" />
+                  <input class="date-range__input" type="date" id="order-planned-date-to" />
                 </span>
               </div>
             </label>
@@ -169,23 +169,19 @@
               <div class="date-range">
                 <span class="date-range__item">
                   <span class="field__label">Від</span>
-                  <input class="date-range__input" type="date" />
+                  <input class="date-range__input" type="date" id="order-actual-date-from" />
                 </span>
                 <span>-</span>
                 <span class="date-range__item">
                   <span class="field__label">До</span>
-                  <input class="date-range__input" type="date" />
+                  <input class="date-range__input" type="date" id="order-actual-date-to" />
                 </span>
               </div>
             </label>
             <label class="field">
               <span class="field__label">Статус замовлення</span>
-              <select class="field__select">
-                <option>Будь-який</option>
-                <option>Виконано</option>
-                <option>В роботі</option>
-                <option>На перевірці</option>
-                <option>Очікує</option>
+              <select class="field__select" id="order-status-filter">
+                <option value="">Всі статуси</option>
               </select>
             </label>
           </div>
@@ -193,11 +189,11 @@
           <div class="filter-search">
             <label class="field field--search">
               <span class="field__label">Пошук за назвою замовлення чи замовником</span>
-              <input class="field__input" type="search" placeholder="Введіть текст для пошуку" />
+              <input class="field__input" type="search" placeholder="Введіть текст для пошуку" id="order-search-input" />
             </label>
             <div class="filter-actions">
-              <button class="button button--secondary">Скинути</button>
-              <button class="button button--primary">Фільтрувати</button>
+              <button class="button button--secondary" type="button" id="order-filter-reset">Скинути</button>
+              <button class="button button--primary" type="button" id="order-filter-submit">Фільтрувати</button>
             </div>
           </div>
         </section>
@@ -234,7 +230,7 @@
               <div class="table-footer__controls">
                 <label class="footer-select">
                   <span>Рядків на сторінці:</span>
-                  <select>
+                  <select id="order-page-size">
                     <option>10</option>
                     <option>15</option>
                     <option>25</option>

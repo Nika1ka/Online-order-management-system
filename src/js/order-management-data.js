@@ -1,8 +1,19 @@
 const ORDER_MANAGEMENT_DATA_URL = "../database.json";
 const ORDERS_TABLE_SELECTOR = ".table--orders tbody";
 const ORDERS_COUNT_SELECTOR = ".table-footer__text";
-const ORDERS_PAGE_SIZE_SELECTOR = ".footer-select select";
+const ORDERS_PAGE_SIZE_SELECTOR = "#order-page-size";
 const ORDERS_PAGINATION_SELECTOR = ".pagination";
+
+const ORDERS_FILTER_SELECTORS = {
+  plannedDateFrom: "#order-planned-date-from",
+  plannedDateTo: "#order-planned-date-to",
+  actualDateFrom: "#order-actual-date-from",
+  actualDateTo: "#order-actual-date-to",
+  status: "#order-status-filter",
+  search: "#order-search-input",
+  submit: "#order-filter-submit",
+  reset: "#order-filter-reset",
+};
 
 const ORDER_STATUS_CLASS_MAP = {
   "Виконано": "badge--success",
@@ -22,8 +33,17 @@ const PAGE_SIZE_OPTIONS = [10, 15, 25, 50];
 
 const ordersTableState = {
   allOrders: [],
+  filteredOrders: [],
   currentPage: 1,
   pageSize: 10,
+  filters: {
+    plannedDateFrom: "",
+    plannedDateTo: "",
+    actualDateFrom: "",
+    actualDateTo: "",
+    status: "",
+    search: "",
+  },
 };
 
 function formatDate(dateString) {
@@ -289,14 +309,14 @@ function createProgressOrderRow(order) {
 }
 
 function getTotalPages() {
-  return Math.max(1, Math.ceil(ordersTableState.allOrders.length / ordersTableState.pageSize));
+  return Math.max(1, Math.ceil(ordersTableState.filteredOrders.length / ordersTableState.pageSize));
 }
 
 function getVisibleOrders() {
   const startIndex = (ordersTableState.currentPage - 1) * ordersTableState.pageSize;
   const endIndex = startIndex + ordersTableState.pageSize;
 
-  return ordersTableState.allOrders.slice(startIndex, endIndex);
+  return ordersTableState.filteredOrders.slice(startIndex, endIndex);
 }
 
 function updateCountLabel(visibleOrdersCount) {
@@ -306,14 +326,14 @@ function updateCountLabel(visibleOrdersCount) {
     return;
   }
 
-  if (!ordersTableState.allOrders.length) {
+  if (!ordersTableState.filteredOrders.length) {
     countLabel.textContent = "Показано 0 із 0 замовлень";
     return;
   }
 
   const start = (ordersTableState.currentPage - 1) * ordersTableState.pageSize + 1;
   const end = start + visibleOrdersCount - 1;
-  const total = ordersTableState.allOrders.length;
+  const total = ordersTableState.filteredOrders.length;
 
   countLabel.textContent = `Показано ${start}–${end} із ${total} замовлень`;
 }
@@ -405,6 +425,152 @@ function syncPageSizeSelect() {
   pageSizeSelect.value = String(ordersTableState.pageSize);
 }
 
+function createOptionsMarkup(defaultLabel, values) {
+  const options = values.map((value) => `<option value="${value}">${value}</option>`).join("");
+  return `<option value="">${defaultLabel}</option>${options}`;
+}
+
+function getUniqueSortedValues(items, key) {
+  return [...new Set(items.map((item) => item[key]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "uk"));
+}
+
+function populateDynamicFilters() {
+  const statusSelect = document.querySelector(ORDERS_FILTER_SELECTORS.status);
+
+  if (statusSelect) {
+    statusSelect.innerHTML = createOptionsMarkup("Всі статуси", getUniqueSortedValues(ordersTableState.allOrders, "status"));
+  }
+
+  console.log("[order-management-data] Dynamic filter options populated");
+}
+
+function normalizeDateOnly(dateString) {
+  if (!dateString) {
+    return null;
+  }
+
+  const date = new Date(dateString);
+
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
+
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+function matchesDateRange(dateString, fromValue, toValue) {
+  if (!fromValue && !toValue) {
+    return true;
+  }
+
+  const targetDate = normalizeDateOnly(dateString);
+
+  if (!targetDate) {
+    return false;
+  }
+
+  const fromDate = normalizeDateOnly(fromValue);
+  const toDate = normalizeDateOnly(toValue);
+
+  if (fromDate && targetDate < fromDate) {
+    return false;
+  }
+
+  if (toDate && targetDate > toDate) {
+    return false;
+  }
+
+  return true;
+}
+
+function matchesSearchFilter(order, searchValue) {
+  if (!searchValue) {
+    return true;
+  }
+
+  const normalizedSearch = searchValue.trim().toLowerCase();
+  const normalizedName = order.name.toLowerCase();
+  const normalizedClient = order.client.toLowerCase();
+  const normalizedManager = order.manager.toLowerCase();
+
+  return (
+    normalizedName.includes(normalizedSearch) ||
+    normalizedClient.includes(normalizedSearch) ||
+    normalizedManager.includes(normalizedSearch)
+  );
+}
+
+function applyFilters() {
+  const { plannedDateFrom, plannedDateTo, actualDateFrom, actualDateTo, status, search } = ordersTableState.filters;
+
+  ordersTableState.filteredOrders = ordersTableState.allOrders.filter((order) => {
+    const matchesPlannedDate = matchesDateRange(order.deadline, plannedDateFrom, plannedDateTo);
+    const matchesActualDate = matchesDateRange(order.actualDate, actualDateFrom, actualDateTo);
+    const matchesStatus = !status || order.status === status;
+    const matchesSearch = matchesSearchFilter(order, search);
+
+    return matchesPlannedDate && matchesActualDate && matchesStatus && matchesSearch;
+  });
+
+  ordersTableState.currentPage = 1;
+
+  console.log("[order-management-data] Filters applied:", ordersTableState.filters);
+  console.log(`[order-management-data] ${ordersTableState.filteredOrders.length} orders matched filters`);
+
+  renderOrdersTable();
+}
+
+function readFiltersFromUI() {
+  ordersTableState.filters = {
+    plannedDateFrom: document.querySelector(ORDERS_FILTER_SELECTORS.plannedDateFrom)?.value || "",
+    plannedDateTo: document.querySelector(ORDERS_FILTER_SELECTORS.plannedDateTo)?.value || "",
+    actualDateFrom: document.querySelector(ORDERS_FILTER_SELECTORS.actualDateFrom)?.value || "",
+    actualDateTo: document.querySelector(ORDERS_FILTER_SELECTORS.actualDateTo)?.value || "",
+    status: document.querySelector(ORDERS_FILTER_SELECTORS.status)?.value || "",
+    search: document.querySelector(ORDERS_FILTER_SELECTORS.search)?.value?.trim() || "",
+  };
+}
+
+function resetFiltersUI() {
+  const selectors = [
+    ORDERS_FILTER_SELECTORS.plannedDateFrom,
+    ORDERS_FILTER_SELECTORS.plannedDateTo,
+    ORDERS_FILTER_SELECTORS.actualDateFrom,
+    ORDERS_FILTER_SELECTORS.actualDateTo,
+    ORDERS_FILTER_SELECTORS.status,
+    ORDERS_FILTER_SELECTORS.search,
+  ];
+
+  selectors.forEach((selector) => {
+    const element = document.querySelector(selector);
+
+    if (!element) {
+      return;
+    }
+
+    element.value = "";
+  });
+}
+
+function resetFilters() {
+  ordersTableState.filters = {
+    plannedDateFrom: "",
+    plannedDateTo: "",
+    actualDateFrom: "",
+    actualDateTo: "",
+    status: "",
+    search: "",
+  };
+
+  resetFiltersUI();
+  ordersTableState.filteredOrders = [...ordersTableState.allOrders];
+  ordersTableState.currentPage = 1;
+
+  console.log("[order-management-data] Filters reset");
+  renderOrdersTable();
+}
+
 function handlePageSizeChange(event) {
   const nextPageSize = Number(event.target.value);
 
@@ -440,9 +606,16 @@ function handlePaginationClick(event) {
   renderOrdersTable();
 }
 
+function handleFilterSubmit() {
+  readFiltersFromUI();
+  applyFilters();
+}
+
 function bindOrdersTableControls() {
   const pageSizeSelect = document.querySelector(ORDERS_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(ORDERS_PAGINATION_SELECTOR);
+  const filterSubmitButton = document.querySelector(ORDERS_FILTER_SELECTORS.submit);
+  const filterResetButton = document.querySelector(ORDERS_FILTER_SELECTORS.reset);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -450,6 +623,14 @@ function bindOrdersTableControls() {
 
   if (paginationElement) {
     paginationElement.addEventListener("click", handlePaginationClick);
+  }
+
+  if (filterSubmitButton) {
+    filterSubmitButton.addEventListener("click", handleFilterSubmit);
+  }
+
+  if (filterResetButton) {
+    filterResetButton.addEventListener("click", resetFilters);
   }
 }
 
@@ -476,11 +657,13 @@ async function initOrdersTable() {
     const orders = getOrdersData(database);
 
     ordersTableState.allOrders = orders;
+    ordersTableState.filteredOrders = [...orders];
 
     if (!orders.length) {
       console.warn("[order-management-data] No orders found in database.json");
     }
 
+    populateDynamicFilters();
     bindOrdersTableControls();
     syncPageSizeSelect();
     renderOrdersTable();
