@@ -1,5 +1,8 @@
 const ORDER_MANAGEMENT_DATA_URL = "../database.json";
 const ORDERS_TABLE_SELECTOR = ".table--orders tbody";
+const ORDERS_COUNT_SELECTOR = ".table-footer__text";
+const ORDERS_PAGE_SIZE_SELECTOR = ".footer-select select";
+const ORDERS_PAGINATION_SELECTOR = ".pagination";
 
 const ORDER_STATUS_CLASS_MAP = {
   "Виконано": "badge--success",
@@ -13,6 +16,14 @@ const ORDER_PRIORITY_CLASS_MAP = {
   "Високий": "badge--purple",
   "Середній": "badge--info",
   "Низький": "badge--gray",
+};
+
+const PAGE_SIZE_OPTIONS = [10, 15, 25, 50];
+
+const ordersTableState = {
+  allOrders: [],
+  currentPage: 1,
+  pageSize: 10,
 };
 
 function formatDate(dateString) {
@@ -277,7 +288,91 @@ function createProgressOrderRow(order) {
   `;
 }
 
-function renderOrdersTable(orders) {
+function getTotalPages() {
+  return Math.max(1, Math.ceil(ordersTableState.allOrders.length / ordersTableState.pageSize));
+}
+
+function getVisibleOrders() {
+  const startIndex = (ordersTableState.currentPage - 1) * ordersTableState.pageSize;
+  const endIndex = startIndex + ordersTableState.pageSize;
+
+  return ordersTableState.allOrders.slice(startIndex, endIndex);
+}
+
+function updateCountLabel(visibleOrdersCount) {
+  const countLabel = document.querySelector(ORDERS_COUNT_SELECTOR);
+
+  if (!countLabel) {
+    return;
+  }
+
+  if (!ordersTableState.allOrders.length) {
+    countLabel.textContent = "Показано 0 із 0 замовлень";
+    return;
+  }
+
+  const start = (ordersTableState.currentPage - 1) * ordersTableState.pageSize + 1;
+  const end = start + visibleOrdersCount - 1;
+  const total = ordersTableState.allOrders.length;
+
+  countLabel.textContent = `Показано ${start}–${end} із ${total} замовлень`;
+}
+
+function createPaginationButton({ label, page, disabled = false, active = false, type = "page" }) {
+  const activeClass = active ? " button--active" : "";
+  const disabledAttr = disabled ? " disabled" : "";
+  const ariaCurrent = active ? ' aria-current="page"' : "";
+
+  return `
+    <button
+      class="button button--ghost${activeClass}"
+      type="button"
+      data-page-type="${type}"
+      data-page="${page}"
+      ${disabledAttr}${ariaCurrent}
+    >
+      ${label}
+    </button>
+  `;
+}
+
+function renderPagination() {
+  const paginationElement = document.querySelector(ORDERS_PAGINATION_SELECTOR);
+
+  if (!paginationElement) {
+    console.error(`[order-management-data] Pagination container not found: ${ORDERS_PAGINATION_SELECTOR}`);
+    return;
+  }
+
+  const totalPages = getTotalPages();
+  const currentPage = ordersTableState.currentPage;
+
+  const pageButtons = Array.from({ length: totalPages }, (_, index) =>
+    createPaginationButton({
+      label: index + 1,
+      page: index + 1,
+      active: currentPage === index + 1,
+    }),
+  ).join("");
+
+  paginationElement.innerHTML = `
+    ${createPaginationButton({
+      label: "Попередня",
+      page: currentPage - 1,
+      disabled: currentPage === 1,
+      type: "prev",
+    })}
+    ${pageButtons}
+    ${createPaginationButton({
+      label: "Наступна",
+      page: currentPage + 1,
+      disabled: currentPage === totalPages,
+      type: "next",
+    })}
+  `;
+}
+
+function renderOrdersTable() {
   const tableBody = document.querySelector(ORDERS_TABLE_SELECTOR);
 
   if (!tableBody) {
@@ -287,10 +382,75 @@ function renderOrdersTable(orders) {
 
   const tableMode = getOrdersTableMode();
   const rowTemplate = tableMode === "detailed" ? createDetailedOrderRow : createProgressOrderRow;
+  const visibleOrders = getVisibleOrders();
 
-  tableBody.innerHTML = orders.map(rowTemplate).join("");
+  tableBody.innerHTML = visibleOrders.map(rowTemplate).join("");
 
-  console.log(`[order-management-data] Rendered ${orders.length} order rows in ${tableMode} mode`);
+  updateCountLabel(visibleOrders.length);
+  renderPagination();
+
+  console.log(
+    `[order-management-data] Rendered page ${ordersTableState.currentPage} with ${visibleOrders.length} order rows in ${tableMode} mode`,
+  );
+}
+
+function syncPageSizeSelect() {
+  const pageSizeSelect = document.querySelector(ORDERS_PAGE_SIZE_SELECTOR);
+
+  if (!pageSizeSelect) {
+    console.error(`[order-management-data] Page size select not found: ${ORDERS_PAGE_SIZE_SELECTOR}`);
+    return;
+  }
+
+  pageSizeSelect.value = String(ordersTableState.pageSize);
+}
+
+function handlePageSizeChange(event) {
+  const nextPageSize = Number(event.target.value);
+
+  if (!PAGE_SIZE_OPTIONS.includes(nextPageSize)) {
+    console.warn(`[order-management-data] Unsupported page size: ${event.target.value}`);
+    return;
+  }
+
+  ordersTableState.pageSize = nextPageSize;
+  ordersTableState.currentPage = 1;
+
+  console.log(`[order-management-data] Page size changed to ${nextPageSize}`);
+  renderOrdersTable();
+}
+
+function handlePaginationClick(event) {
+  const button = event.target.closest("[data-page]");
+
+  if (!button || button.disabled) {
+    return;
+  }
+
+  const nextPage = Number(button.dataset.page);
+  const totalPages = getTotalPages();
+
+  if (Number.isNaN(nextPage) || nextPage < 1 || nextPage > totalPages) {
+    return;
+  }
+
+  ordersTableState.currentPage = nextPage;
+
+  console.log(`[order-management-data] Switched to page ${nextPage}`);
+  renderOrdersTable();
+}
+
+function bindOrdersTableControls() {
+  const pageSizeSelect = document.querySelector(ORDERS_PAGE_SIZE_SELECTOR);
+  const paginationElement = document.querySelector(ORDERS_PAGINATION_SELECTOR);
+
+  if (pageSizeSelect) {
+    pageSizeSelect.addEventListener("change", handlePageSizeChange);
+  }
+
+  if (paginationElement) {
+    paginationElement.addEventListener("click", handlePaginationClick);
+  }
 }
 
 async function fetchOrdersData() {
@@ -315,11 +475,15 @@ async function initOrdersTable() {
     const database = await fetchOrdersData();
     const orders = getOrdersData(database);
 
+    ordersTableState.allOrders = orders;
+
     if (!orders.length) {
       console.warn("[order-management-data] No orders found in database.json");
     }
 
-    renderOrdersTable(orders);
+    bindOrdersTableControls();
+    syncPageSizeSelect();
+    renderOrdersTable();
   } catch (error) {
     console.error("[order-management-data] Error fetching data:", error);
   }

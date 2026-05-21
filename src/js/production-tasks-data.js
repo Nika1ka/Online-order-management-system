@@ -1,11 +1,22 @@
 const PRODUCTION_TASKS_DATA_URL = "../database.json";
 const PRODUCTION_TASKS_TABLE_SELECTOR = ".table--production-tasks tbody";
+const PRODUCTION_TASKS_COUNT_SELECTOR = ".table-footer__text";
+const PRODUCTION_TASKS_PAGE_SIZE_SELECTOR = ".footer-select select";
+const PRODUCTION_TASKS_PAGINATION_SELECTOR = ".pagination";
 
 const PRODUCTION_TASK_STATUS_CLASS_MAP = {
   "Виконано": "badge--success",
   "В роботі": "badge--info",
   "На перевірці": "badge--purple",
   "Очікує": "badge--gray",
+};
+
+const PAGE_SIZE_OPTIONS = [10, 15, 25, 50];
+
+const productionTasksTableState = {
+  allTasks: [],
+  currentPage: 1,
+  pageSize: 10,
 };
 
 function formatDate(dateString) {
@@ -166,7 +177,91 @@ function createTaskRow(task) {
   `;
 }
 
-function renderProductionTasksTable(tasks) {
+function getTotalPages() {
+  return Math.max(1, Math.ceil(productionTasksTableState.allTasks.length / productionTasksTableState.pageSize));
+}
+
+function getVisibleTasks() {
+  const startIndex = (productionTasksTableState.currentPage - 1) * productionTasksTableState.pageSize;
+  const endIndex = startIndex + productionTasksTableState.pageSize;
+
+  return productionTasksTableState.allTasks.slice(startIndex, endIndex);
+}
+
+function updateCountLabel(visibleTasksCount) {
+  const countLabel = document.querySelector(PRODUCTION_TASKS_COUNT_SELECTOR);
+
+  if (!countLabel) {
+    return;
+  }
+
+  if (!productionTasksTableState.allTasks.length) {
+    countLabel.textContent = "Показано 0 із 0 виробничих задач";
+    return;
+  }
+
+  const start = (productionTasksTableState.currentPage - 1) * productionTasksTableState.pageSize + 1;
+  const end = start + visibleTasksCount - 1;
+  const total = productionTasksTableState.allTasks.length;
+
+  countLabel.textContent = `Показано ${start}–${end} із ${total} виробничих задач`;
+}
+
+function createPaginationButton({ label, page, disabled = false, active = false, type = "page" }) {
+  const activeClass = active ? " button--active" : "";
+  const disabledAttr = disabled ? " disabled" : "";
+  const ariaCurrent = active ? ' aria-current="page"' : "";
+
+  return `
+    <button
+      class="button button--ghost${activeClass}"
+      type="button"
+      data-page-type="${type}"
+      data-page="${page}"
+      ${disabledAttr}${ariaCurrent}
+    >
+      ${label}
+    </button>
+  `;
+}
+
+function renderPagination() {
+  const paginationElement = document.querySelector(PRODUCTION_TASKS_PAGINATION_SELECTOR);
+
+  if (!paginationElement) {
+    console.error(`[production-tasks-data] Pagination container not found: ${PRODUCTION_TASKS_PAGINATION_SELECTOR}`);
+    return;
+  }
+
+  const totalPages = getTotalPages();
+  const currentPage = productionTasksTableState.currentPage;
+
+  const pageButtons = Array.from({ length: totalPages }, (_, index) =>
+    createPaginationButton({
+      label: index + 1,
+      page: index + 1,
+      active: currentPage === index + 1,
+    }),
+  ).join("");
+
+  paginationElement.innerHTML = `
+    ${createPaginationButton({
+      label: "Попередня",
+      page: currentPage - 1,
+      disabled: currentPage === 1,
+      type: "prev",
+    })}
+    ${pageButtons}
+    ${createPaginationButton({
+      label: "Наступна",
+      page: currentPage + 1,
+      disabled: currentPage === totalPages,
+      type: "next",
+    })}
+  `;
+}
+
+function renderProductionTasksTable() {
   const tableBody = document.querySelector(PRODUCTION_TASKS_TABLE_SELECTOR);
 
   if (!tableBody) {
@@ -174,9 +269,74 @@ function renderProductionTasksTable(tasks) {
     return;
   }
 
-  tableBody.innerHTML = tasks.map(createTaskRow).join("");
+  const visibleTasks = getVisibleTasks();
+  tableBody.innerHTML = visibleTasks.map(createTaskRow).join("");
 
-  console.log(`[production-tasks-data] Rendered ${tasks.length} production task rows`);
+  updateCountLabel(visibleTasks.length);
+  renderPagination();
+
+  console.log(
+    `[production-tasks-data] Rendered page ${productionTasksTableState.currentPage} with ${visibleTasks.length} production task rows`,
+  );
+}
+
+function syncPageSizeSelect() {
+  const pageSizeSelect = document.querySelector(PRODUCTION_TASKS_PAGE_SIZE_SELECTOR);
+
+  if (!pageSizeSelect) {
+    console.error(`[production-tasks-data] Page size select not found: ${PRODUCTION_TASKS_PAGE_SIZE_SELECTOR}`);
+    return;
+  }
+
+  pageSizeSelect.value = String(productionTasksTableState.pageSize);
+}
+
+function handlePageSizeChange(event) {
+  const nextPageSize = Number(event.target.value);
+
+  if (!PAGE_SIZE_OPTIONS.includes(nextPageSize)) {
+    console.warn(`[production-tasks-data] Unsupported page size: ${event.target.value}`);
+    return;
+  }
+
+  productionTasksTableState.pageSize = nextPageSize;
+  productionTasksTableState.currentPage = 1;
+
+  console.log(`[production-tasks-data] Page size changed to ${nextPageSize}`);
+  renderProductionTasksTable();
+}
+
+function handlePaginationClick(event) {
+  const button = event.target.closest("[data-page]");
+
+  if (!button || button.disabled) {
+    return;
+  }
+
+  const nextPage = Number(button.dataset.page);
+  const totalPages = getTotalPages();
+
+  if (Number.isNaN(nextPage) || nextPage < 1 || nextPage > totalPages) {
+    return;
+  }
+
+  productionTasksTableState.currentPage = nextPage;
+
+  console.log(`[production-tasks-data] Switched to page ${nextPage}`);
+  renderProductionTasksTable();
+}
+
+function bindProductionTasksTableControls() {
+  const pageSizeSelect = document.querySelector(PRODUCTION_TASKS_PAGE_SIZE_SELECTOR);
+  const paginationElement = document.querySelector(PRODUCTION_TASKS_PAGINATION_SELECTOR);
+
+  if (pageSizeSelect) {
+    pageSizeSelect.addEventListener("change", handlePageSizeChange);
+  }
+
+  if (paginationElement) {
+    paginationElement.addEventListener("click", handlePaginationClick);
+  }
 }
 
 async function fetchProductionTasksData() {
@@ -201,11 +361,15 @@ async function initProductionTasksTable() {
     const database = await fetchProductionTasksData();
     const tasks = getProductionTasksData(database);
 
+    productionTasksTableState.allTasks = tasks;
+
     if (!tasks.length) {
       console.warn("[production-tasks-data] No production tasks found in database.json");
     }
 
-    renderProductionTasksTable(tasks);
+    bindProductionTasksTableControls();
+    syncPageSizeSelect();
+    renderProductionTasksTable();
   } catch (error) {
     console.error("[production-tasks-data] Error fetching data:", error);
   }
