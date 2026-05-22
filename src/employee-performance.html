@@ -151,27 +151,21 @@
           <div class="filter-grid">
             <label class="field">
               <span class="field__label">Посада</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-performance-position-filter">
                 <option>Всі посади</option>
-                <option>Дизайн</option>
-                <option>Веб-розробка</option>
-                <option>Тестування</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Відділ</span>
-              <select class="field__select">
+              <select class="field__select" id="employee-performance-department-filter">
                 <option>Всі відділи</option>
-                <option>UX/UI</option>
-                <option>IT</option>
-                <option>Відділ якості</option>
               </select>
             </label>
             <label class="field">
               <span class="field__label">Час</span>
               <select class="field__select">
-                <option>30 днів</option>
                 <option>7 днів</option>
+                <option selected>30 днів</option>
                 <option>90 днів</option>
               </select>
             </label>
@@ -464,6 +458,7 @@
       </main>
     </div>
   </div>
+  <script src="js/employee-performance-filters.js"></script>
 </body>
 </html>
 
