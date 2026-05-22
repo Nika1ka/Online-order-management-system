@@ -161,24 +161,33 @@
                 <option>Всі відділи</option>
               </select>
             </label>
+            <label class="field field--range">
+              <span class="field__label">Початкова дата</span>
+              <div class="date-range">
+                <span class="date-range__item">
+                  <input class="date-range__input" type="date" id="production-task-planned-date-from" />
+                </span>
+              </div>
+            </label>
             <label class="field">
               <span class="field__label">Час</span>
-              <select class="field__select">
-                <option>7 днів</option>
-                <option selected>30 днів</option>
-                <option>90 днів</option>
+              <select class="field__select" id="employee-performance-time-filter">
+                <option value="7d">7 днів</option>
+                <option value="30d" selected>30 днів</option>
+                <option value="90d">90 днів</option>
               </select>
             </label>
+
           </div>
 
           <div class="filter-search">
             <label class="field field--search">
               <span class="field__label">Пошук за ПІБ співробітника</span>
-              <input class="field__input" type="search" placeholder="Введіть ім'я або email" />
+              <input class="field__input" id="employee-performance-search-input" type="search" placeholder="Введіть ім'я або email" />
             </label>
             <div class="filter-actions">
-              <button class="button button--secondary">Скинути</button>
-              <button class="button button--primary">Фільтрувати</button>
+              <button class="button button--secondary" id="employee-performance-filter-reset" type="button">Скинути</button>
+              <button class="button button--primary" id="employee-performance-filter-submit" type="button">Фільтрувати</button>
             </div>
           </div>
         </section>
@@ -292,141 +301,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">ІП</div>
-                        <div>
-                          <div class="user-name">Іван Петренко</div>
-                          <div class="user-role">Дизайн</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Дизайн</td>
-                    <td>UX/UI</td>
-                    <td>
-                      <div class="progress-inline progress-inline--success"><div class="progress-inline__bar" style="width: 84%"></div></div>
-                    </td>
-                    <td>
-                      <div class="dashboard-card__metric">
-                        <span class="dashboard-card__metric-value">100</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/check.svg" alt="" class="icon icon--metric"></span>
-                        <span class="dashboard-card__metric-value">23</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
-                      </div>
-                    </td>
-                    <td>2.3 год.</td>
-                    <td><button class="icon-button icon-button--small" aria-label="ШІ-аналіз"><img src="assets/icons/ai.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">МК</div>
-                        <div>
-                          <div class="user-name">Марія Коваль</div>
-                          <div class="user-role">Веб-розробка</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Веб-розробка</td>
-                    <td>IT</td>
-                    <td>
-                      <div class="progress-inline progress-inline--info"><div class="progress-inline__bar" style="width: 72%"></div></div>
-                    </td>
-                    <td>
-                      <div class="dashboard-card__metric">
-                        <span class="dashboard-card__metric-value">25</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/check.svg" alt="" class="icon icon--metric"></span>
-                        <span class="dashboard-card__metric-value">4</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
-                      </div>
-                    </td>
-                    <td>4.6 год.</td>
-                    <td><button class="icon-button icon-button--small" aria-label="ШІ-аналіз"><img src="assets/icons/ai.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">ОС</div>
-                        <div>
-                          <div class="user-name">Олег Сидоренко</div>
-                          <div class="user-role">Backend</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Backend</td>
-                    <td>IT</td>
-                    <td>
-                      <div class="progress-inline progress-inline--red"><div class="progress-inline__bar" style="width: 21%"></div></div>
-                    </td>
-                    <td>
-                      <div class="dashboard-card__metric">
-                        <span class="dashboard-card__metric-value">73</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/check.svg" alt="" class="icon icon--metric"></span>
-                        <span class="dashboard-card__metric-value">42</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
-                      </div>
-                    </td>
-                    <td>5.8 год.</td>
-                    <td><button class="icon-button icon-button--small" aria-label="ШІ-аналіз"><img src="assets/icons/ai.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">ДЛ</div>
-                        <div>
-                          <div class="user-name">Дмитро Лисенко</div>
-                          <div class="user-role">Backend</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Backend</td>
-                    <td>IT</td>
-                    <td>
-                      <div class="progress-inline progress-inline--purple"><div class="progress-inline__bar" style="width: 52%"></div></div>
-                    </td>
-                    <td>
-                      <div class="dashboard-card__metric">
-                        <span class="dashboard-card__metric-value">15</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/check.svg" alt="" class="icon icon--metric"></span>
-                        <span class="dashboard-card__metric-value">3</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
-                      </div>
-                    </td>
-                    <td>5.8 год.</td>
-                    <td><button class="icon-button icon-button--small" aria-label="ШІ-аналіз"><img src="assets/icons/ai.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>
-                      <div class="user-cell">
-                        <div class="user-avatar">АС</div>
-                        <div>
-                          <div class="user-name">Анна Шевченко</div>
-                          <div class="user-role">Тестування</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Тестування</td>
-                    <td>Відділ якості</td>
-                    <td>
-                      <div class="progress-inline progress-inline--purple"><div class="progress-inline__bar" style="width: 46%"></div></div>
-                    </td>
-                    <td>
-                      <div class="dashboard-card__metric">
-                        <span class="dashboard-card__metric-value">11</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/check.svg" alt="" class="icon icon--metric"></span>
-                        <span class="dashboard-card__metric-value">3</span>
-                        <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
-                      </div>
-                    </td>
-                    <td>9.0 год.</td>
-                    <td><button class="icon-button icon-button--small" aria-label="ШІ-аналіз"><img src="assets/icons/ai.png" alt="" class="icon icon--action"></button></td>
-                  </tr>
+                  <!-- Employee performance rows are rendered dynamically by src/js/employee-performance-filters.js -->
                 </tbody>
               </table>
             </div>
@@ -436,7 +311,7 @@
               <div class="table-footer__controls">
                 <label class="footer-select">
                   <span>Рядків на сторінці:</span>
-                  <select>
+                  <select id="employee-performance-page-size">
                     <option>5</option>
                     <option>10</option>
                     <option>20</option>
