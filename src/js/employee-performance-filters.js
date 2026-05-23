@@ -5,6 +5,15 @@ const EMPLOYEE_PERFORMANCE_PAGE_SIZE_SELECTOR = "#employee-performance-page-size
 const EMPLOYEE_PERFORMANCE_PAGINATION_SELECTOR = ".pagination";
 const TASK_TIME_NORM_HOURS = 100;
 const PAGE_SIZE_OPTIONS = [5, 10, 25, 50];
+const EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS = {
+  scoreBadge: "#employee-performance-score-badge",
+  summaryText: "#employee-performance-summary-text",
+  summaryBar: "#employee-performance-summary-bar",
+  newTasks: "#employee-performance-new-tasks",
+  completedTasks: "#employee-performance-completed-tasks",
+  overdueTasks: "#employee-performance-overdue-tasks",
+  averageTime: "#employee-performance-average-time",
+};
 
 const EMPLOYEE_PERFORMANCE_FILTER_SELECTORS = {
   startDate: "#production-task-planned-date-from",
@@ -127,6 +136,16 @@ function parseDate(dateString) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
+function isDateInRange(dateValue, rangeStart, rangeEnd) {
+  const date = parseDate(dateValue);
+
+  if (!date) {
+    return false;
+  }
+
+  return date >= rangeStart && date <= rangeEnd;
+}
+
 function getTaskReferenceDate(task) {
   return parseDate(task.start_date) || parseDate(task.actual_completion_date) || parseDate(task.planned_completion_date);
 }
@@ -179,7 +198,10 @@ function normalizeDatabase(database) {
 }
 
 function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
+  const { rangeStart, rangeEnd } = getPeriodRange(startDateValue, periodValue);
   const periodTasks = employee.tasks.filter((task) => isTaskInPeriod(task, startDateValue, periodValue));
+  const startedTasks = periodTasks.filter((task) => isDateInRange(task.start_date, rangeStart, rangeEnd));
+  const completedTasks = periodTasks.filter((task) => isDateInRange(task.actual_completion_date, rangeStart, rangeEnd));
   const completedOnTime = periodTasks.filter((task) => {
     const plannedDate = parseDate(task.planned_completion_date);
     const actualDate = parseDate(task.actual_completion_date);
@@ -217,6 +239,8 @@ function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
 
   return {
     ...employee,
+    startedTasks,
+    completedTasks,
     periodTasks,
     completedOnTime,
     overdue,
@@ -225,9 +249,19 @@ function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
   };
 }
 
+function getEmployeeTotalProductivityScore(employee) {
+  const totalCheckedTasks = employee.completedOnTime + employee.overdue;
+
+  if (!totalCheckedTasks) {
+    return 0;
+  }
+
+  return Math.max(10, Math.round(employee.productivityScore * (employee.completedOnTime / totalCheckedTasks)));
+}
+
 function createEmployeePerformanceRow(employee) {
-  total_productivity_score = employee.productivityScore*(employee.completedOnTime/(employee.completedOnTime + employee.overdue)) || 0;
-  const progressClass = getProgressClass(total_productivity_score);
+  const totalProductivityScore = getEmployeeTotalProductivityScore(employee);
+  const progressClass = getProgressClass(totalProductivityScore);
   const initials = getInitials(employee.name);
 
   return `
@@ -246,7 +280,7 @@ function createEmployeePerformanceRow(employee) {
       <td>${employee.department}</td>
       <td>
         <div class="progress-inline ${progressClass}">
-          <div class="progress-inline__bar" style="width: ${total_productivity_score}%"></div>
+          <div class="progress-inline__bar" style="width: ${totalProductivityScore}%"></div>
         </div>
       </td>
       <td>
@@ -265,6 +299,67 @@ function createEmployeePerformanceRow(employee) {
       </td>
     </tr>
   `;
+}
+
+function updateSummaryCard() {
+  const scoreBadge = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.scoreBadge);
+  const summaryText = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.summaryText);
+  const summaryBar = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.summaryBar);
+  const newTasks = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.newTasks);
+  const completedTasks = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.completedTasks);
+  const overdueTasks = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.overdueTasks);
+  const averageTime = document.querySelector(EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS.averageTime);
+  const periodDays = getDurationDays(employeePerformanceState.filters.time);
+  const employees = employeePerformanceState.filteredEmployees;
+  const totalScore = employees.reduce((sum, employee) => sum + getEmployeeTotalProductivityScore(employee), 0);
+  const overallEfficiency = employees.length ? Math.round(totalScore / employees.length) : 0;
+  const totalNewTasks = employees.reduce((sum, employee) => sum + employee.startedTasks.length, 0);
+  const totalCompletedTasks = employees.reduce((sum, employee) => sum + employee.completedOnTime, 0);
+  const totalOverdueTasks = employees.reduce((sum, employee) => sum + employee.overdue, 0);
+  const executionTimes = employees
+    .flatMap((employee) => employee.completedTasks)
+    .map((task) => {
+      const startDate = parseDate(task.start_date);
+      const actualDate = parseDate(task.actual_completion_date);
+
+      if (!startDate || !actualDate) {
+        return null;
+      }
+
+      return (actualDate.getTime() - startDate.getTime()) / (1000 * 60 * 60);
+    })
+    .filter((value) => Number.isFinite(value));
+  const averageExecutionHours = executionTimes.length
+    ? executionTimes.reduce((sum, value) => sum + value, 0) / executionTimes.length
+    : null;
+
+  if (scoreBadge) {
+    scoreBadge.textContent = `${overallEfficiency}%`;
+  }
+
+  if (summaryText) {
+    summaryText.textContent = `Загальна ефективність команди за останні ${periodDays} днів: ${overallEfficiency}%`;
+  }
+
+  if (summaryBar) {
+    summaryBar.style.width = `${overallEfficiency}%`;
+  }
+
+  if (newTasks) {
+    newTasks.textContent = String(totalNewTasks);
+  }
+
+  if (completedTasks) {
+    completedTasks.textContent = String(totalCompletedTasks);
+  }
+
+  if (overdueTasks) {
+    overdueTasks.textContent = String(totalOverdueTasks);
+  }
+
+  if (averageTime) {
+    averageTime.textContent = formatHours(averageExecutionHours);
+  }
 }
 
 function getTotalPages() {
@@ -436,6 +531,7 @@ function applyFilters() {
   console.log("[employee-performance] Filters applied:", employeePerformanceState.filters);
   console.log(`[employee-performance] ${employeePerformanceState.filteredEmployees.length} employees matched filters`);
 
+  updateSummaryCard();
   renderEmployeePerformanceTable();
 }
 
