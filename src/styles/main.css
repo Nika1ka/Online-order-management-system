@@ -81,6 +81,7 @@ select {
   display: grid;
   grid-template-columns: 312px 1fr;
   min-height: 100vh;
+  transition: grid-template-columns 0.28s ease;
 }
 
 /* Styles the left sidebar with dashboard branding colors and a vertical shadow separator. */
@@ -89,6 +90,21 @@ select {
   background: linear-gradient(180deg, #324866 0%, #485f7d 100%);
   color: var(--sidebar-text);
   box-shadow: 10px 0 24px rgba(24, 39, 75, 0.14);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  transform-origin: left center;
+}
+
+/* Collapses the sidebar column so the content area expands when navigation is hidden. */
+.app-shell--sidebar-collapsed {
+  grid-template-columns: 0 1fr;
+}
+
+/* Slides the sidebar out of view and disables interactions while it is collapsed. */
+.app-shell--sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 /* Aligns the logo icon and product name in the sidebar header. */
@@ -197,15 +213,22 @@ select {
   font-weight: 600;
 }
 
-/* Renders the menu icon at the start of the breadcrumb trail. */
-.breadcrumb::before {
-  content: url("../assets/icons/menu.png");
+/* Styles the real burger-menu control inserted into the breadcrumb area. */
+.breadcrumb__menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
+  flex: 0 0 24px;
   margin-right: 16px;
-  background: currentColor;
-  -webkit-mask: url("../assets/icons/menu.png") center / contain no-repeat;
-  mask: url("../assets/icons/menu.png") center / contain no-repeat;
+  cursor: pointer;
+}
+
+/* Shows a visible focus ring for keyboard interaction with the burger-menu control. */
+.breadcrumb__menu:focus-visible {
+  outline: 2px solid #324866;
+  outline-offset: 4px;
 }
 
 /* Displays the breadcrumb chevron separator between hierarchy levels. */
@@ -267,6 +290,12 @@ select {
 .icon--button {
   width: 20px;
   height: 20px;
+}
+
+/* Sets the burger-menu icon size used inside the breadcrumb toggle control. */
+.icon--menu {
+  width: 24px;
+  height: 24px;
 }
 
 /* Sets icon dimensions for row-level action buttons and similar controls. */
@@ -1360,8 +1389,8 @@ button:hover {
     flex-wrap: wrap;
   }
 
-  /* Reduces the space after the breadcrumb menu icon on small screens. */
-  .breadcrumb::before {
+  /* Reduces the space after the breadcrumb burger control on small screens. */
+  .breadcrumb__menu {
     margin-right: 6px;
   }
 }
