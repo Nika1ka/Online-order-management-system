@@ -210,13 +210,14 @@ order-production_schedule_management_system/
 ```json
 {
   "task_id": 1,
-  "task_name": "Зварювання каркасів",
-  "description": "Підготовка та зварювання металевих рам",
-  "planned_completion_date": "2024-03-10T17:00:00",
-  "actual_completion_date": "2024-03-10T16:45:00",
+  "task_name": "Створення dashboard",
+  "description": "Розробка інтерактивного dashboard для візуалізації показників та моніторингу даних",
+  "planned_completion_date": "2026-05-12T21:25:33.137133",
+  "actual_completion_date": "2026-05-08T21:25:33.141225",
   "task_status": "Виконано|В роботі|На перевірці|Очікує",
   "employee_id": 1,
-  "order_id": 1
+  "order_id": 1,
+  "start_date": "2026-05-05T20:25:33.141225"
 }
 ```
 

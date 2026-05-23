@@ -3,10 +3,11 @@ const EMPLOYEE_PERFORMANCE_TABLE_SELECTOR = ".table--analytics tbody";
 const EMPLOYEE_PERFORMANCE_COUNT_SELECTOR = ".table-footer__text";
 const EMPLOYEE_PERFORMANCE_PAGE_SIZE_SELECTOR = "#employee-performance-page-size";
 const EMPLOYEE_PERFORMANCE_PAGINATION_SELECTOR = ".pagination";
-const TASK_TIME_NORM_HOURS = 50;
-const PAGE_SIZE_OPTIONS = [5, 10, 20];
+const TASK_TIME_NORM_HOURS = 500;
+const PAGE_SIZE_OPTIONS = [5, 10, 25, 50];
 
 const EMPLOYEE_PERFORMANCE_FILTER_SELECTORS = {
+  startDate: "#production-task-planned-date-from",
   position: "#employee-performance-position-filter",
   department: "#employee-performance-department-filter",
   time: "#employee-performance-time-filter",
@@ -21,6 +22,7 @@ const employeePerformanceState = {
   currentPage: 1,
   pageSize: 5,
   filters: {
+    startDate: "",
     position: "",
     department: "",
     time: "30d",
@@ -74,27 +76,46 @@ function getProgressClass(score) {
   return "progress-inline--red";
 }
 
-function getReferenceDate() {
-  const today = new Date();
-  today.setHours(23, 59, 59, 999);
-  return today;
-}
-
-function getPeriodThreshold(periodValue) {
-  const threshold = getReferenceDate();
-
+function getDurationDays(periodValue) {
   switch (periodValue) {
     case "7d":
-      threshold.setDate(threshold.getDate() - 7);
-      return threshold;
+      return 7;
     case "90d":
-      threshold.setDate(threshold.getDate() - 90);
-      return threshold;
+      return 90;
+    case "180d":
+      return 180;
+    case "365d":
+      return 365;
     case "30d":
     default:
-      threshold.setDate(threshold.getDate() - 30);
-      return threshold;
+      return 30;
   }
+}
+
+function formatDateInputValue(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+function getDefaultStartDateValue(periodValue = "30d") {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return formatDateInputValue(today);
+}
+
+function getPeriodRange(startDateValue, periodValue) {
+  const rangeStart = parseDate(startDateValue) || parseDate(getDefaultStartDateValue(periodValue));
+  const rangeEnd = new Date(rangeStart);
+
+  rangeStart.setHours(0, 0, 0, 0);
+  rangeEnd.setHours(23, 59, 59, 999);
+  rangeEnd.setDate(rangeEnd.getDate() + getDurationDays(periodValue));
+
+  return { rangeStart, rangeEnd };
 }
 
 function parseDate(dateString) {
@@ -107,20 +128,19 @@ function parseDate(dateString) {
 }
 
 function getTaskReferenceDate(task) {
-  return parseDate(task.actual_completion_date) || parseDate(task.planned_completion_date);
+  return parseDate(task.start_date) || parseDate(task.actual_completion_date) || parseDate(task.planned_completion_date);
 }
 
-function isTaskInPeriod(task, periodValue) {
+function isTaskInPeriod(task, startDateValue, periodValue) {
   const referenceDate = getTaskReferenceDate(task);
 
   if (!referenceDate) {
     return false;
   }
 
-  const threshold = getPeriodThreshold(periodValue);
-  const periodEnd = getReferenceDate();
+  const { rangeStart, rangeEnd } = getPeriodRange(startDateValue, periodValue);
 
-  return referenceDate >= threshold && referenceDate <= periodEnd;
+  return referenceDate >= rangeStart && referenceDate <= rangeEnd;
 }
 
 function normalizeDatabase(database) {
@@ -158,8 +178,8 @@ function normalizeDatabase(database) {
   });
 }
 
-function calculateEmployeeMetrics(employee, periodValue) {
-  const periodTasks = employee.tasks.filter((task) => isTaskInPeriod(task, periodValue));
+function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
+  const periodTasks = employee.tasks.filter((task) => isTaskInPeriod(task, startDateValue, periodValue));
   const completedOnTime = periodTasks.filter((task) => {
     const plannedDate = parseDate(task.planned_completion_date);
     const actualDate = parseDate(task.actual_completion_date);
@@ -175,7 +195,16 @@ function calculateEmployeeMetrics(employee, periodValue) {
   }).length;
 
   const executionTimes = periodTasks
-    .map((task) => employee.taskResultsByTaskId.get(Number(task.task_id))?.actual_execution_time)
+    .map((task) => {
+      const startDate = parseDate(task.start_date);
+      const actualDate = parseDate(task.actual_completion_date);
+
+      if (!startDate || !actualDate) {
+        return null;
+      }
+
+      return (actualDate.getTime() - startDate.getTime()) / (1000 * 60 * 60);
+    })
     .filter((value) => Number.isFinite(value));
 
   const averageExecutionHours = executionTimes.length
@@ -341,16 +370,22 @@ function renderEmployeePerformanceTable() {
 
 function syncPageSizeSelect() {
   const pageSizeSelect = document.querySelector(EMPLOYEE_PERFORMANCE_PAGE_SIZE_SELECTOR);
+  const startDateInput = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.startDate);
 
   if (!pageSizeSelect) {
     return;
   }
 
   pageSizeSelect.value = String(employeePerformanceState.pageSize);
+
+  if (startDateInput && !startDateInput.value) {
+    startDateInput.value = employeePerformanceState.filters.startDate || getDefaultStartDateValue(employeePerformanceState.filters.time);
+  }
 }
 
 function readFiltersFromUI() {
   employeePerformanceState.filters = {
+    startDate: document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.startDate)?.value || getDefaultStartDateValue(document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.time)?.value || "30d"),
     position: document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.position)?.value || "",
     department: document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.department)?.value || "",
     time: document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.time)?.value || "30d",
@@ -372,7 +407,7 @@ function matchesSearch(employee, searchValue) {
 }
 
 function applyFilters() {
-  const { position, department, time, search } = employeePerformanceState.filters;
+  const { startDate, position, department, time, search } = employeePerformanceState.filters;
 
   employeePerformanceState.filteredEmployees = employeePerformanceState.allEmployees
     .filter((employee) => {
@@ -382,7 +417,7 @@ function applyFilters() {
 
       return matchesPosition && matchesDepartment && matchesEmployeeSearch;
     })
-    .map((employee) => calculateEmployeeMetrics(employee, time))
+    .map((employee) => calculateEmployeeMetrics(employee, startDate, time))
     .sort((employeeA, employeeB) => {
       if (employeeB.productivityScore !== employeeA.productivityScore) {
         return employeeB.productivityScore - employeeA.productivityScore;
@@ -404,11 +439,13 @@ function applyFilters() {
 }
 
 function resetFiltersUI() {
+  const startDateInput = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.startDate);
   const positionSelect = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.position);
   const departmentSelect = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.department);
   const timeSelect = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.time);
   const searchInput = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.search);
 
+  if (startDateInput) startDateInput.value = getDefaultStartDateValue("30d");
   if (positionSelect) positionSelect.value = "";
   if (departmentSelect) departmentSelect.value = "";
   if (timeSelect) timeSelect.value = "30d";
@@ -417,6 +454,7 @@ function resetFiltersUI() {
 
 function resetFilters() {
   employeePerformanceState.filters = {
+    startDate: getDefaultStartDateValue("30d"),
     position: "",
     department: "",
     time: "30d",
@@ -521,6 +559,7 @@ async function initEmployeePerformancePage() {
     const employees = normalizeDatabase(database);
 
     employeePerformanceState.allEmployees = employees;
+    employeePerformanceState.filters.startDate = getDefaultStartDateValue(employeePerformanceState.filters.time);
 
     if (!employees.length) {
       console.warn("[employee-performance] No employees found in database.json");
