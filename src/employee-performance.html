@@ -221,7 +221,7 @@
                 <div class="dashboard-card__metric">
                   <span class="dashboard-card__metric-icon"><img src="assets/icons/close.svg" alt="" class="icon icon--metric"></span>
                   <div>
-                    <div class="dashboard-card__metric-label">Прострочено задач:</div>
+                    <div class="dashboard-card__metric-label">Протерміновано задач:</div>
                     <div class="dashboard-card__metric-value" id="employee-performance-overdue-tasks">124</div>
                   </div>
                 </div>
@@ -237,46 +237,18 @@
 
             <div class="analytics-aside">
               <div class="small-card">
-                <h3 class="small-card__title">Результативні співробітники за 30 днів</h3>
-                <ul class="small-card__list">
-                  <li class="small-card__item">
-                    <div class="user-cell">
-                      <div class="user-avatar">МК</div>
-                      <div>
-                        <div class="user-name">Марія Кузнєцова</div>
-                        <div class="user-role">Дизайн</div>
-                      </div>
-                    </div>
-                    <div class="progress-inline progress-inline--success"><div class="progress-inline__bar" style="width: 95%"></div></div>
-                  </li>
-                  <li class="small-card__item">
-                    <div class="user-cell">
-                      <div class="user-avatar">ІП</div>
-                      <div>
-                        <div class="user-name">Іван Петренко</div>
-                        <div class="user-role">Дизайн</div>
-                      </div>
-                    </div>
-                    <div class="progress-inline progress-inline--success"><div class="progress-inline__bar" style="width: 84%"></div></div>
-                  </li>
-                  <li class="small-card__item">
-                    <div class="user-cell">
-                      <div class="user-avatar">ЕК</div>
-                      <div>
-                        <div class="user-name">Єгор Курченко</div>
-                        <div class="user-role">Тестування</div>
-                      </div>
-                    </div>
-                    <div class="progress-inline progress-inline--info"><div class="progress-inline__bar" style="width: 74%"></div></div>
-                  </li>
+                <h3 class="small-card__title">Найрезультативніші співробітники за весь час</h3>
+                <ul class="small-card__list" id="employee-performance-top-list">
+                  <li class="small-card__item">Завантаження...</li>
                 </ul>
               </div>
 
               <div class="small-card">
                 <h3 class="small-card__title">Оцінка ШІ</h3>
-                <p class="dashboard-card__text">Натисніть на спеціальний значок у меню "Дії" співробітника чи відділу, щоб отримати аналітичні дані про їхню роботу.</p>
+                <p class="dashboard-card__text" id="employee-performance-ai-meta" style="margin-top: 12px;"></p>
+                <p class="dashboard-card__text" id="employee-performance-ai-text">Натисніть на спеціальний значок у меню "Дії" співробітника чи відділу, щоб отримати аналітичні дані про їхню роботу.</p>
                 <div class="progress-inline progress-inline--gray" style="margin-top: 18px;">
-                  <div class="progress-inline__bar" style="width: 50%"></div>
+                  <div class="progress-inline__bar" id="employee-performance-ai-bar" style="width: 50%"></div>
                 </div>
               </div>
             </div>
@@ -297,7 +269,7 @@
                     <th>Посада</th>
                     <th>Відділ</th>
                     <th>Оцінка продуктивності</th>
-                    <th>Завершено/просрочено задач</th>
+                    <th>Завершено/протерміновано задач</th>
                     <th>Середній час виконання задачі</th>
                     <th>Дії</th>
                   </tr>

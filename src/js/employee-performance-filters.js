@@ -14,6 +14,12 @@ const EMPLOYEE_PERFORMANCE_SUMMARY_SELECTORS = {
   overdueTasks: "#employee-performance-overdue-tasks",
   averageTime: "#employee-performance-average-time",
 };
+const EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS = {
+  topList: "#employee-performance-top-list",
+  aiText: "#employee-performance-ai-text",
+  aiBar: "#employee-performance-ai-bar",
+  aiMeta: "#employee-performance-ai-meta",
+};
 
 const EMPLOYEE_PERFORMANCE_FILTER_SELECTORS = {
   startDate: "#production-task-planned-date-from",
@@ -28,6 +34,7 @@ const EMPLOYEE_PERFORMANCE_FILTER_SELECTORS = {
 const employeePerformanceState = {
   allEmployees: [],
   filteredEmployees: [],
+  topEmployees: [],
   currentPage: 1,
   pageSize: 5,
   filters: {
@@ -37,6 +44,8 @@ const employeePerformanceState = {
     time: "30d",
     search: "",
   },
+  selectedAiEmployeeId: null,
+  aiAdviceTimeoutId: null,
 };
 
 function createOptionsMarkup(defaultLabel, values) {
@@ -166,11 +175,13 @@ function normalizeDatabase(database) {
   const users = Array.isArray(database.users) ? database.users : [];
   const employees = Array.isArray(database.employees) ? database.employees : [];
   const tasks = Array.isArray(database.production_tasks) ? database.production_tasks : [];
-  const taskResults = Array.isArray(database.task_results) ? database.task_results : [];
+  const performanceReports = Array.isArray(database.performance_reports) ? database.performance_reports : [];
+  const aiPerformanceReports = Array.isArray(database.ai_performance_reports) ? database.ai_performance_reports : [];
 
   const usersById = new Map(users.map((user) => [Number(user.user_id), user]));
   const tasksByEmployeeId = new Map();
-  const taskResultsByTaskId = new Map(taskResults.map((result) => [Number(result.task_id), result]));
+  const aiReportsById = new Map(aiPerformanceReports.map((report) => [Number(report.ai_report_id), report]));
+  const reportsByEmployeeId = new Map();
 
   tasks.forEach((task) => {
     const employeeId = Number(task.employee_id);
@@ -180,6 +191,19 @@ function normalizeDatabase(database) {
     }
 
     tasksByEmployeeId.get(employeeId).push(task);
+  });
+
+  performanceReports.forEach((report) => {
+    const employeeId = Number(report.employee_id);
+
+    if (!reportsByEmployeeId.has(employeeId)) {
+      reportsByEmployeeId.set(employeeId, []);
+    }
+
+    reportsByEmployeeId.get(employeeId).push({
+      ...report,
+      aiReport: aiReportsById.get(Number(report.ai_report_id)) || null,
+    });
   });
 
   return employees.map((employee) => {
@@ -192,7 +216,7 @@ function normalizeDatabase(database) {
       position: employee.position || "—",
       department: employee.department || "—",
       tasks: tasksByEmployeeId.get(Number(employee.employee_id)) || [],
-      taskResultsByTaskId,
+      reports: reportsByEmployeeId.get(Number(employee.employee_id)) || [],
     };
   });
 }
@@ -259,6 +283,51 @@ function getEmployeeTotalProductivityScore(employee) {
   return Math.max(10, Math.round(employee.productivityScore * (employee.completedOnTime / totalCheckedTasks)));
 }
 
+function calculateAllTimeMetrics(employee) {
+  const completedOnTime = employee.tasks.filter((task) => {
+    const plannedDate = parseDate(task.planned_completion_date);
+    const actualDate = parseDate(task.actual_completion_date);
+
+    return plannedDate && actualDate && plannedDate >= actualDate;
+  }).length;
+
+  const overdue = employee.tasks.filter((task) => {
+    const plannedDate = parseDate(task.planned_completion_date);
+    const actualDate = parseDate(task.actual_completion_date);
+
+    return plannedDate && actualDate && plannedDate < actualDate;
+  }).length;
+
+  const executionTimes = employee.tasks
+    .map((task) => {
+      const startDate = parseDate(task.start_date);
+      const actualDate = parseDate(task.actual_completion_date);
+
+      if (!startDate || !actualDate) {
+        return null;
+      }
+
+      return (actualDate.getTime() - startDate.getTime()) / (1000 * 60 * 60);
+    })
+    .filter((value) => Number.isFinite(value));
+
+  const averageExecutionHours = executionTimes.length
+    ? executionTimes.reduce((sum, value) => sum + value, 0) / executionTimes.length
+    : null;
+
+  const productivityScore = averageExecutionHours === null
+    ? 0
+    : Math.max(0, Math.min(100, Math.round((TASK_TIME_NORM_HOURS / averageExecutionHours) * 100)));
+
+  return {
+    ...employee,
+    completedOnTime,
+    overdue,
+    averageExecutionHours,
+    productivityScore,
+  };
+}
+
 function createEmployeePerformanceRow(employee) {
   const totalProductivityScore = getEmployeeTotalProductivityScore(employee);
   const progressClass = getProgressClass(totalProductivityScore);
@@ -293,12 +362,103 @@ function createEmployeePerformanceRow(employee) {
       </td>
       <td>${formatHours(employee.averageExecutionHours)}</td>
       <td>
-        <button class="icon-button icon-button--small" type="button" aria-label="ШІ-аналіз">
+        <button class="icon-button icon-button--small" type="button" data-ai-employee-id="${employee.id}" aria-label="ШІ-аналіз співробітника">
           <img src="assets/icons/ai.png" alt="" class="icon icon--action">
         </button>
       </td>
     </tr>
   `;
+}
+
+function createTopEmployeeItem(employee) {
+  const score = getEmployeeTotalProductivityScore(employee);
+  const progressClass = getProgressClass(score);
+  const initials = getInitials(employee.name);
+
+  return `
+    <li class="small-card__item">
+      <div class="user-cell">
+        <div class="user-avatar">${initials}</div>
+        <div>
+          <div class="user-name">${employee.name}</div>
+          <div class="user-role">${employee.position}</div>
+        </div>
+      </div>
+      <div class="progress-inline ${progressClass}">
+        <div class="progress-inline__bar" style="width: ${score}%"></div>
+      </div>
+    </li>
+  `;
+}
+
+function getLatestAiReport(employee) {
+  if (!employee || !employee.reports || !employee.reports.length) {
+    return null;
+  }
+
+  return [...employee.reports].sort((reportA, reportB) => {
+    const dateA = parseDate(reportA.report_created_at);
+    const dateB = parseDate(reportB.report_created_at);
+
+    return (dateB?.getTime() || 0) - (dateA?.getTime() || 0);
+  })[0];
+}
+
+function renderTopEmployees() {
+  const topList = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.topList);
+
+  if (!topList) {
+    return;
+  }
+
+  if (!employeePerformanceState.topEmployees.length) {
+    topList.innerHTML = '<li class="small-card__item">Немає даних для відображення.</li>';
+    return;
+  }
+
+  topList.innerHTML = employeePerformanceState.topEmployees.map(createTopEmployeeItem).join("");
+}
+
+function renderAiAdvice(employeeId) {
+  const aiText = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiText);
+  const aiBar = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiBar);
+  const aiMeta = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiMeta);
+  const employee = employeePerformanceState.allEmployees.find((item) => Number(item.id) === Number(employeeId));
+  const latestReport = getLatestAiReport(employee);
+
+  if (!aiText || !aiBar || !aiMeta) {
+    return;
+  }
+
+  if (!employee || !latestReport || !latestReport.aiReport) {
+    aiText.textContent = 'Недостатньо даних для аналізу. Переконайтеся, що співробітник має достатньо виконаних завдань та згенерованих звітів про продуктивність.';
+    aiMeta.textContent = "";
+    aiBar.style.width = "0%";
+  aiBar.parentElement.classList = "progress-inline progress-inline--gray";
+    return;
+  }
+
+  const aiScore = Math.max(0, Math.min(100, Math.round(Number(latestReport.aiReport.productivity_score || 0) * 10)));
+
+  aiText.textContent = latestReport.aiReport.recommendations || "Для цього співробітника поки немає рекомендацій.";
+  aiMeta.textContent = `${employee.name} • прогноз ефективності: ${aiScore}/100`;
+  aiBar.style.width = `${aiScore}%`;
+  aiBar.parentElement.classList = "progress-inline " + getProgressClass(aiScore);
+}
+
+function renderAiAnalysisPending() {
+  const aiText = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiText);
+  const aiBar = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiBar);
+  const aiMeta = document.querySelector(EMPLOYEE_PERFORMANCE_ASIDE_SELECTORS.aiMeta);
+
+  if (!aiText || !aiBar || !aiMeta) {
+    return;
+  }
+
+  aiText.textContent = "Виконується аналіз...";
+  aiMeta.textContent = "";
+  aiBar.style.width = "50%";
+  aiBar.parentElement.classList = "progress-inline progress-inline--gray";
 }
 
 function updateSummaryCard() {
@@ -607,11 +767,33 @@ function handlePaginationClick(event) {
   renderEmployeePerformanceTable();
 }
 
+function handleAiAdviceClick(event) {
+  const button = event.target.closest("[data-ai-employee-id]");
+
+  if (!button) {
+    return;
+  }
+
+  employeePerformanceState.selectedAiEmployeeId = Number(button.dataset.aiEmployeeId);
+
+  if (employeePerformanceState.aiAdviceTimeoutId) {
+    clearTimeout(employeePerformanceState.aiAdviceTimeoutId);
+  }
+
+  renderAiAnalysisPending();
+
+  employeePerformanceState.aiAdviceTimeoutId = window.setTimeout(() => {
+    renderAiAdvice(employeePerformanceState.selectedAiEmployeeId);
+    employeePerformanceState.aiAdviceTimeoutId = null;
+  }, 4000);
+}
+
 function bindEmployeePerformanceControls() {
   const pageSizeSelect = document.querySelector(EMPLOYEE_PERFORMANCE_PAGE_SIZE_SELECTOR);
   const paginationElement = document.querySelector(EMPLOYEE_PERFORMANCE_PAGINATION_SELECTOR);
   const filterSubmitButton = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.submit);
   const filterResetButton = document.querySelector(EMPLOYEE_PERFORMANCE_FILTER_SELECTORS.reset);
+  const tableBody = document.querySelector(EMPLOYEE_PERFORMANCE_TABLE_SELECTOR);
 
   if (pageSizeSelect) {
     pageSizeSelect.addEventListener("change", handlePageSizeChange);
@@ -630,6 +812,10 @@ function bindEmployeePerformanceControls() {
 
   if (filterResetButton) {
     filterResetButton.addEventListener("click", resetFilters);
+  }
+
+  if (tableBody) {
+    tableBody.addEventListener("click", handleAiAdviceClick);
   }
 }
 
@@ -656,6 +842,22 @@ async function initEmployeePerformancePage() {
     const employees = normalizeDatabase(database);
 
     employeePerformanceState.allEmployees = employees;
+    employeePerformanceState.topEmployees = employees
+      .map(calculateAllTimeMetrics)
+      .sort((employeeA, employeeB) => {
+        const scoreDifference = getEmployeeTotalProductivityScore(employeeB) - getEmployeeTotalProductivityScore(employeeA);
+
+        if (scoreDifference !== 0) {
+          return scoreDifference;
+        }
+
+        if (employeeB.completedOnTime !== employeeA.completedOnTime) {
+          return employeeB.completedOnTime - employeeA.completedOnTime;
+        }
+
+        return employeeA.name.localeCompare(employeeB.name, "uk");
+      })
+      .slice(0, 3);
     employeePerformanceState.filters.startDate = getDefaultStartDateValue(employeePerformanceState.filters.time);
 
     if (!employees.length) {
@@ -664,6 +866,8 @@ async function initEmployeePerformancePage() {
 
     populateEmployeePerformanceFilters(employees);
     bindEmployeePerformanceControls();
+    renderTopEmployees();
+    //renderAiAdvice(employeePerformanceState.selectedAiEmployeeId);
     syncPageSizeSelect();
     applyFilters();
   } catch (error) {
