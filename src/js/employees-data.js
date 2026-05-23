@@ -230,9 +230,6 @@ function createEmployeeRow(employee) {
       <td>${employee.currentTask}</td>
       <td><span class="badge ${badgeClass}">${employee.taskStatus}</span></td>
       <td>
-        <button class="icon-button--action icon-button--action--secondary" type="button" aria-label="Переглянути">
-          <img src="assets/icons/view.svg" alt="" class="icon icon--action">
-        </button>
         <button class="icon-button--action icon-button--action--primary" type="button" aria-label="Редагувати">
           <img src="assets/icons/edit.png" alt="" class="icon icon--action">
         </button>
