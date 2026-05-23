@@ -3,7 +3,7 @@ const EMPLOYEE_PERFORMANCE_TABLE_SELECTOR = ".table--analytics tbody";
 const EMPLOYEE_PERFORMANCE_COUNT_SELECTOR = ".table-footer__text";
 const EMPLOYEE_PERFORMANCE_PAGE_SIZE_SELECTOR = "#employee-performance-page-size";
 const EMPLOYEE_PERFORMANCE_PAGINATION_SELECTOR = ".pagination";
-const TASK_TIME_NORM_HOURS = 500;
+const TASK_TIME_NORM_HOURS = 100;
 const PAGE_SIZE_OPTIONS = [5, 10, 25, 50];
 
 const EMPLOYEE_PERFORMANCE_FILTER_SELECTORS = {
@@ -61,15 +61,15 @@ function formatHours(hours) {
 }
 
 function getProgressClass(score) {
-  if (score >= 75) {
+  if (score >= 80) {
     return "progress-inline--success";
   }
 
-  if (score >= 50) {
+  if (score >= 60) {
     return "progress-inline--info";
   }
 
-  if (score >= 25) {
+  if (score >= 40) {
     return "progress-inline--purple";
   }
 
@@ -213,7 +213,7 @@ function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
 
   const productivityScore = averageExecutionHours === null
     ? 0
-    : Math.max(0, Math.min(100, Math.round(((TASK_TIME_NORM_HOURS - averageExecutionHours) / TASK_TIME_NORM_HOURS) * 100)));
+    : Math.max(0, Math.min(100, Math.round((TASK_TIME_NORM_HOURS / averageExecutionHours) * 100)));
 
   return {
     ...employee,
@@ -226,7 +226,8 @@ function calculateEmployeeMetrics(employee, startDateValue, periodValue) {
 }
 
 function createEmployeePerformanceRow(employee) {
-  const progressClass = getProgressClass(employee.productivityScore);
+  total_productivity_score = employee.productivityScore*(employee.completedOnTime/(employee.completedOnTime + employee.overdue)) || 0;
+  const progressClass = getProgressClass(total_productivity_score);
   const initials = getInitials(employee.name);
 
   return `
@@ -245,7 +246,7 @@ function createEmployeePerformanceRow(employee) {
       <td>${employee.department}</td>
       <td>
         <div class="progress-inline ${progressClass}">
-          <div class="progress-inline__bar" style="width: ${employee.productivityScore}%"></div>
+          <div class="progress-inline__bar" style="width: ${total_productivity_score}%"></div>
         </div>
       </td>
       <td>
